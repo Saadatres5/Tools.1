@@ -41,7 +41,7 @@ export default function SplitPDFClient() {
         const copied=await doc.copyPages(src,indices[i]);
         copied.forEach(p=>doc.addPage(p));
         const bytes=await doc.save();
-        const blob=new Blob([bytes],{type:"application/pdf"});
+        const blob=new Blob([new Uint8Array(bytes)],{type:"application/pdf"});
         out.push({url:URL.createObjectURL(blob),name:`page_${indices[i].map(n=>n+1).join("-")}.pdf`,pages:indices[i].length});
         setProgress(30+((i+1)/indices.length)*60);
       }

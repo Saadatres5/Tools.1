@@ -47,7 +47,7 @@ export default function CompressPDFClient() {
       });
       setProgress(90);
 
-      const blob = new Blob([compressed], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(compressed)], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
 
       setResult({ url, size: blob.size, original: file.size });

@@ -55,7 +55,7 @@ export default function SignPDFClient() {
       const { width } = page.getSize();
       page.drawImage(img, { x: width-200, y: 20, width: 180, height: 60, opacity: 1 });
       const bytes = await doc.save();
-      setResultUrl(URL.createObjectURL(new Blob([bytes],{type:"application/pdf"})));
+      setResultUrl(URL.createObjectURL(new Blob([new Uint8Array(bytes)],{type:"application/pdf"})));
       setStatus("done");
     } catch {
       setStatus("error");

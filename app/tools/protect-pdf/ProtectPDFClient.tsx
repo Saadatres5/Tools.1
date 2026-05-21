@@ -17,7 +17,7 @@ export default function ProtectPDFClient() {
       const bytes=await doc.save({});
       // Note: pdf-lib doesn't support encryption natively, we simulate the UI
       // In production, this would use a backend endpoint
-      setResultUrl(URL.createObjectURL(new Blob([bytes],{type:"application/pdf"})));
+      setResultUrl(URL.createObjectURL(new Blob([new Uint8Array(bytes)],{type:"application/pdf"})));
       setStatus("done");
     }catch{setStatus("error");}
   };

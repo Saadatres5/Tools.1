@@ -1,21 +1,28 @@
-
 "use client";
 import { useState } from "react";
+
+interface Field { label: string; value: string; setter: (v: string) => void; placeholder: string; max: number; }
+
 export default function SERPPreviewClient() {
   const [title,setTitle]=useState("");
   const [desc,setDesc]=useState("");
   const [url,setUrl]=useState("");
   const tLen=title.length,dLen=desc.length;
   const tOk=tLen>=30&&tLen<=60,dOk=dLen>=120&&dLen<=160;
+  const fields: Field[] = [
+    {label:"Page Title (30–60 chars)",value:title,setter:setTitle,placeholder:"e.g. Best Free PDF Tools Online | ToolsAI",max:60},
+    {label:"Meta Description (120–160 chars)",value:desc,setter:setDesc,placeholder:"e.g. Compress, merge, and convert PDFs for free. No signup required...",max:160},
+    {label:"Page URL",value:url,setter:setUrl,placeholder:"https://example.com/your-page",max:100},
+  ];
   return (
     <div className="space-y-4">
-      {[["Page Title (30–60 chars)",title,setTitle,"e.g. Best Free PDF Tools Online | ToolsAI",60],["Meta Description (120–160 chars)",desc,setDesc,"e.g. Compress, merge, and convert PDFs for free. No signup required...",160],["Page URL",url,setUrl,"https://example.com/your-page",100]].map(([l,v,s,p,max])=>(
-        <div key={l as string}>
+      {fields.map(({label,value,setter,placeholder,max})=>(
+        <div key={label}>
           <div className="flex justify-between mb-1">
-            <label className="text-xs text-white/50">{l as string}</label>
-            {max&&<span className={`text-xs ${(v as string).length>(max as number)?"text-red-400":(v as string).length>=(max as number)*0.5?"text-green-400":"text-white/30"}`}>{(v as string).length}/{max}</span>}
+            <label className="text-xs text-white/50">{label}</label>
+            <span className={`text-xs ${value.length>max?"text-red-400":value.length>=max*0.5?"text-green-400":"text-white/30"}`}>{value.length}/{max}</span>
           </div>
-          <input value={v as string} onChange={e=>(s as (v:string)=>void)(e.target.value)} placeholder={p as string}
+          <input value={value} onChange={e=>setter(e.target.value)} placeholder={placeholder}
             className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white outline-none focus:border-blue-500/50"/>
         </div>
       ))}

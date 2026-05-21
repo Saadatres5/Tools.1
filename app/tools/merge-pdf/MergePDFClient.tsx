@@ -31,7 +31,7 @@ export default function MergePDFClient() {
         setProgress(20 + ((i+1)/files.length)*70);
       }
       const bytes = await merged.save();
-      const blob = new Blob([bytes], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(bytes)], { type: "application/pdf" });
       setResultUrl(URL.createObjectURL(blob));
       setStatus("done"); setProgress(100);
     } catch { setStatus("error"); }

@@ -8,7 +8,7 @@ export default function VoiceRecorderClient() {
   const [error,setError]=useState("");
   const mediaRef=useRef<MediaRecorder|null>(null);
   const chunksRef=useRef<Blob[]>([]);
-  const timerRef=useRef<NodeJS.Timeout>();
+  const timerRef=useRef<NodeJS.Timeout | undefined>(undefined);
   const start=async()=>{
     try{
       const stream=await navigator.mediaDevices.getUserMedia({audio:true});

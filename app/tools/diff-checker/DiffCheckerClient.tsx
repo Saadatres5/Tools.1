@@ -14,7 +14,7 @@ export default function DiffCheckerClient() {
       return{lineA,lineB,type,n:i+1};
     });
   },[a,b]);
-  const colors={same:"",added:"bg-green-500/10 border-l-2 border-green-500",removed:"bg-red-500/10 border-l-2 border-red-500",changed:"bg-yellow-500/10 border-l-2 border-yellow-500"};
+  const colors: Record<string,string>={same:"",added:"bg-green-500/10 border-l-2 border-green-500",removed:"bg-red-500/10 border-l-2 border-red-500",changed:"bg-yellow-500/10 border-l-2 border-yellow-500"};
   const stats=diff.reduce((s,d)=>({...s,[d.type]:(s[d.type]||0)+1}),{} as Record<string,number>);
   return (
     <div className="space-y-4">

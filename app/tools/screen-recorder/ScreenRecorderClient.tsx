@@ -9,7 +9,7 @@ export default function ScreenRecorderClient() {
   const [duration, setDuration] = useState(0);
   const mediaRef = useRef<MediaRecorder|null>(null);
   const chunksRef = useRef<Blob[]>([]);
-  const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const timerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 
   const start = async () => {
     try {

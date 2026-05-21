@@ -26,7 +26,7 @@ export default function WatermarkPDFClient() {
       });
       setProgress(80);
       const bytes=await doc.save();
-      setResultUrl(URL.createObjectURL(new Blob([bytes],{type:"application/pdf"})));
+      setResultUrl(URL.createObjectURL(new Blob([new Uint8Array(bytes)],{type:"application/pdf"})));
       setStatus("done");setProgress(100);
     }catch{setStatus("error");}
   };

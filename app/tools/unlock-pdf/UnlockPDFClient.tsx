@@ -17,7 +17,7 @@ export default function UnlockPDFClient() {
       const doc=await PDFDocument.load(await file.arrayBuffer(),{ignoreEncryption:true});
       setProgress(70);
       const bytes=await doc.save();
-      setResultUrl(URL.createObjectURL(new Blob([bytes],{type:"application/pdf"})));
+      setResultUrl(URL.createObjectURL(new Blob([new Uint8Array(bytes)],{type:"application/pdf"})));
       setStatus("done");setProgress(100);
     }catch{setStatus("error");}
   };

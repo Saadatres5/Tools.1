@@ -10,7 +10,7 @@ export default function WebcamRecorderClient() {
   const videoRef=useRef<HTMLVideoElement>(null);
   const mediaRef=useRef<MediaRecorder|null>(null);
   const chunksRef=useRef<Blob[]>([]);
-  const timerRef=useRef<NodeJS.Timeout>();
+  const timerRef=useRef<NodeJS.Timeout | undefined>(undefined);
   const streamRef=useRef<MediaStream|null>(null);
   const startPreview=async()=>{
     try{

@@ -14,7 +14,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https://chart.googleapis.com https://pagead2.googlesyndication.com",
       "font-src 'self'",
-      "connect-src 'self' https://pagead2.googlesyndication.com https://speed.cloudflare.com https://www.cloudflare.com",
+      "connect-src 'self' https://pagead2.googlesyndication.com https://speed.cloudflare.com https://www.cloudflare.com https://open.er-api.com",
       "media-src 'self' blob:",
       "worker-src 'self' blob:",
       "frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com",
@@ -24,6 +24,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Empty turbopack config suppresses the webpack-without-turbopack warning in Next.js 16
+  turbopack: {},
   async headers() {
     return [
       {

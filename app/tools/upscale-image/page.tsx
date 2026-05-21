@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import UpscaleImageClient from "./UpscaleImageClient";
 
 export const metadata: Metadata = {
-  title: "Upscale Image Free Online — ToolsAI",
+  title: "Upscale Image Free Online — QuantixTools",
   description: "Enhance image resolution with AI. 100% free, no signup required.",
 };
 

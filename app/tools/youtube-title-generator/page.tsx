@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import YTTitleClient from "./YTTitleClient";
 
 export const metadata: Metadata = {
-  title: "YouTube Title Generator Free Online — ToolsAI",
+  title: "YouTube Title Generator Free Online — QuantixTools",
   description: "Generate click-worthy YouTube titles. 100% free, no signup required.",
 };
 

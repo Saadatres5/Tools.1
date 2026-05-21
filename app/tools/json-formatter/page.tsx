@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import JSONFormatterClient from "./JSONFormatterClient";
 
 export const metadata: Metadata = {
-  title: "JSON Formatter Free Online — ToolsAI",
+  title: "JSON Formatter Free Online — QuantixTools",
   description: "Format and validate JSON. 100% free, no signup required.",
 };
 

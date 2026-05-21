@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="col-span-2 md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">T</div>
-            <span className="font-bold">ToolsAI</span>
+            <span className="font-bold">QuantixTools</span>
           </div>
           <p className="text-white/40 text-sm mb-4">100% Free AI & File Tools. No signup required. Privacy first.</p>
           <div className="flex flex-wrap gap-2">
@@ -60,7 +60,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-white/5 py-6 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/30 text-sm">© {new Date().getFullYear()} ToolsAI. All rights reserved.</p>
+          <p className="text-white/30 text-sm">© {new Date().getFullYear()} QuantixTools. All rights reserved.</p>
           <div className="flex items-center gap-4 text-xs text-white/20">
             <Link href="/privacy" className="hover:text-white/40">Privacy</Link>
             <Link href="/terms" className="hover:text-white/40">Terms</Link>

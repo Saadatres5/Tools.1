@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import BusinessNameClient from "./BusinessNameClient";
 
 export const metadata: Metadata = {
-  title: "Business Name Generator Free Online — ToolsAI",
+  title: "Business Name Generator Free Online — QuantixTools",
   description: "Generate creative business names. 100% free, no signup required.",
 };
 

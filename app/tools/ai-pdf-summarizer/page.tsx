@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIPDFSummarizerClient from "./AIPDFSummarizerClient";
 
 export const metadata: Metadata = {
-  title: "AI PDF Summarizer Free Online — ToolsAI",
+  title: "AI PDF Summarizer Free Online — QuantixTools",
   description: "Summarize PDF with AI. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import UUIDGeneratorClient from "./UUIDGeneratorClient";
 
 export const metadata: Metadata = {
-  title: "UUID Generator Free Online — ToolsAI",
+  title: "UUID Generator Free Online — QuantixTools",
   description: "Generate unique UUIDs. 100% free, no signup required.",
 };
 

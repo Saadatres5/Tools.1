@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import MathSolverClient from "./MathSolverClient";
 
 export const metadata: Metadata = {
-  title: "Math Solver Free Online — ToolsAI",
+  title: "Math Solver Free Online — QuantixTools",
   description: "Solve math problems step by step. 100% free, no signup required.",
 };
 

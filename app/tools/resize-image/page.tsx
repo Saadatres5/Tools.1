@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ResizeImageClient from "./ResizeImageClient";
 
 export const metadata: Metadata = {
-  title: "Resize Image Free Online — ToolsAI",
+  title: "Resize Image Free Online — QuantixTools",
   description: "Resize images to any dimension. 100% free, no signup required.",
 };
 

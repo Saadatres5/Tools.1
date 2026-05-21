@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import SpeedTestClient from "./SpeedTestClient";
 
 export const metadata: Metadata = {
-  title: "Internet Speed Test Free Online — ToolsAI",
+  title: "Internet Speed Test Free Online — QuantixTools",
   description: "Test connection speed. 100% free, no signup required.",
 };
 

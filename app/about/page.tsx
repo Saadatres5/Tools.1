@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import { getTotalToolCount } from "@/lib/tools-data";
 
 export const metadata: Metadata = {
-  title: "About ToolsAI — Free AI & File Tools Platform",
-  description: "ToolsAI is a free browser-based platform with 100+ AI and file tools. No signup, no uploads, privacy first.",
-  alternates: { canonical: "https://toolsai.com/about" },
+  title: "About QuantixTools — Free AI & File Tools Platform",
+  description: "QuantixTools is a free browser-based platform with 100+ AI and file tools. No signup, no uploads, privacy first.",
+  alternates: { canonical: "https://quantixtools.com/about" },
 };
 
 export default function AboutPage() {
@@ -16,13 +16,13 @@ export default function AboutPage() {
     <main className="min-h-screen bg-[#0a0a0a] text-white">
       <Navbar />
       <div className="max-w-3xl mx-auto px-4 pt-28 pb-20">
-        <h1 className="text-4xl font-bold mb-4">About ToolsAI</h1>
+        <h1 className="text-4xl font-bold mb-4">About QuantixTools</h1>
         <p className="text-white/50 text-lg mb-12">We believe powerful tools should be free, fast, and private — for everyone.</p>
 
         <section className="space-y-8">
           <div className="p-6 rounded-2xl bg-white/3 border border-white/8">
             <h2 className="text-xl font-bold mb-3">Our Mission</h2>
-            <p className="text-white/60 leading-relaxed">ToolsAI was built to give everyone access to powerful AI and file processing tools — completely free, with no account required. Most of our tools run entirely inside your browser, meaning your files never leave your device.</p>
+            <p className="text-white/60 leading-relaxed">QuantixTools was built to give everyone access to powerful AI and file processing tools — completely free, with no account required. Most of our tools run entirely inside your browser, meaning your files never leave your device.</p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
@@ -41,7 +41,7 @@ export default function AboutPage() {
 
           <div className="p-6 rounded-2xl bg-white/3 border border-white/8">
             <h2 className="text-xl font-bold mb-3">Privacy First Architecture</h2>
-            <p className="text-white/60 leading-relaxed mb-4">Unlike most online tools, ToolsAI processes your files locally in your browser using modern Web APIs, WebAssembly, and browser-based AI models. Your documents, images, and data never touch our servers.</p>
+            <p className="text-white/60 leading-relaxed mb-4">Unlike most online tools, QuantixTools processes your files locally in your browser using modern Web APIs, WebAssembly, and browser-based AI models. Your documents, images, and data never touch our servers.</p>
             <Link href="/privacy" className="text-blue-400 text-sm hover:underline">Read our Privacy Policy →</Link>
           </div>
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import BMIClient from "./BMIClient";
 
 export const metadata: Metadata = {
-  title: "BMI Calculator Free Online — ToolsAI",
+  title: "BMI Calculator Free Online — QuantixTools",
   description: "Calculate body mass index. 100% free, no signup required.",
 };
 

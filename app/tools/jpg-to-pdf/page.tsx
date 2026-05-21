@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import JPGToPDFClient from "./JPGToPDFClient";
 
 export const metadata: Metadata = {
-  title: "JPG to PDF Free Online — ToolsAI",
+  title: "JPG to PDF Free Online — QuantixTools",
   description: "Convert images to PDF. 100% free, no signup required.",
 };
 

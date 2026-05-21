@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import SERPPreviewClient from "./SERPPreviewClient";
 
 export const metadata: Metadata = {
-  title: "SERP Preview Free Online — ToolsAI",
+  title: "SERP Preview Free Online — QuantixTools",
   description: "Preview Google snippet. 100% free, no signup required.",
 };
 

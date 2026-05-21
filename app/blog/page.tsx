@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog — AI & File Tools Tips — ToolsAI",
+  title: "Blog — AI & File Tools Tips — QuantixTools",
   description: "Learn about AI tools, PDF tips, image editing, and productivity hacks.",
 };
 

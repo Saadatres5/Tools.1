@@ -3,7 +3,7 @@ import CategoryPage from "@/components/CategoryPage";
 import { getCategoryById } from "@/lib/tools-data";
 
 export const metadata: Metadata = {
-  title: "Security Tools — Free Online Tools — ToolsAI",
+  title: "Security Tools — Free Online Tools — QuantixTools",
   description: "Free security tools online. No signup required. Fast, private, browser-based.",
 };
 

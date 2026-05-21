@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AudioConverterClient from "./AudioConverterClient";
 
 export const metadata: Metadata = {
-  title: "Audio Converter Free Online — ToolsAI",
+  title: "Audio Converter Free Online — QuantixTools",
   description: "Convert audio formats. 100% free, no signup required.",
 };
 

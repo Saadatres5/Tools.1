@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ScreenshotEditorClient from "./ScreenshotEditorClient";
 
 export const metadata: Metadata = {
-  title: "Screenshot Editor Free Online — ToolsAI",
+  title: "Screenshot Editor Free Online — QuantixTools",
   description: "Annotate and edit screenshots. 100% free, no signup required.",
 };
 

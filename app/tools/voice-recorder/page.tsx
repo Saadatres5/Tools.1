@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import VoiceRecorderClient from "./VoiceRecorderClient";
 
 export const metadata: Metadata = {
-  title: "Voice Recorder Free Online — ToolsAI",
+  title: "Voice Recorder Free Online — QuantixTools",
   description: "Record audio in browser. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AISummarizerClient from "./AISummarizerClient";
 
 export const metadata: Metadata = {
-  title: "AI Summarizer Free Online — ToolsAI",
+  title: "AI Summarizer Free Online — QuantixTools",
   description: "Summarize any text instantly. 100% free, no signup required.",
 };
 

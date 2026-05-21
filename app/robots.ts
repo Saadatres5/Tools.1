@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/", "/_next/"],
       },
     ],
-    sitemap: "https://toolsai.com/sitemap.xml",
-    host: "https://toolsai.com",
+    sitemap: "https://quantixtools.com/sitemap.xml",
+    host: "https://quantixtools.com",
   };
 }

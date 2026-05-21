@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIHeadlineClient from "./AIHeadlineClient";
 
 export const metadata: Metadata = {
-  title: "AI Headline Generator Free Online — ToolsAI",
+  title: "AI Headline Generator Free Online — QuantixTools",
   description: "Create compelling headlines. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import RegexClient from "./RegexClient";
 
 export const metadata: Metadata = {
-  title: "Regex Tester Free Online — ToolsAI",
+  title: "Regex Tester Free Online — QuantixTools",
   description: "Test regular expressions. 100% free, no signup required.",
 };
 

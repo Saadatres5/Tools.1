@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import RemoveBGClient from "./RemoveBGClient";
 
 export const metadata: Metadata = {
-  title: "Remove Background Free Online — ToolsAI",
+  title: "Remove Background Free Online — QuantixTools",
   description: "Remove image background with AI. 100% free, no signup required.",
 };
 

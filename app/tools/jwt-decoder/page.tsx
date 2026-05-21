@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import JWTClient from "./JWTClient";
 
 export const metadata: Metadata = {
-  title: "JWT Decoder Free Online — ToolsAI",
+  title: "JWT Decoder Free Online — QuantixTools",
   description: "Decode JWT tokens. 100% free, no signup required.",
 };
 

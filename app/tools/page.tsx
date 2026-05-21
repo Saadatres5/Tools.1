@@ -6,7 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import { allCategories, getTotalToolCount } from "@/lib/tools-data";
 
 export const metadata: Metadata = {
-  title: "All Free Online Tools — ToolsAI",
+  title: "All Free Online Tools — QuantixTools",
   description: "Browse 100+ free online tools for PDF, images, video, AI writing, and more. No signup required.",
 };
 

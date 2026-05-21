@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import MetaTagClient from "./MetaTagClient";
 
 export const metadata: Metadata = {
-  title: "Meta Tag Generator Free Online — ToolsAI",
+  title: "Meta Tag Generator Free Online — QuantixTools",
   description: "Generate SEO meta tags. 100% free, no signup required.",
 };
 

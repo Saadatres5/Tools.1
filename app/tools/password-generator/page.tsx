@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import PasswordGeneratorClient from "./PasswordGeneratorClient";
 
 export const metadata: Metadata = {
-  title: "Password Generator Free Online — ToolsAI",
+  title: "Password Generator Free Online — QuantixTools",
   description: "Generate strong passwords. 100% free, no signup required.",
 };
 

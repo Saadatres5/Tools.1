@@ -130,7 +130,7 @@ export default function HomePage() {
       {/* Why Choose Us */}
       <section className="py-16 px-4 bg-white/2">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold mb-12 text-center">Why ToolsAI?</h2>
+          <h2 className="text-2xl font-bold mb-12 text-center">Why QuantixTools?</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {features.map(f => (
               <div key={f.title} className="text-center p-6 rounded-2xl bg-white/3 border border-white/8">

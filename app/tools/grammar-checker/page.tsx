@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import GrammarCheckerClient from "./GrammarCheckerClient";
 
 export const metadata: Metadata = {
-  title: "Grammar Checker Free Online — ToolsAI",
+  title: "Grammar Checker Free Online — QuantixTools",
   description: "Check and fix grammar. 100% free, no signup required.",
 };
 

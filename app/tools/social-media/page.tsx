@@ -3,7 +3,7 @@ import CategoryPage from "@/components/CategoryPage";
 import { getCategoryById } from "@/lib/tools-data";
 
 export const metadata: Metadata = {
-  title: "Social Media Tools — Free Online Tools — ToolsAI",
+  title: "Social Media Tools — Free Online Tools — QuantixTools",
   description: "Free social media tools online. No signup required. Fast, private, browser-based.",
 };
 

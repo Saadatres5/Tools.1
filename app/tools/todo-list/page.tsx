@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import TodoClient from "./TodoClient";
 
 export const metadata: Metadata = {
-  title: "To-Do List Free Online — ToolsAI",
+  title: "To-Do List Free Online — QuantixTools",
   description: "Simple task manager. 100% free, no signup required.",
 };
 

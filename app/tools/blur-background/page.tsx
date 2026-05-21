@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import BlurBackgroundClient from "./BlurBackgroundClient";
 
 export const metadata: Metadata = {
-  title: "Blur Background Free Online — ToolsAI",
+  title: "Blur Background Free Online — QuantixTools",
   description: "AI background blur for photos. 100% free, no signup required.",
 };
 

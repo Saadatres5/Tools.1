@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import GPAClient from "./GPAClient";
 
 export const metadata: Metadata = {
-  title: "GPA Calculator Free Online — ToolsAI",
+  title: "GPA Calculator Free Online — QuantixTools",
   description: "Calculate your GPA. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIParaphraserClient from "./AIParaphraserClient";
 
 export const metadata: Metadata = {
-  title: "AI Paraphraser Free Online — ToolsAI",
+  title: "AI Paraphraser Free Online — QuantixTools",
   description: "Rewrite text in new words. 100% free, no signup required.",
 };
 

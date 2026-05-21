@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import SitemapClient from "./SitemapClient";
 
 export const metadata: Metadata = {
-  title: "Sitemap Generator Free Online — ToolsAI",
+  title: "Sitemap Generator Free Online — QuantixTools",
   description: "Generate XML sitemap. 100% free, no signup required.",
 };
 

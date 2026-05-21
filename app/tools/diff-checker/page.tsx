@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import DiffCheckerClient from "./DiffCheckerClient";
 
 export const metadata: Metadata = {
-  title: "Diff Checker Free Online — ToolsAI",
+  title: "Diff Checker Free Online — QuantixTools",
   description: "Compare two texts. 100% free, no signup required.",
 };
 

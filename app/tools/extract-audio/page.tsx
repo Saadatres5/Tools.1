@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ExtractAudioClient from "./ExtractAudioClient";
 
 export const metadata: Metadata = {
-  title: "Extract Audio Free Online — ToolsAI",
+  title: "Extract Audio Free Online — QuantixTools",
   description: "Extract audio from video. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import PomodoroClient from "./PomodoroClient";
 
 export const metadata: Metadata = {
-  title: "Pomodoro Timer Free Online — ToolsAI",
+  title: "Pomodoro Timer Free Online — QuantixTools",
   description: "Boost focus with Pomodoro. 100% free, no signup required.",
 };
 

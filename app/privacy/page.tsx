@@ -3,8 +3,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — ToolsAI",
-  description: "ToolsAI privacy policy. Learn how we handle your data. We process files locally in your browser — your data stays on your device.",
+  title: "Privacy Policy — QuantixTools",
+  description: "QuantixTools privacy policy. Learn how we handle your data. We process files locally in your browser — your data stays on your device.",
   robots: { index: true, follow: true },
 };
 
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
 
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">1. Overview</h2>
-          <p className="text-white/60 leading-relaxed">ToolsAI (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights. Our core principle: your files never leave your device. Most tools process data entirely in your browser.</p>
+          <p className="text-white/60 leading-relaxed">QuantixTools (&ldquo;we&rdquo;, &ldquo;our&rdquo;, &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what information we collect, how we use it, and your rights. Our core principle: your files never leave your device. Most tools process data entirely in your browser.</p>
         </section>
 
         <section className="mb-8">
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
 
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">5. Children&apos;s Privacy</h2>
-          <p className="text-white/60 leading-relaxed">ToolsAI is not directed at children under 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, contact us immediately.</p>
+          <p className="text-white/60 leading-relaxed">QuantixTools is not directed at children under 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, contact us immediately.</p>
         </section>
 
         <section className="mb-8">
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
 
         <section className="mb-8">
           <h2 className="text-xl font-bold mb-3">7. Contact</h2>
-          <p className="text-white/60">For privacy questions, contact us at: <strong className="text-white">privacy@toolsai.com</strong></p>
+          <p className="text-white/60">For privacy questions, contact us at: <strong className="text-white">privacy@quantixtools.com</strong></p>
         </section>
       </article>
       <Footer />

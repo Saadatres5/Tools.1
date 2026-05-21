@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import QRCodeClient from "./QRCodeClient";
 
 export const metadata: Metadata = {
-  title: "QR Code Generator Free Online — ToolsAI",
+  title: "QR Code Generator Free Online — QuantixTools",
   description: "Create QR codes instantly. 100% free, no signup required.",
 };
 

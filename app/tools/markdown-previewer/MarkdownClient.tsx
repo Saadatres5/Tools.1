@@ -17,7 +17,7 @@ const hello = "world";
 console.log(hello);
 \`\`\`
 
-[Visit ToolsAI](https://toolsai.com)
+[Visit QuantixTools](https://quantixtools.com)
 `;
 function renderMd(md:string){
   return md

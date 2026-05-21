@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIBlogClient from "./AIBlogClient";
 
 export const metadata: Metadata = {
-  title: "AI Blog Generator Free Online — ToolsAI",
+  title: "AI Blog Generator Free Online — QuantixTools",
   description: "Generate full blog posts. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import NoiseRemoverClient from "./NoiseRemoverClient";
 
 export const metadata: Metadata = {
-  title: "Noise Remover Free Online — ToolsAI",
+  title: "Noise Remover Free Online — QuantixTools",
   description: "Remove background noise. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import EssayWriterClient from "./EssayWriterClient";
 
 export const metadata: Metadata = {
-  title: "Essay Writer Free Online — ToolsAI",
+  title: "Essay Writer Free Online — QuantixTools",
   description: "Write essays with AI assistance. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AddSubtitleClient from "./AddSubtitleClient";
 
 export const metadata: Metadata = {
-  title: "Add Subtitle Free Online — ToolsAI",
+  title: "Add Subtitle Free Online — QuantixTools",
   description: "Add subtitles to video. 100% free, no signup required.",
 };
 

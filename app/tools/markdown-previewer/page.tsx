@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import MarkdownClient from "./MarkdownClient";
 
 export const metadata: Metadata = {
-  title: "Markdown Previewer Free Online — ToolsAI",
+  title: "Markdown Previewer Free Online — QuantixTools",
   description: "Preview Markdown live. 100% free, no signup required.",
 };
 

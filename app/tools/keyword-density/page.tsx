@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import KeywordDensityClient from "./KeywordDensityClient";
 
 export const metadata: Metadata = {
-  title: "Keyword Density Checker Free Online — ToolsAI",
+  title: "Keyword Density Checker Free Online — QuantixTools",
   description: "Analyze keyword usage. 100% free, no signup required.",
 };
 

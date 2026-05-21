@@ -29,7 +29,7 @@ export default function Navbar() {
           <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:shadow-blue-500/30 transition-shadow">
             T
           </div>
-          <span className="font-bold text-lg tracking-tight">ToolsAI</span>
+          <span className="font-bold text-lg tracking-tight">QuantixTools</span>
         </Link>
 
         {/* Desktop nav */}

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import PercentageClient from "./PercentageClient";
 
 export const metadata: Metadata = {
-  title: "Percentage Calculator Free Online — ToolsAI",
+  title: "Percentage Calculator Free Online — QuantixTools",
   description: "Calculate percentages. 100% free, no signup required.",
 };
 

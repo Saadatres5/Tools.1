@@ -3,20 +3,20 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Disclaimer — ToolsAI",
-  description: "ToolsAI disclaimer. Read our terms of use and limitations of liability.",
-  alternates: { canonical: "https://toolsai.com/disclaimer" },
+  title: "Disclaimer — QuantixTools",
+  description: "QuantixTools disclaimer. Read our terms of use and limitations of liability.",
+  alternates: { canonical: "https://quantixtools.com/disclaimer" },
 };
 
 const sections = [
-  { title: "General Disclaimer", body: "The information and tools provided on ToolsAI are for general informational and utility purposes only. ToolsAI makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the website or the tools for any purpose." },
-  { title: "No Professional Advice", body: "Nothing on ToolsAI constitutes legal, financial, medical, or professional advice. Tools such as calculators, generators, and AI-powered features are provided for convenience only. Always consult a qualified professional for important decisions." },
-  { title: "AI-Generated Content", body: "AI-powered tools on ToolsAI generate content automatically. This content may be inaccurate, incomplete, or biased. ToolsAI takes no responsibility for decisions made based on AI-generated content. Always review and verify AI outputs before use." },
-  { title: "Browser-Based Processing", body: "Most tools on ToolsAI process files locally in your browser. While we take privacy seriously, ToolsAI accepts no liability for any data loss, corruption, or unintended processing that may occur during use." },
-  { title: "Third-Party Advertising", body: "ToolsAI displays advertisements served by Google AdSense and other third-party networks. ToolsAI is not responsible for the content, accuracy, or practices of any third-party advertisers." },
-  { title: "External Links", body: "ToolsAI may contain links to external websites. We have no control over the content of those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them." },
-  { title: "Limitation of Liability", body: "In no event shall ToolsAI be liable for any indirect, incidental, special, or consequential damages arising from your use of the platform or its tools, even if advised of the possibility of such damages." },
-  { title: "Changes to Disclaimer", body: "ToolsAI reserves the right to update this disclaimer at any time. Continued use of the platform constitutes acceptance of any changes." },
+  { title: "General Disclaimer", body: "The information and tools provided on QuantixTools are for general informational and utility purposes only. QuantixTools makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability of the website or the tools for any purpose." },
+  { title: "No Professional Advice", body: "Nothing on QuantixTools constitutes legal, financial, medical, or professional advice. Tools such as calculators, generators, and AI-powered features are provided for convenience only. Always consult a qualified professional for important decisions." },
+  { title: "AI-Generated Content", body: "AI-powered tools on QuantixTools generate content automatically. This content may be inaccurate, incomplete, or biased. QuantixTools takes no responsibility for decisions made based on AI-generated content. Always review and verify AI outputs before use." },
+  { title: "Browser-Based Processing", body: "Most tools on QuantixTools process files locally in your browser. While we take privacy seriously, QuantixTools accepts no liability for any data loss, corruption, or unintended processing that may occur during use." },
+  { title: "Third-Party Advertising", body: "QuantixTools displays advertisements served by Google AdSense and other third-party networks. QuantixTools is not responsible for the content, accuracy, or practices of any third-party advertisers." },
+  { title: "External Links", body: "QuantixTools may contain links to external websites. We have no control over the content of those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them." },
+  { title: "Limitation of Liability", body: "In no event shall QuantixTools be liable for any indirect, incidental, special, or consequential damages arising from your use of the platform or its tools, even if advised of the possibility of such damages." },
+  { title: "Changes to Disclaimer", body: "QuantixTools reserves the right to update this disclaimer at any time. Continued use of the platform constitutes acceptance of any changes." },
 ];
 
 export default function DisclaimerPage() {

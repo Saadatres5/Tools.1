@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function QRCodeClient() {
-  const [text, setText] = useState("https://toolsai.com");
+  const [text, setText] = useState("https://quantixtools.com");
   const [size, setSize] = useState(256);
   const [qrUrl, setQrUrl] = useState("");
 
@@ -23,7 +23,7 @@ export default function QRCodeClient() {
   };
 
   const types = [
-    ["URL","https://toolsai.com"],
+    ["URL","https://quantixtools.com"],
     ["Email","mailto:hello@example.com"],
     ["Phone","tel:+1234567890"],
     ["WiFi","WIFI:T:WPA;S:NetworkName;P:Password;;"],

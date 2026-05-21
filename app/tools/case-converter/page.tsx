@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import CaseConverterClient from "./CaseConverterClient";
 
 export const metadata: Metadata = {
-  title: "Case Converter Free Online — ToolsAI",
+  title: "Case Converter Free Online — QuantixTools",
   description: "Convert text case. 100% free, no signup required.",
 };
 

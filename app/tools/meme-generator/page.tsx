@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import MemeGeneratorClient from "./MemeGeneratorClient";
 
 export const metadata: Metadata = {
-  title: "Meme Generator Free Online — ToolsAI",
+  title: "Meme Generator Free Online — QuantixTools",
   description: "Create memes with custom text. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import SpeechToTextClient from "./SpeechToTextClient";
 
 export const metadata: Metadata = {
-  title: "Speech to Text Free Online — ToolsAI",
+  title: "Speech to Text Free Online — QuantixTools",
   description: "Transcribe audio to text. 100% free, no signup required.",
 };
 

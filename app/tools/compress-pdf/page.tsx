@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import CompressPDFClient from "./CompressPDFClient";
 
 export const metadata: Metadata = {
-  title: "Compress PDF Free Online — ToolsAI",
+  title: "Compress PDF Free Online — QuantixTools",
   description: "Reduce PDF file size instantly. 100% free, no signup required.",
 };
 

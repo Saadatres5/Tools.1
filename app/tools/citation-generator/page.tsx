@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import CitationClient from "./CitationClient";
 
 export const metadata: Metadata = {
-  title: "Citation Generator Free Online — ToolsAI",
+  title: "Citation Generator Free Online — QuantixTools",
   description: "Generate APA, MLA citations. 100% free, no signup required.",
 };
 

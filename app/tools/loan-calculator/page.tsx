@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import LoanClient from "./LoanClient";
 
 export const metadata: Metadata = {
-  title: "Loan Calculator Free Online — ToolsAI",
+  title: "Loan Calculator Free Online — QuantixTools",
   description: "Calculate loan payments. 100% free, no signup required.",
 };
 

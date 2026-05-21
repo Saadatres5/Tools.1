@@ -10,7 +10,7 @@ export default function SERPPreviewClient() {
   const tLen=title.length,dLen=desc.length;
   const tOk=tLen>=30&&tLen<=60,dOk=dLen>=120&&dLen<=160;
   const fields: Field[] = [
-    {label:"Page Title (30–60 chars)",value:title,setter:setTitle,placeholder:"e.g. Best Free PDF Tools Online | ToolsAI",max:60},
+    {label:"Page Title (30–60 chars)",value:title,setter:setTitle,placeholder:"e.g. Best Free PDF Tools Online | QuantixTools",max:60},
     {label:"Meta Description (120–160 chars)",value:desc,setter:setDesc,placeholder:"e.g. Compress, merge, and convert PDFs for free. No signup required...",max:160},
     {label:"Page URL",value:url,setter:setUrl,placeholder:"https://example.com/your-page",max:100},
   ];

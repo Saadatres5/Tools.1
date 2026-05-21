@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import WebcamRecorderClient from "./WebcamRecorderClient";
 
 export const metadata: Metadata = {
-  title: "Webcam Recorder Free Online — ToolsAI",
+  title: "Webcam Recorder Free Online — QuantixTools",
   description: "Record webcam video. 100% free, no signup required.",
 };
 

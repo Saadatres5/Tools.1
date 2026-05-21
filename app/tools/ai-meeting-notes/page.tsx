@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIMeetingNotesClient from "./AIMeetingNotesClient";
 
 export const metadata: Metadata = {
-  title: "AI Meeting Notes Free Online — ToolsAI",
+  title: "AI Meeting Notes Free Online — QuantixTools",
   description: "Summarize meetings with AI. 100% free, no signup required.",
 };
 

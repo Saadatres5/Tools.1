@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import VideoToMP3Client from "./VideoToMP3Client";
 
 export const metadata: Metadata = {
-  title: "Video to MP3 Free Online — ToolsAI",
+  title: "Video to MP3 Free Online — QuantixTools",
   description: "Extract audio from video. 100% free, no signup required.",
 };
 

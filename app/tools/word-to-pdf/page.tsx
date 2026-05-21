@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import WordToPDFClient from "./WordToPDFClient";
 
 export const metadata: Metadata = {
-  title: "Word to PDF Free Online — ToolsAI",
+  title: "Word to PDF Free Online — QuantixTools",
   description: "Convert Word documents to PDF. 100% free, no signup required.",
 };
 

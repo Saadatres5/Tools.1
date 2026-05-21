@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 import { allCategories } from "@/lib/tools-data";
 
-const BASE_URL = "https://toolsai.com";
+const BASE_URL = "https://quantixtools.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

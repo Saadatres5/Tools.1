@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import WatermarkPDFClient from "./WatermarkPDFClient";
 
 export const metadata: Metadata = {
-  title: "Watermark PDF Free Online — ToolsAI",
+  title: "Watermark PDF Free Online — QuantixTools",
   description: "Add watermark to PDF pages. 100% free, no signup required.",
 };
 

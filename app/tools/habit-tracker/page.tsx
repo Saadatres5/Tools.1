@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import HabitTrackerClient from "./HabitTrackerClient";
 
 export const metadata: Metadata = {
-  title: "Habit Tracker Free Online — ToolsAI",
+  title: "Habit Tracker Free Online — QuantixTools",
   description: "Track daily habits. 100% free, no signup required.",
 };
 

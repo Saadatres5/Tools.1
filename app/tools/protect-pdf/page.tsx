@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ProtectPDFClient from "./ProtectPDFClient";
 
 export const metadata: Metadata = {
-  title: "Protect PDF Free Online — ToolsAI",
+  title: "Protect PDF Free Online — QuantixTools",
   description: "Add password to your PDF. 100% free, no signup required.",
 };
 

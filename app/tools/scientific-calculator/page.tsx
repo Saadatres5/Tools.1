@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ScientificCalcClient from "./ScientificCalcClient";
 
 export const metadata: Metadata = {
-  title: "Scientific Calculator Free Online — ToolsAI",
+  title: "Scientific Calculator Free Online — QuantixTools",
   description: "Advanced math calculator. 100% free, no signup required.",
 };
 

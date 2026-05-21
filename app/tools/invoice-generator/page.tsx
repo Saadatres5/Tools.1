@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import InvoiceClient from "./InvoiceClient";
 
 export const metadata: Metadata = {
-  title: "Invoice Generator Free Online — ToolsAI",
+  title: "Invoice Generator Free Online — QuantixTools",
   description: "Create professional invoices. 100% free, no signup required.",
 };
 

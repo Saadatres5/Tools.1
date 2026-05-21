@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ScreenRecorderClient from "./ScreenRecorderClient";
 
 export const metadata: Metadata = {
-  title: "Screen Recorder Free Online — ToolsAI",
+  title: "Screen Recorder Free Online — QuantixTools",
   description: "Record your screen. 100% free, no signup required.",
 };
 

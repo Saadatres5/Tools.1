@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import UnlockPDFClient from "./UnlockPDFClient";
 
 export const metadata: Metadata = {
-  title: "Unlock PDF Free Online — ToolsAI",
+  title: "Unlock PDF Free Online — QuantixTools",
   description: "Remove PDF password protection. 100% free, no signup required.",
 };
 

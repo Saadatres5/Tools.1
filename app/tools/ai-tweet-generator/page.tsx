@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AITweetClient from "./AITweetClient";
 
 export const metadata: Metadata = {
-  title: "AI Tweet Generator Free Online — ToolsAI",
+  title: "AI Tweet Generator Free Online — QuantixTools",
   description: "Write viral tweets with AI. 100% free, no signup required.",
 };
 

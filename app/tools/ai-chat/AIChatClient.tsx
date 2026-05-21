@@ -5,25 +5,25 @@ import { useState } from "react";
 const FAQ: {q:string;a:string}[] = [
   {q:"how do i compress a pdf",a:"Go to PDF Tools → Compress PDF. Upload your file, choose your compression level, and click Compress. Your file is processed entirely in your browser — nothing is uploaded to our servers."},
   {q:"how do i remove background from image",a:"Go to Image Tools → Remove Background. Upload your image and the tool will process it. For best results, use images with clear subjects against contrasting backgrounds."},
-  {q:"is this website free",a:"Yes! ToolsAI is 100% free. No account required, no hidden fees, no limits. We are supported by non-intrusive ads."},
+  {q:"is this website free",a:"Yes! QuantixTools is 100% free. No account required, no hidden fees, no limits. We are supported by non-intrusive ads."},
   {q:"are my files safe",a:"Absolutely. Most tools process your files directly in your browser using JavaScript and WebAssembly. Your files never leave your device or get uploaded to any server."},
   {q:"how do i convert pdf to word",a:"Go to PDF Tools → PDF to Word. Upload your PDF and we extract the text content. You can download it as a .txt file. Note: complex formatting may not be preserved."},
   {q:"how do i generate a qr code",a:"Go to Image Tools → QR Code Generator. Enter your URL, text, or other content. Choose your size and click generate. You can download the QR code as PNG."},
   {q:"how does the word counter work",a:"Go to Text Tools → Word Counter. Start typing or paste your text. The counter updates in real time, showing words, characters, sentences, paragraphs, and estimated reading time."},
-  {q:"can i use these tools on mobile",a:"Yes! ToolsAI is fully mobile-responsive and works on any device — phones, tablets, and desktops. No app download needed."},
+  {q:"can i use these tools on mobile",a:"Yes! QuantixTools is fully mobile-responsive and works on any device — phones, tablets, and desktops. No app download needed."},
 ];
 
 function findAnswer(query: string): string {
   const q = query.toLowerCase();
   const match = FAQ.find(f => f.q.split(" ").some(w => q.includes(w)));
-  return match ? match.a : "I'm a basic help assistant. For that question, try browsing our tool categories or use the search bar on the homepage to find the right tool. You can also contact us at hello@toolsai.com.";
+  return match ? match.a : "I'm a basic help assistant. For that question, try browsing our tool categories or use the search bar on the homepage to find the right tool. You can also contact us at hello@quantixtools.com.";
 }
 
 interface Message { role: "user"|"bot"; text: string; }
 
 export default function AIChatClient() {
   const [messages, setMessages] = useState<Message[]>([
-    { role:"bot", text:"Hi! I'm the ToolsAI help assistant. Ask me about any of our tools or how to use the platform." }
+    { role:"bot", text:"Hi! I'm the QuantixTools help assistant. Ask me about any of our tools or how to use the platform." }
   ]);
   const [input, setInput] = useState("");
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AITranslatorClient from "./AITranslatorClient";
 
 export const metadata: Metadata = {
-  title: "AI Translator Free Online — ToolsAI",
+  title: "AI Translator Free Online — QuantixTools",
   description: "Translate text to any language. 100% free, no signup required.",
 };
 

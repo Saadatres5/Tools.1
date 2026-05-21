@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import OCRClient from "./OCRClient";
 
 export const metadata: Metadata = {
-  title: "OCR PDF Free Online — ToolsAI",
+  title: "OCR PDF Free Online — QuantixTools",
   description: "Extract text from scanned PDFs. 100% free, no signup required.",
 };
 

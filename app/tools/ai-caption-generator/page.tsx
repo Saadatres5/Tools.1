@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AICaptionClient from "./AICaptionClient";
 
 export const metadata: Metadata = {
-  title: "AI Caption Generator Free Online — ToolsAI",
+  title: "AI Caption Generator Free Online — QuantixTools",
   description: "Generate social media captions. 100% free, no signup required.",
 };
 

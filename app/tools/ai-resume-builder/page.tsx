@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIResumeBuilderClient from "./AIResumeBuilderClient";
 
 export const metadata: Metadata = {
-  title: "AI Resume Builder Free Online — ToolsAI",
+  title: "AI Resume Builder Free Online — QuantixTools",
   description: "Build resume with AI. 100% free, no signup required.",
 };
 

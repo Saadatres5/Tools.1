@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import HomeworkHelperClient from "./HomeworkHelperClient";
 
 export const metadata: Metadata = {
-  title: "AI Homework Helper Free Online — ToolsAI",
+  title: "AI Homework Helper Free Online — QuantixTools",
   description: "Get help with homework. 100% free, no signup required.",
 };
 

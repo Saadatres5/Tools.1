@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIHashtagClient from "./AIHashtagClient";
 
 export const metadata: Metadata = {
-  title: "AI Hashtag Generator Free Online — ToolsAI",
+  title: "AI Hashtag Generator Free Online — QuantixTools",
   description: "Generate trending hashtags. 100% free, no signup required.",
 };
 

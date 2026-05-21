@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import MergeVideosClient from "./MergeVideosClient";
 
 export const metadata: Metadata = {
-  title: "Merge Videos Free Online — ToolsAI",
+  title: "Merge Videos Free Online — QuantixTools",
   description: "Combine multiple videos. 100% free, no signup required.",
 };
 

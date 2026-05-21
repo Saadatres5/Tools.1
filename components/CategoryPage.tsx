@@ -14,7 +14,7 @@ export default function CategoryPage({ category }: { category: Category }) {
     "@type": "CollectionPage",
     name: `${category.name} — Free Online Tools`,
     description: `${category.tools.length}+ free ${category.name.toLowerCase()} online. No signup required.`,
-    url: `https://toolsai.com${category.href}`,
+    url: `https://quantixtools.com${category.href}`,
     hasPart: category.tools.map(t => ({ "@type": "SoftwareApplication", name: t.name, description: t.desc, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } })),
   };
 

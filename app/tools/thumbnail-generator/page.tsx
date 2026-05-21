@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ThumbnailClient from "./ThumbnailClient";
 
 export const metadata: Metadata = {
-  title: "Thumbnail Generator Free Online — ToolsAI",
+  title: "Thumbnail Generator Free Online — QuantixTools",
   description: "Create YouTube thumbnails. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import AIEmailWriterClient from "./AIEmailWriterClient";
 
 export const metadata: Metadata = {
-  title: "AI Email Writer Free Online — ToolsAI",
+  title: "AI Email Writer Free Online — QuantixTools",
   description: "Write professional emails. 100% free, no signup required.",
 };
 

@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import SignPDFClient from "./SignPDFClient";
 
 export const metadata: Metadata = {
-  title: "Sign PDF Free Online — ToolsAI",
+  title: "Sign PDF Free Online — QuantixTools",
   description: "Add digital signature to PDF. 100% free, no signup required.",
 };
 

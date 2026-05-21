@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ColorPickerClient from "./ColorPickerClient";
 
 export const metadata: Metadata = {
-  title: "Color Picker Free Online — ToolsAI",
+  title: "Color Picker Free Online — QuantixTools",
   description: "Pick colors from any image. 100% free, no signup required.",
 };
 

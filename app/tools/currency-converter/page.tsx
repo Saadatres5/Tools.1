@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import CurrencyClient from "./CurrencyClient";
 
 export const metadata: Metadata = {
-  title: "Currency Converter Free Online — ToolsAI",
+  title: "Currency Converter Free Online — QuantixTools",
   description: "Convert currencies. 100% free, no signup required.",
 };
 

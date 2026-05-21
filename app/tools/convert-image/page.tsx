@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import ConvertImageClient from "./ConvertImageClient";
 
 export const metadata: Metadata = {
-  title: "Convert Image Free Online — ToolsAI",
+  title: "Convert Image Free Online — QuantixTools",
   description: "Convert between image formats. 100% free, no signup required.",
 };
 

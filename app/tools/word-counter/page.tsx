@@ -3,7 +3,7 @@ import ToolLayout from "@/components/ToolLayout";
 import WordCounterClient from "./WordCounterClient";
 
 export const metadata: Metadata = {
-  title: "Word Counter Free Online — ToolsAI",
+  title: "Word Counter Free Online — QuantixTools",
   description: "Count words and characters. 100% free, no signup required.",
 };
 

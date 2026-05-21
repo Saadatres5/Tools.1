@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <rect x="80" y="80" width="80" height="80" rx="20" fill="#3b82f6"/>
+  <text x="120" y="140" text-anchor="middle" font-family="system-ui" font-weight="800" font-size="52" fill="white">T</text>
+  <text x="200" y="140" font-family="system-ui" font-weight="800" font-size="52" fill="white">ToolsAI</text>
+  <text x="80" y="220" font-family="system-ui" font-size="28" fill="rgba(255,255,255,0.6)">100+ Free AI &amp; File Tools — No Signup — Privacy First</text>
+</svg>

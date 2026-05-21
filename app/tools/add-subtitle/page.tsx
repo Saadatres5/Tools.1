@@ -1,0 +1,22 @@
+import type { Metadata } from "next";
+import ToolLayout from "@/components/ToolLayout";
+import AddSubtitleClient from "./AddSubtitleClient";
+
+export const metadata: Metadata = {
+  title: "Add Subtitle Free Online — ToolsAI",
+  description: "Add subtitles to video. 100% free, no signup required.",
+};
+
+export default function Page() {
+  return (
+    <ToolLayout
+      title="Add Subtitle"
+      description="Add subtitles to video."
+      emoji="📝"
+      category="Video Tools"
+      categoryHref="/tools/video"
+    >
+      <AddSubtitleClient />
+    </ToolLayout>
+  );
+}

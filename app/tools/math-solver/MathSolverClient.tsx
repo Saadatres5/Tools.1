@@ -15,7 +15,6 @@ function tryEval(expr: string): string {
 
     // Only allow safe characters
     if (!/^[0-9+\-*/().%\s*]+$/.test(clean)) throw new Error("Use numbers and operators only");
-    // eslint-disable-next-line no-new-func
     const result = Function(`"use strict"; return (${clean})`)();
     if (typeof result !== "number" || !isFinite(result)) throw new Error("Invalid result");
     return String(Math.round(result * 1e10) / 1e10);

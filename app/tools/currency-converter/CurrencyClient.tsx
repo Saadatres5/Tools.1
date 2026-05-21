@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const CURRENCIES = ["USD","EUR","GBP","AED","SAR","JPY","CNY","INR","CAD","AUD","CHF","SGD","HKD","MYR","PKR","BDT","NGN","BRL","MXN","KRW"];
 

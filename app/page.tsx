@@ -2,29 +2,30 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
+import HomepageTools from "@/components/HomepageTools";
 import AdBanner from "@/components/AdBanner";
 import { allCategories, getTotalToolCount } from "@/lib/tools-data";
 
-const featuredTools = [
-  { name: "Compress PDF", href: "/tools/compress-pdf", emoji: "📦", desc: "Reduce PDF size instantly", badge: "Popular" },
-  { name: "Remove Background", href: "/tools/remove-background", emoji: "✂️", desc: "AI background removal", badge: "AI" },
-  { name: "AI Writer", href: "/tools/ai-writer", emoji: "✨", desc: "Generate content with AI", badge: "AI" },
-  { name: "Merge PDF", href: "/tools/merge-pdf", emoji: "🔗", desc: "Combine multiple PDFs", badge: null },
-  { name: "Upscale Image", href: "/tools/upscale-image", emoji: "🔍", desc: "Enhance image with AI", badge: "AI" },
-  { name: "Speech to Text", href: "/tools/speech-to-text", emoji: "🎤", desc: "Transcribe audio instantly", badge: "AI" },
-  { name: "JSON Formatter", href: "/tools/json-formatter", emoji: "{ }", desc: "Format and validate JSON", badge: null },
-  { name: "Trim Video", href: "/tools/trim-video", emoji: "🎬", desc: "Cut and trim videos", badge: null },
-];
-
-const features = [
-  { emoji: "🔒", title: "Privacy First", desc: "Files processed in your browser. Nothing uploaded to our servers." },
-  { emoji: "⚡", title: "Instant & Fast", desc: "No waiting, no queues. Tools run immediately." },
-  { emoji: "🆓", title: "Always Free", desc: "No account needed. No hidden fees. 100% free forever." },
-  { emoji: "📱", title: "Works Everywhere", desc: "Any device, any browser. No software to install." },
-];
+const categoryConfig: Record<string, { color: string; bg: string }> = {
+  pdf:          { color: "#ef4444", bg: "#fef2f2" },
+  image:        { color: "#3b82f6", bg: "#eff6ff" },
+  ai:           { color: "#8b5cf6", bg: "#f5f3ff" },
+  video:        { color: "#ec4899", bg: "#fdf2f8" },
+  audio:        { color: "#f59e0b", bg: "#fffbeb" },
+  developer:    { color: "#10b981", bg: "#ecfdf5" },
+  seo:          { color: "#0891b2", bg: "#ecfeff" },
+  text:         { color: "#6366f1", bg: "#eef2ff" },
+  security:     { color: "#dc2626", bg: "#fef2f2" },
+  calculators:  { color: "#d97706", bg: "#fffbeb" },
+  productivity: { color: "#7c3aed", bg: "#f5f3ff" },
+  "social-media":{ color: "#db2777", bg: "#fdf2f8" },
+  student:      { color: "#2563eb", bg: "#eff6ff" },
+  business:     { color: "#0f766e", bg: "#f0fdfa" },
+  browser:      { color: "#64748b", bg: "#f8fafc" },
+};
 
 const faqs = [
-  { q: "Are all tools really free?", a: "Yes, 100% free. No signup, no credit card, no hidden fees." },
+  { q: "Are all tools really free?", a: "Yes, 100% free. No signup, no credit card, no hidden fees — ever." },
   { q: "Are my files safe?", a: "Absolutely. Most tools process files directly in your browser — nothing is sent to our servers." },
   { q: "Do I need to create an account?", a: "No account needed. Just open a tool and start using it immediately." },
   { q: "What file formats are supported?", a: "We support all major formats: PDF, JPG, PNG, MP4, MP3, DOCX, and many more." },
@@ -32,200 +33,285 @@ const faqs = [
 
 export default function HomePage() {
   const total = getTotalToolCount();
-  const topCategories = allCategories.slice(0, 6);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
+    <div style={{ minHeight: "100vh", background: "#fff" }}>
       <Navbar />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 px-4 text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-purple-600/5 to-transparent pointer-events-none" />
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-20 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="relative max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/60 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            {total}+ Free Tools Available
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-            All Your{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x">
-              AI & File Tools
-            </span>
-            <br />in One Place
-          </h1>
-          <p className="text-white/50 text-lg sm:text-xl mb-10 max-w-2xl mx-auto">
-            100% Free &bull; No Signup &bull; Instant Processing &bull; Privacy First
-          </p>
+      {/* ── HERO ── */}
+      <section style={{
+        background: "linear-gradient(180deg, #f8fafc 0%, #fff 100%)",
+        padding: "80px 24px 64px",
+        textAlign: "center",
+        borderBottom: "1px solid #e2e8f0",
+      }}>
+        {/* Eyebrow */}
+        <div style={{
+          display: "inline-flex", alignItems: "center", gap: 7,
+          background: "#fff", border: "1px solid #e2e8f0",
+          borderRadius: 100, padding: "5px 14px 5px 8px",
+          fontSize: 12, fontWeight: 600, color: "#64748b",
+          marginBottom: 24,
+        }}>
+          <span style={{ width: 8, height: 8, background: "#22c55e", borderRadius: "50%", display: "inline-block" }} />
+          {total}+ Free Tools · No Signup Required
+        </div>
+
+        {/* Headline */}
+        <h1 style={{
+          fontFamily: "var(--font-syne, sans-serif)",
+          fontSize: "clamp(38px, 6vw, 66px)",
+          fontWeight: 800,
+          color: "#0f172a",
+          lineHeight: 1.08,
+          letterSpacing: "-2px",
+          marginBottom: 18,
+          maxWidth: 780,
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}>
+          Every AI &amp; File Tool<br />
+          <span style={{ color: "#2563eb" }}>In One Place</span>
+        </h1>
+
+        {/* Subtext */}
+        <p style={{
+          fontSize: "clamp(15px, 2vw, 18px)",
+          color: "#64748b",
+          maxWidth: 480,
+          margin: "0 auto 36px",
+          lineHeight: 1.65,
+        }}>
+          Compress PDFs, remove backgrounds, write with AI, trim videos — all free, all instant, all private.
+        </p>
+
+        {/* Search */}
+        <div style={{ marginBottom: 28 }}>
           <SearchBar />
-          <div className="flex flex-wrap justify-center gap-2 mt-6 text-xs text-white/30">
-            {["Compress PDF", "Remove Background", "AI Writer", "Merge PDF", "Trim Video"].map(t => (
-              <Link key={t} href={`/tools/${t.toLowerCase().replace(/ /g, "-")}`}
-                className="px-3 py-1 rounded-full bg-white/5 hover:bg-white/10 hover:text-white/60 transition-colors">
-                {t}
-              </Link>
-            ))}
-          </div>
         </div>
-      </section>
 
-      {/* Featured Tools */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold">🔥 Trending Tools</h2>
-            <Link href="/tools" className="text-sm text-white/40 hover:text-white transition-colors">View all {total}+ →</Link>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {featuredTools.map(tool => (
-              <Link key={tool.href} href={tool.href}
-                className="group p-5 rounded-2xl bg-white/3 border border-white/8 hover:bg-white/6 hover:border-white/15 transition-all duration-200">
-                <div className="text-3xl mb-3">{tool.emoji}</div>
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <h3 className="font-semibold text-sm text-white group-hover:text-blue-400 transition-colors">{tool.name}</h3>
-                  {tool.badge && (
-                    <span className={`text-xs px-1.5 py-0.5 rounded-full flex-shrink-0 ${tool.badge === "AI" ? "bg-purple-500/20 text-purple-300" : "bg-blue-500/20 text-blue-300"}`}>
-                      {tool.badge}
-                    </span>
-                  )}
-                </div>
-                <p className="text-white/40 text-xs">{tool.desc}</p>
-              </Link>
-            ))}
-          </div>
+        {/* Quick links */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8, flexWrap: "wrap", marginBottom: 48 }}>
+          <span style={{ fontSize: 12, color: "#94a3b8", fontWeight: 500 }}>Popular:</span>
+          {["Compress PDF", "Remove Background", "AI Writer", "Merge PDF", "Trim Video", "JSON Formatter"].map(t => (
+            <Link key={t} href={`/tools/${t.toLowerCase().replace(/ /g, "-")}`}
+              style={{
+                background: "#fff", border: "1px solid #e2e8f0",
+                borderRadius: 100, padding: "5px 14px",
+                fontSize: 12, fontWeight: 500, color: "#475569",
+                textDecoration: "none", transition: "all .15s",
+              }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = "#2563eb"; e.currentTarget.style.color = "#2563eb"; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.color = "#475569"; }}
+            >{t}</Link>
+          ))}
         </div>
-      </section>
 
-      {/* Ad — After Trending Tools */}
-      <div className="max-w-7xl mx-auto px-4 py-2">
-        <AdBanner slot="2233445566" format="horizontal" className="rounded-2xl" />
-      </div>
-
-      {/* Categories */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold">Browse by Category</h2>
-            <Link href="/tools" className="text-sm text-white/40 hover:text-white transition-colors">All {allCategories.length} categories →</Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {topCategories.map(cat => (
-              <Link key={cat.href} href={cat.href}
-                className={`group p-6 rounded-2xl bg-gradient-to-br ${cat.gradient} border ${cat.border} hover:scale-[1.02] transition-all duration-200`}>
-                <div className="text-3xl mb-3">{cat.emoji}</div>
-                <h3 className="font-bold mb-1">{cat.name}</h3>
-                <p className="text-white/40 text-xs mb-3">{cat.tools.length} tools available</p>
-                <div className="flex flex-wrap gap-1">
-                  {cat.tools.slice(0, 3).map(t => (
-                    <span key={t.name} className="text-xs px-2 py-0.5 rounded-full bg-white/10 text-white/60">{t.name}</span>
-                  ))}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-16 px-4 bg-white/2">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold mb-12 text-center">Why QuantixTools?</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {features.map(f => (
-              <div key={f.title} className="text-center p-6 rounded-2xl bg-white/3 border border-white/8">
-                <div className="text-4xl mb-4">{f.emoji}</div>
-                <h3 className="font-semibold mb-2">{f.title}</h3>
-                <p className="text-white/40 text-sm">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Ad — Mid Page */}
-      <div className="max-w-7xl mx-auto px-4 py-2">
-        <AdBanner slot="3344556677" format="rectangle" className="rounded-2xl" />
-      </div>
-
-      {/* AI Spotlight */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="rounded-3xl bg-gradient-to-br from-purple-900/40 to-blue-900/40 border border-purple-500/20 p-8 md:p-12">
-            <div className="max-w-2xl">
-              <span className="text-xs px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/20 mb-4 inline-block">AI-Powered</span>
-              <h2 className="text-2xl md:text-4xl font-bold mb-4">Browser-Based AI Tools</h2>
-              <p className="text-white/50 mb-6">Our AI tools run entirely in your browser. No data leaves your device. No API keys. No cost.</p>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  { name: "AI Writer", href: "/tools/ai-writer" },
-                  { name: "AI Summarizer", href: "/tools/ai-summarizer" },
-                  { name: "Remove Background", href: "/tools/remove-background" },
-                  { name: "Speech to Text", href: "/tools/speech-to-text" },
-                  { name: "AI Translator", href: "/tools/ai-translator" },
-                  { name: "Text to Speech", href: "/tools/text-to-speech" },
-                ].map(t => (
-                  <Link key={t.href} href={t.href}
-                    className="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-sm transition-colors">
-                    {t.name}
-                  </Link>
-                ))}
+        {/* Stats */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 40, flexWrap: "wrap" }}>
+          {[
+            { num: `${total}+`, lbl: "Free Tools" },
+            { num: "15", lbl: "Categories" },
+            { num: "0", lbl: "Signups Needed" },
+            { num: "100%", lbl: "Free Forever" },
+          ].map((s, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "center", gap: 40 }}>
+              {i > 0 && <div style={{ width: 1, height: 36, background: "#e2e8f0" }} />}
+              <div style={{ textAlign: "center" }}>
+                <div style={{ fontFamily: "var(--font-syne, sans-serif)", fontSize: 28, fontWeight: 800, color: "#0f172a" }}>{s.num}</div>
+                <div style={{ fontSize: 12, color: "#94a3b8", marginTop: 2 }}>{s.lbl}</div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* All Categories Grid */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8">All {allCategories.length} Tool Categories</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-            {allCategories.map(cat => (
-              <Link key={cat.id} href={cat.href}
-                className={`p-4 rounded-2xl bg-gradient-to-br ${cat.gradient} border ${cat.border} hover:scale-[1.02] transition-all text-center`}>
-                <div className="text-2xl mb-1">{cat.emoji}</div>
-                <h3 className="font-semibold text-sm">{cat.name}</h3>
-                <p className="text-white/30 text-xs">{cat.tools.length} tools</p>
-              </Link>
-            ))}
-          </div>
+      {/* ── MAIN ── */}
+      <main style={{ maxWidth: 1280, margin: "0 auto", padding: "52px 24px 80px" }}>
+
+        {/* Section header */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 24 }}>
+          <h2 style={{ fontFamily: "var(--font-syne, sans-serif)", fontSize: 22, fontWeight: 700, color: "#0f172a" }}>
+            All Tools
+          </h2>
+          <Link href="/tools" style={{ fontSize: 13, fontWeight: 600, color: "#2563eb", textDecoration: "none" }}>
+            View all {total}+ →
+          </Link>
         </div>
-      </section>
 
-      {/* Ad — Before FAQ */}
-      <div className="max-w-3xl mx-auto px-4 py-2">
-        <AdBanner slot="4455667788" format="horizontal" className="rounded-2xl" />
-      </div>
+        {/* Interactive category tabs + tool grid */}
+        <HomepageTools />
 
-      {/* FAQ */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {faqs.map(faq => (
-              <div key={faq.q} className="p-6 rounded-2xl bg-white/3 border border-white/8">
-                <h3 className="font-semibold mb-2">{faq.q}</h3>
-                <p className="text-white/50 text-sm">{faq.a}</p>
+        {/* Ad */}
+        <div style={{ margin: "40px 0" }}>
+          <AdBanner slot="2233445566" format="horizontal" className="rounded-2xl" />
+        </div>
+
+        {/* ── TRUST BAR ── */}
+        <div style={{
+          display: "flex", alignItems: "center", justifyContent: "center",
+          gap: 32, flexWrap: "wrap",
+          padding: 28,
+          background: "#f8fafc",
+          borderRadius: 14,
+          border: "1px solid #e2e8f0",
+          marginBottom: 48,
+        }}>
+          {[
+            { icon: "🔒", label: "Browser-based processing" },
+            { icon: "⚡", label: "Instant, no queues" },
+            { icon: "🆓", label: "Free forever, no limits" },
+            { icon: "🛡️", label: "No data stored on servers" },
+            { icon: "📱", label: "Works on any device" },
+          ].map(({ icon, label }) => (
+            <div key={label} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, fontWeight: 600, color: "#475569" }}>
+              <span style={{ fontSize: 18 }}>{icon}</span> {label}
+            </div>
+          ))}
+        </div>
+
+        {/* ── FEATURES DARK SECTION ── */}
+        <div style={{
+          background: "#0f172a",
+          borderRadius: 20,
+          padding: "52px 48px",
+          marginBottom: 48,
+        }}>
+          <h2 style={{ fontFamily: "var(--font-syne, sans-serif)", fontSize: 30, fontWeight: 800, color: "#fff", marginBottom: 8 }}>
+            Why QuantixTools?
+          </h2>
+          <p style={{ fontSize: 15, color: "rgba(255,255,255,.45)", marginBottom: 36 }}>
+            Built different. No bloat, no paywalls, no sign-in walls.
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 20 }}>
+            {[
+              { icon: "🔒", title: "Privacy First", desc: "Files processed in your browser. Nothing ever uploaded to our servers." },
+              { icon: "⚡", title: "Instant & Fast", desc: "No waiting, no queues. Every tool starts the moment you open it." },
+              { icon: "🆓", title: "Always Free", desc: "No account. No credit card. No hidden fees. 100% free, forever." },
+              { icon: "🤖", title: "AI-Powered", desc: "Smart AI tools running in your browser — no API keys, no cost." },
+            ].map(f => (
+              <div key={f.title} style={{
+                background: "rgba(255,255,255,.06)",
+                border: "1px solid rgba(255,255,255,.10)",
+                borderRadius: 14, padding: "22px",
+              }}>
+                <div style={{ fontSize: 22, marginBottom: 12 }}>{f.icon}</div>
+                <div style={{ fontFamily: "var(--font-syne, sans-serif)", fontWeight: 700, fontSize: 15, color: "#fff", marginBottom: 6 }}>{f.title}</div>
+                <div style={{ fontSize: 13, color: "rgba(255,255,255,.45)", lineHeight: 1.6 }}>{f.desc}</div>
               </div>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-16 px-4 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold mb-4">Start using tools for free</h2>
-          <p className="text-white/40 mb-8">No signup required. {total}+ tools at your fingertips.</p>
-          <Link href="/tools"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 font-semibold transition-all duration-200 hover:scale-105">
-            Explore All Tools →
+        {/* ── ALL CATEGORIES ── */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 20 }}>
+          <h2 style={{ fontFamily: "var(--font-syne, sans-serif)", fontSize: 22, fontWeight: 700, color: "#0f172a" }}>
+            Browse by Category
+          </h2>
+          <Link href="/tools" style={{ fontSize: 13, fontWeight: 600, color: "#2563eb", textDecoration: "none" }}>
+            All {allCategories.length} categories →
           </Link>
         </div>
-      </section>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(170px, 1fr))",
+          gap: 12,
+          marginBottom: 48,
+        }}>
+          {allCategories.map(cat => {
+            const cfg = categoryConfig[cat.id] || { color: "#64748b", bg: "#f8fafc" };
+            return (
+              <Link key={cat.id} href={cat.href}
+                style={{
+                  display: "block", background: "#fff",
+                  border: "1px solid #e2e8f0", borderRadius: 14,
+                  padding: "20px 16px", textAlign: "center",
+                  textDecoration: "none", transition: "all .18s",
+                }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = "#cbd5e1"; e.currentTarget.style.boxShadow = "0 4px 16px rgba(0,0,0,.08)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.transform = "translateY(0)"; }}
+              >
+                <div style={{
+                  width: 48, height: 48, borderRadius: 12,
+                  background: cfg.bg,
+                  margin: "0 auto 12px",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                  fontSize: 22,
+                }}>{cat.emoji}</div>
+                <div style={{ fontFamily: "var(--font-syne, sans-serif)", fontSize: 13, fontWeight: 700, color: "#0f172a", marginBottom: 3 }}>{cat.name}</div>
+                <div style={{ fontSize: 11, color: "#94a3b8" }}>{cat.tools.length} tools</div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Ad */}
+        <div style={{ marginBottom: 48 }}>
+          <AdBanner slot="3344556677" format="rectangle" className="rounded-2xl" />
+        </div>
+
+        {/* ── FAQ ── */}
+        <div style={{ maxWidth: 720, margin: "0 auto 48px" }}>
+          <h2 style={{ fontFamily: "var(--font-syne, sans-serif)", fontSize: 22, fontWeight: 700, color: "#0f172a", textAlign: "center", marginBottom: 24 }}>
+            Frequently Asked Questions
+          </h2>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            {faqs.map(faq => (
+              <div key={faq.q} style={{
+                background: "#fff", border: "1px solid #e2e8f0",
+                borderRadius: 14, padding: "20px 22px",
+              }}>
+                <h3 style={{ fontFamily: "var(--font-syne, sans-serif)", fontWeight: 700, fontSize: 14, color: "#0f172a", marginBottom: 6 }}>{faq.q}</h3>
+                <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.6 }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── CTA ── */}
+        <div style={{
+          background: "linear-gradient(135deg, #2563eb 0%, #4f46e5 100%)",
+          borderRadius: 20,
+          padding: "56px 48px",
+          textAlign: "center",
+          color: "#fff",
+        }}>
+          <h2 style={{ fontFamily: "var(--font-syne, sans-serif)", fontSize: "clamp(24px, 4vw, 36px)", fontWeight: 800, marginBottom: 12 }}>
+            Start Using Tools for Free
+          </h2>
+          <p style={{ fontSize: 15, color: "rgba(255,255,255,.7)", marginBottom: 28 }}>
+            No signup required. {total}+ tools at your fingertips, right now.
+          </p>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <Link href="/tools" style={{
+              background: "#fff", color: "#2563eb",
+              fontSize: 15, fontWeight: 700,
+              padding: "14px 32px", borderRadius: 10,
+              textDecoration: "none", transition: "background .15s",
+            }}
+              onMouseEnter={e => (e.currentTarget.style.background = "#f1f5f9")}
+              onMouseLeave={e => (e.currentTarget.style.background = "#fff")}
+            >
+              Explore All Tools →
+            </Link>
+            <Link href="/tools/pdf" style={{
+              background: "rgba(255,255,255,.15)", color: "#fff",
+              fontSize: 14, fontWeight: 600,
+              padding: "14px 28px", borderRadius: 10,
+              border: "1.5px solid rgba(255,255,255,.3)",
+              textDecoration: "none", transition: "background .15s",
+            }}
+              onMouseEnter={e => (e.currentTarget.style.background = "rgba(255,255,255,.25)")}
+              onMouseLeave={e => (e.currentTarget.style.background = "rgba(255,255,255,.15)")}
+            >
+              PDF Tools
+            </Link>
+          </div>
+        </div>
+
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 }

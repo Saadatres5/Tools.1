@@ -258,3 +258,8 @@ export const getCategoryById = (id: string) =>
   allCategories.find((c) => c.id === id);
 
 export const getAllTools = () => allCategories.flatMap((c) => c.tools);
+
+export const getAllToolsWithCategory = () =>
+  allCategories.flatMap((c) =>
+    c.tools.map((t) => ({ ...t, category: c.id }))
+  );

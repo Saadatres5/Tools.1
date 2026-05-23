@@ -2,72 +2,124 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-[#0a0a0a] mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 grid grid-cols-2 md:grid-cols-5 gap-8">
-        <div className="col-span-2 md:col-span-1">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">T</div>
-            <span className="font-bold">QuantixTools</span>
+    <footer style={{ background: "#0f172a", marginTop: 0 }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", padding: "64px 24px 0" }}>
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "2fr 1fr 1fr 1fr",
+          gap: 48,
+          paddingBottom: 48,
+          borderBottom: "1px solid rgba(255,255,255,.08)",
+        }} className="footer-grid">
+          {/* Brand */}
+          <div>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
+              <div style={{
+                width: 30, height: 30, borderRadius: 7, background: "#fff",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontFamily: "var(--font-syne, sans-serif)", fontWeight: 900, fontSize: 13, color: "#0f172a",
+              }}>Q</div>
+              <span style={{ fontFamily: "var(--font-syne, sans-serif)", fontWeight: 800, fontSize: 17, color: "#fff" }}>QuantixTools</span>
+            </div>
+            <p style={{ fontSize: 13, color: "rgba(255,255,255,.4)", lineHeight: 1.7, marginBottom: 16, maxWidth: 260 }}>
+              100+ free AI &amp; file tools. No signup. No limits. Files processed privately in your browser.
+            </p>
+            <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+              {["✦ Free", "🔒 Private", "⚡ Instant"].map(b => (
+                <span key={b} style={{
+                  background: "rgba(255,255,255,.07)", border: "1px solid rgba(255,255,255,.12)",
+                  borderRadius: 100, padding: "4px 12px", fontSize: 11, fontWeight: 600, color: "rgba(255,255,255,.45)",
+                }}>{b}</span>
+              ))}
+            </div>
           </div>
-          <p className="text-white/40 text-sm mb-4">100% Free AI & File Tools. No signup required. Privacy first.</p>
-          <div className="flex flex-wrap gap-2">
-            {["Free", "No Signup", "Private"].map(b => (
-              <span key={b} className="text-xs px-2 py-0.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400">{b}</span>
+
+          {/* PDF Tools */}
+          <div>
+            <h4 style={{ fontSize: 11, fontWeight: 700, color: "#fff", marginBottom: 16, letterSpacing: ".6px", textTransform: "uppercase" }}>PDF Tools</h4>
+            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
+              {[
+                ["Compress PDF", "/tools/compress-pdf"],
+                ["Merge PDF", "/tools/merge-pdf"],
+                ["PDF to Word", "/tools/pdf-to-word"],
+                ["OCR PDF", "/tools/ocr"],
+                ["All PDF Tools →", "/tools/pdf"],
+              ].map(([label, href]) => (
+                <li key={href}><Link href={href} style={{ fontSize: 13, color: "rgba(255,255,255,.4)", textDecoration: "none", transition: "color .15s" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.4)")}
+                >{label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* AI Tools */}
+          <div>
+            <h4 style={{ fontSize: 11, fontWeight: 700, color: "#fff", marginBottom: 16, letterSpacing: ".6px", textTransform: "uppercase" }}>AI Tools</h4>
+            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
+              {[
+                ["AI Writer", "/tools/ai-writer"],
+                ["AI Summarizer", "/tools/ai-summarizer"],
+                ["Remove Background", "/tools/remove-background"],
+                ["Speech to Text", "/tools/speech-to-text"],
+                ["All AI Tools →", "/tools/ai"],
+              ].map(([label, href]) => (
+                <li key={href}><Link href={href} style={{ fontSize: 13, color: "rgba(255,255,255,.4)", textDecoration: "none", transition: "color .15s" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.4)")}
+                >{label}</Link></li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 style={{ fontSize: 11, fontWeight: 700, color: "#fff", marginBottom: 16, letterSpacing: ".6px", textTransform: "uppercase" }}>Company</h4>
+            <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 10 }}>
+              {[
+                ["About", "/about"],
+                ["Blog", "/blog"],
+                ["Privacy Policy", "/privacy"],
+                ["Terms of Service", "/terms"],
+                ["Contact", "/contact"],
+                ["Disclaimer", "/disclaimer"],
+              ].map(([label, href]) => (
+                <li key={href}><Link href={href} style={{ fontSize: 13, color: "rgba(255,255,255,.4)", textDecoration: "none", transition: "color .15s" }}
+                  onMouseEnter={e => (e.currentTarget.style.color = "#fff")}
+                  onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.4)")}
+                >{label}</Link></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div style={{
+          padding: "20px 0 24px",
+          display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12,
+        }}>
+          <span style={{ fontSize: 13, color: "rgba(255,255,255,.25)" }}>
+            © {new Date().getFullYear()} QuantixTools. All rights reserved.
+          </span>
+          <div style={{ display: "flex", gap: 20 }}>
+            {[["Privacy", "/privacy"], ["Terms", "/terms"], ["Contact", "/contact"]].map(([label, href]) => (
+              <Link key={href} href={href} style={{ fontSize: 13, color: "rgba(255,255,255,.25)", textDecoration: "none" }}
+                onMouseEnter={e => (e.currentTarget.style.color = "rgba(255,255,255,.6)")}
+                onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,.25)")}
+              >{label}</Link>
             ))}
           </div>
         </div>
-        <div>
-          <h4 className="text-sm font-semibold mb-3 text-white/80">PDF Tools</h4>
-          <ul className="space-y-2 text-sm text-white/40">
-            <li><Link href="/tools/compress-pdf" className="hover:text-white/70 transition-colors">Compress PDF</Link></li>
-            <li><Link href="/tools/merge-pdf" className="hover:text-white/70 transition-colors">Merge PDF</Link></li>
-            <li><Link href="/tools/pdf-to-word" className="hover:text-white/70 transition-colors">PDF to Word</Link></li>
-            <li><Link href="/tools/ocr" className="hover:text-white/70 transition-colors">OCR PDF</Link></li>
-            <li><Link href="/tools/pdf" className="hover:text-white/70 transition-colors">All PDF Tools →</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-semibold mb-3 text-white/80">AI Tools</h4>
-          <ul className="space-y-2 text-sm text-white/40">
-            <li><Link href="/tools/ai-writer" className="hover:text-white/70 transition-colors">AI Writer</Link></li>
-            <li><Link href="/tools/ai-summarizer" className="hover:text-white/70 transition-colors">AI Summarizer</Link></li>
-            <li><Link href="/tools/remove-background" className="hover:text-white/70 transition-colors">Remove Background</Link></li>
-            <li><Link href="/tools/speech-to-text" className="hover:text-white/70 transition-colors">Speech to Text</Link></li>
-            <li><Link href="/tools/ai" className="hover:text-white/70 transition-colors">All AI Tools →</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-semibold mb-3 text-white/80">More Tools</h4>
-          <ul className="space-y-2 text-sm text-white/40">
-            <li><Link href="/tools/image" className="hover:text-white/70 transition-colors">Image Tools</Link></li>
-            <li><Link href="/tools/video" className="hover:text-white/70 transition-colors">Video Tools</Link></li>
-            <li><Link href="/tools/developer" className="hover:text-white/70 transition-colors">Developer Tools</Link></li>
-            <li><Link href="/tools/calculators" className="hover:text-white/70 transition-colors">Calculators</Link></li>
-            <li><Link href="/tools" className="hover:text-white/70 transition-colors">All Tools →</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-semibold mb-3 text-white/80">Company</h4>
-          <ul className="space-y-2 text-sm text-white/40">
-            <li><Link href="/blog" className="hover:text-white/70 transition-colors">Blog</Link></li>
-            <li><Link href="/about" className="hover:text-white/70 transition-colors">About</Link></li>
-            <li><Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link></li>
-            <li><Link href="/terms" className="hover:text-white/70 transition-colors">Terms of Service</Link></li>
-            <li><Link href="/contact" className="hover:text-white/70 transition-colors">Contact</Link></li>
-            <li><Link href="/disclaimer" className="hover:text-white/70 transition-colors">Disclaimer</Link></li>
-          </ul>
-        </div>
       </div>
-      <div className="border-t border-white/5 py-6 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/30 text-sm">© {new Date().getFullYear()} QuantixTools. All rights reserved.</p>
-          <div className="flex items-center gap-4 text-xs text-white/20">
-            <Link href="/privacy" className="hover:text-white/40">Privacy</Link>
-            <Link href="/terms" className="hover:text-white/40">Terms</Link>
-            <span>Made with ❤️ for the web</span>
-          </div>
-        </div>
-      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+        }
+        @media (max-width: 480px) {
+          .footer-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
     </footer>
   );
 }

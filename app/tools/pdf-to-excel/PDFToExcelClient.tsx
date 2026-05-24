@@ -7,11 +7,13 @@ type Table = { headers: string[]; rows: string[][] };
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
-function groupIntoRows(items: { x: number; y: number; str: string }[]): string[][] {
+type TextItem = { x: number; y: number; str: string };
+
+function groupIntoRows(items: TextItem[]): string[][] {
   if (!items.length) return [];
   const sorted = [...items].sort((a, b) => a.y - b.y);
-  const rows: typeof items[][] = [];
-  let current: typeof items[] = [sorted[0]];
+  const rows: TextItem[][] = [];
+  let current: TextItem[] = [sorted[0]];
   for (let i = 1; i < sorted.length; i++) {
     if (Math.abs(sorted[i].y - sorted[i - 1].y) < 5) {
       current.push(sorted[i]);

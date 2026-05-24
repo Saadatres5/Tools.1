@@ -19,6 +19,8 @@ export const allCategories: Category[] = [
       { name: "Sign PDF", href: "/tools/sign-pdf", desc: "Add digital signature to PDF" },
       { name: "Watermark PDF", href: "/tools/watermark-pdf", desc: "Add watermark to PDF pages" },
       { name: "PDF to Word", href: "/tools/pdf-to-word", desc: "Convert PDF to editable Word doc" },
+      { name: "PDF to Excel", href: "/tools/pdf-to-excel", desc: "Extract tables from PDF to Excel/CSV" },
+      { name: "PDF to Text", href: "/tools/pdf-to-text", desc: "Extract all text from any PDF file" },
       { name: "PDF to JPG", href: "/tools/pdf-to-jpg", desc: "Convert PDF pages to images" },
       { name: "JPG to PDF", href: "/tools/jpg-to-pdf", desc: "Convert images to PDF" },
       { name: "Word to PDF", href: "/tools/word-to-pdf", desc: "Convert Word documents to PDF" },
@@ -34,6 +36,7 @@ export const allCategories: Category[] = [
     border: "border-blue-500/20",
     tools: [
       { name: "Remove Background", href: "/tools/remove-background", desc: "AI background removal", badge: "AI" },
+      { name: "Signature to PNG", href: "/tools/signature-png", desc: "Extract signature as transparent PNG", badge: "AI" },
       { name: "Upscale Image", href: "/tools/upscale-image", desc: "Enhance resolution with AI", badge: "AI" },
       { name: "Resize Image", href: "/tools/resize-image", desc: "Resize to any dimension" },
       { name: "Compress Image", href: "/tools/compress-image", desc: "Reduce image file size" },

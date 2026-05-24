@@ -6,39 +6,76 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Blog — AI & File Tools Tips — QuantixTools",
   description: "Learn about AI tools, PDF tips, image editing, and productivity hacks.",
+  alternates: { canonical: "https://quantixtools.com/blog" },
 };
 
 const posts = [
-  { title: "Best Free PDF Editor Online in 2024", slug: "best-free-pdf-editor", desc: "Compare the top free PDF editors available online with no software to install.", date: "Dec 2024", readTime: "5 min" },
-  { title: "AI Tools for Students — Complete Guide", slug: "ai-tools-for-students", desc: "Discover the best free AI tools to help students write, summarize, and study more effectively.", date: "Dec 2024", readTime: "7 min" },
-  { title: "How to Compress PDF Without Losing Quality", slug: "compress-pdf-without-losing-quality", desc: "Step-by-step guide to compressing PDF files while keeping them looking sharp.", date: "Nov 2024", readTime: "4 min" },
-  { title: "Remove Background from Image — Free Methods", slug: "remove-background-online-free", desc: "The best free tools and methods to remove backgrounds from images in seconds.", date: "Nov 2024", readTime: "5 min" },
-  { title: "Best AI Summarizer Tools in 2024", slug: "best-ai-summarizer-tools", desc: "A roundup of the best free AI summarizer tools available right now.", date: "Oct 2024", readTime: "6 min" },
+  { title: "Best Free PDF Editor Online in 2025", slug: "best-free-pdf-editor", desc: "Compare the top free PDF editors available online with no software to install.", date: "Jan 2025", readTime: "5 min", emoji: "📄", category: "PDF" },
+  { title: "AI Tools for Students — Complete Guide", slug: "ai-tools-for-students", desc: "Discover the best free AI tools to help students write, summarize, and study more effectively.", date: "Jan 2025", readTime: "7 min", emoji: "🎓", category: "AI" },
+  { title: "How to Compress PDF Without Losing Quality", slug: "compress-pdf-without-losing-quality", desc: "Step-by-step guide to compressing PDF files while keeping them looking sharp.", date: "Dec 2024", readTime: "4 min", emoji: "📦", category: "PDF" },
+  { title: "Remove Background from Image — Free Methods", slug: "remove-background-online-free", desc: "The best free tools and methods to remove backgrounds from images in seconds.", date: "Dec 2024", readTime: "5 min", emoji: "🖼️", category: "Image" },
+  { title: "Best AI Summarizer Tools in 2025", slug: "best-ai-summarizer-tools", desc: "A roundup of the best free AI summarizer tools available right now.", date: "Nov 2024", readTime: "6 min", emoji: "✨", category: "AI" },
 ];
+
+const catColor: Record<string, { bg: string; color: string }> = {
+  PDF:   { bg: "#fff0f3", color: "#e8284a" },
+  AI:    { bg: "#f5f3ff", color: "#7c3aed" },
+  Image: { bg: "#eff6ff", color: "#2563eb" },
+};
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
+    <div style={{ minHeight: "100vh", background: "#f7f8fc" }}>
       <Navbar />
-      <div className="max-w-4xl mx-auto px-4 pt-28 pb-20">
-        <h1 className="text-4xl font-bold mb-3">Blog</h1>
-        <p className="text-white/40 mb-12">Tips, guides, and insights on AI tools and productivity.</p>
-        <div className="space-y-6">
-          {posts.map(post => (
-            <Link key={post.slug} href={`/blog/${post.slug}`}
-              className="block p-6 rounded-2xl bg-white/3 border border-white/8 hover:bg-white/6 hover:border-white/15 transition-all group">
-              <div className="flex items-center gap-3 text-xs text-white/30 mb-3">
-                <span>{post.date}</span>
-                <span>•</span>
-                <span>{post.readTime} read</span>
-              </div>
-              <h2 className="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors">{post.title}</h2>
-              <p className="text-white/50 text-sm">{post.desc}</p>
-            </Link>
-          ))}
+      <main id="main-content">
+
+        {/* Hero */}
+        <div style={{ background: "#fff", borderBottom: "1px solid #e8eaf0", padding: "56px 24px 44px", textAlign: "center" }}>
+          <div style={{ fontSize: 44, marginBottom: 14 }}>✍️</div>
+          <h1 style={{ fontFamily: "var(--font-syne,sans-serif)", fontSize: "clamp(26px,4vw,40px)", fontWeight: 800, color: "#1a1a2e", letterSpacing: "-1px", marginBottom: 12 }}>
+            Blog
+          </h1>
+          <p style={{ fontSize: 16, color: "#64748b", maxWidth: 420, margin: "0 auto" }}>
+            Tips, guides, and insights on AI tools and productivity.
+          </p>
         </div>
-      </div>
+
+        <div style={{ maxWidth: 800, margin: "0 auto", padding: "44px 24px 80px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            {posts.map(post => {
+              const cat = catColor[post.category] || { bg: "#f1f5f9", color: "#64748b" };
+              return (
+                <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }}>
+                  <div style={{
+                    background: "#fff", border: "1px solid #e8eaf0", borderRadius: 14,
+                    padding: "22px 24px", transition: "all .18s", cursor: "pointer",
+                    display: "flex", alignItems: "flex-start", gap: 18,
+                  }} className="blog-card">
+                    {/* Icon */}
+                    <div style={{ width: 52, height: 52, borderRadius: 12, background: cat.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, flexShrink: 0 }}>
+                      {post.emoji}
+                    </div>
+                    {/* Content */}
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6, flexWrap: "wrap" }}>
+                        <span style={{ fontSize: 10, fontWeight: 700, background: cat.bg, color: cat.color, padding: "2px 9px", borderRadius: 100 }}>{post.category}</span>
+                        <span style={{ fontSize: 12, color: "#94a3b8" }}>{post.date}</span>
+                        <span style={{ fontSize: 12, color: "#cbd5e1" }}>·</span>
+                        <span style={{ fontSize: 12, color: "#94a3b8" }}>{post.readTime} read</span>
+                      </div>
+                      <h2 style={{ fontFamily: "var(--font-syne,sans-serif)", fontSize: 16, fontWeight: 700, color: "#1a1a2e", marginBottom: 6, lineHeight: 1.3 }}>{post.title}</h2>
+                      <p style={{ fontSize: 13, color: "#64748b", lineHeight: 1.6 }}>{post.desc}</p>
+                    </div>
+                    <div style={{ fontSize: 18, color: "#cbd5e1", flexShrink: 0, marginTop: 4 }}>→</div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </main>
       <Footer />
-    </main>
+      <style>{`.blog-card:hover { border-color: #e8284a !important; box-shadow: 0 6px 24px rgba(232,40,74,.09); transform: translateY(-2px); }`}</style>
+    </div>
   );
 }

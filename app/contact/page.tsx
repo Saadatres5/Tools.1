@@ -8,33 +8,54 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://quantixtools.com/contact" },
 };
 
+const contacts = [
+  { icon: "💬", title: "General Enquiries", email: "hello@quantixtools.com", desc: "Questions, feedback, or just want to say hi?" },
+  { icon: "🔒", title: "Privacy & Legal", email: "privacy@quantixtools.com", desc: "GDPR requests, data questions, legal matters." },
+  { icon: "📢", title: "Advertising", email: "ads@quantixtools.com", desc: "Interested in advertising on QuantixTools?" },
+  { icon: "🐛", title: "Bug Reports & Feature Requests", email: "support@quantixtools.com", desc: "Found a bug or have a tool idea? We'd love to hear it." },
+];
+
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
+    <div style={{ minHeight: "100vh", background: "#f7f8fc" }}>
       <Navbar />
-      <div className="max-w-2xl mx-auto px-4 pt-28 pb-20">
-        <h1 className="text-4xl font-bold mb-3">Contact Us</h1>
-        <p className="text-white/50 mb-10">Have a question, suggestion, or found a bug? We&apos;d love to hear from you.</p>
-        <div className="space-y-4">
-          <div className="p-6 rounded-2xl bg-white/3 border border-white/8">
-            <h2 className="font-semibold mb-1">General Enquiries</h2>
-            <a href="mailto:hello@quantixtools.com" className="text-blue-400 hover:underline text-sm">hello@quantixtools.com</a>
+      <main id="main-content">
+
+        {/* Hero */}
+        <div style={{ background: "#fff", borderBottom: "1px solid #e8eaf0", padding: "56px 24px 44px", textAlign: "center" }}>
+          <div style={{ fontSize: 44, marginBottom: 14 }}>📬</div>
+          <h1 style={{ fontFamily: "var(--font-syne,sans-serif)", fontSize: "clamp(26px,4vw,40px)", fontWeight: 800, color: "#1a1a2e", letterSpacing: "-1px", marginBottom: 12 }}>
+            Contact Us
+          </h1>
+          <p style={{ fontSize: 16, color: "#64748b", maxWidth: 420, margin: "0 auto" }}>
+            Have a question, suggestion, or found a bug? We&apos;d love to hear from you.
+          </p>
+        </div>
+
+        <div style={{ maxWidth: 700, margin: "0 auto", padding: "44px 24px 80px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }} className="contact-grid">
+            {contacts.map(c => (
+              <div key={c.email} style={{ background: "#fff", border: "1px solid #e8eaf0", borderRadius: 14, padding: "24px 22px" }}>
+                <div style={{ width: 44, height: 44, borderRadius: 10, background: "#fff0f3", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 22, marginBottom: 14 }}>{c.icon}</div>
+                <h2 style={{ fontFamily: "var(--font-syne,sans-serif)", fontWeight: 700, fontSize: 15, color: "#1a1a2e", marginBottom: 6 }}>{c.title}</h2>
+                <p style={{ fontSize: 12, color: "#94a3b8", lineHeight: 1.6, marginBottom: 10 }}>{c.desc}</p>
+                <a href={`mailto:${c.email}`} style={{ fontSize: 13, fontWeight: 600, color: "#e8284a", textDecoration: "none" }}>{c.email}</a>
+              </div>
+            ))}
           </div>
-          <div className="p-6 rounded-2xl bg-white/3 border border-white/8">
-            <h2 className="font-semibold mb-1">Privacy &amp; Legal</h2>
-            <a href="mailto:privacy@quantixtools.com" className="text-blue-400 hover:underline text-sm">privacy@quantixtools.com</a>
-          </div>
-          <div className="p-6 rounded-2xl bg-white/3 border border-white/8">
-            <h2 className="font-semibold mb-1">Advertising</h2>
-            <a href="mailto:ads@quantixtools.com" className="text-blue-400 hover:underline text-sm">ads@quantixtools.com</a>
-          </div>
-          <div className="p-6 rounded-2xl bg-white/3 border border-white/8">
-            <h2 className="font-semibold mb-2">Bug Reports &amp; Feature Requests</h2>
-            <p className="text-white/50 text-sm">Found a bug or want to suggest a new tool? Email us at <a href="mailto:support@quantixtools.com" className="text-blue-400 hover:underline">support@quantixtools.com</a> and we&apos;ll look into it.</p>
+
+          {/* Response time note */}
+          <div style={{ marginTop: 20, background: "#fff", border: "1px solid #e8eaf0", borderRadius: 14, padding: "20px 24px", display: "flex", alignItems: "center", gap: 14 }}>
+            <div style={{ fontSize: 28, flexShrink: 0 }}>⏱️</div>
+            <div>
+              <div style={{ fontFamily: "var(--font-syne,sans-serif)", fontWeight: 700, fontSize: 14, color: "#1a1a2e", marginBottom: 3 }}>Response Time</div>
+              <div style={{ fontSize: 13, color: "#64748b" }}>We typically respond within 24–48 hours on business days.</div>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
-    </main>
+      <style>{`@media(max-width:540px){ .contact-grid{ grid-template-columns:1fr !important; } }`}</style>
+    </div>
   );
 }

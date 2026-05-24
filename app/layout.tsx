@@ -78,7 +78,16 @@ const jsonLd = {
       "@id": "https://quantixtools.com/#organization",
       "name": "QuantixTools",
       "url": "https://quantixtools.com",
-      "logo": { "@type": "ImageObject", "url": "https://quantixtools.com/logo.png" },
+      "logo": { "@type": "ImageObject", "url": "https://quantixtools.com/favicon.svg" },
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Are all tools really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, 100% free. No signup, no credit card, no hidden fees — ever." } },
+        { "@type": "Question", "name": "Are my files safe?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Most tools process files directly in your browser — nothing is sent to our servers." } },
+        { "@type": "Question", "name": "Do I need to create an account?", "acceptedAnswer": { "@type": "Answer", "text": "No account needed. Just open a tool and start using it immediately." } },
+        { "@type": "Question", "name": "What file formats are supported?", "acceptedAnswer": { "@type": "Answer", "text": "We support all major formats: PDF, JPG, PNG, MP4, MP3, DOCX, and many more." } },
+      ],
     },
   ],
 };

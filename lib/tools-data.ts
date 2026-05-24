@@ -97,7 +97,7 @@ export const allCategories: Category[] = [
       { name: "Text to Speech", href: "/tools/text-to-speech", desc: "Convert text to audio", badge: "AI" },
       { name: "Noise Remover", href: "/tools/noise-remover", desc: "Remove background noise", badge: "AI" },
       { name: "Voice Recorder", href: "/tools/voice-recorder", desc: "Record audio in browser" },
-      { name: "Speech to Text", href: "/tools/speech-to-text", desc: "Transcribe audio to text", badge: "AI" },
+
     ],
   },
   {

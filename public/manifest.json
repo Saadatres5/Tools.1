@@ -1,11 +1,11 @@
 {
-  "name": "QuantixTools \u2014 Free AI & File Tools",
+  "name": "QuantixTools — Free AI & File Tools",
   "short_name": "QuantixTools",
   "description": "100+ free AI and file tools. No signup. Privacy first.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0a",
-  "theme_color": "#0a0a0a",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "orientation": "portrait-primary",
   "icons": [
     {
@@ -18,12 +18,5 @@
   "categories": [
     "utilities",
     "productivity"
-  ],
-  "screenshots": [
-    {
-      "src": "/og-image.png",
-      "sizes": "1200x630",
-      "type": "image/png"
-    }
   ]
 }

@@ -5,6 +5,7 @@ import { getCategoryById } from "@/lib/tools-data";
 export const metadata: Metadata = {
   title: "Browser Utilities — Free Online Tools — QuantixTools",
   description: "Free browser utilities online. No signup required. Fast, private, browser-based.",
+  alternates: { canonical: "https://quantixtools.com/tools/browser" },
 };
 
 export default function Page() {

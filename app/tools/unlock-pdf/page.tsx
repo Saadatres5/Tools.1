@@ -5,6 +5,7 @@ import UnlockPDFClient from "./UnlockPDFClient";
 export const metadata: Metadata = {
   title: "Unlock PDF Free Online — QuantixTools",
   description: "Remove PDF password protection. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/unlock-pdf" },
 };
 
 export default function Page() {

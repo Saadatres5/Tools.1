@@ -5,6 +5,7 @@ import WordCounterClient from "./WordCounterClient";
 export const metadata: Metadata = {
   title: "Word Counter Free Online — QuantixTools",
   description: "Count words and characters. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/word-counter" },
 };
 
 export default function Page() {

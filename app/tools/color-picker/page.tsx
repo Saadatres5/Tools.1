@@ -5,6 +5,7 @@ import ColorPickerClient from "./ColorPickerClient";
 export const metadata: Metadata = {
   title: "Color Picker Free Online — QuantixTools",
   description: "Pick colors from any image. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/color-picker" },
 };
 
 export default function Page() {

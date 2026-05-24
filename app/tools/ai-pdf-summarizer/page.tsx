@@ -5,6 +5,7 @@ import AIPDFSummarizerClient from "./AIPDFSummarizerClient";
 export const metadata: Metadata = {
   title: "AI PDF Summarizer Free Online — QuantixTools",
   description: "Summarize PDF with AI. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-pdf-summarizer" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import WordToPDFClient from "./WordToPDFClient";
 export const metadata: Metadata = {
   title: "Word to PDF Free Online — QuantixTools",
   description: "Convert Word documents to PDF. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/word-to-pdf" },
 };
 
 export default function Page() {

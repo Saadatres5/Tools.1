@@ -5,6 +5,7 @@ import RegexClient from "./RegexClient";
 export const metadata: Metadata = {
   title: "Regex Tester Free Online — QuantixTools",
   description: "Test regular expressions. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/regex-tester" },
 };
 
 export default function Page() {

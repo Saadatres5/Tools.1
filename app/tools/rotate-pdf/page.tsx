@@ -5,6 +5,7 @@ import RotatePDFClient from "./RotatePDFClient";
 export const metadata: Metadata = {
   title: "Rotate PDF Free Online — QuantixTools",
   description: "Rotate PDF pages to any angle. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/rotate-pdf" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import AIMeetingNotesClient from "./AIMeetingNotesClient";
 export const metadata: Metadata = {
   title: "AI Meeting Notes Free Online — QuantixTools",
   description: "Summarize meetings with AI. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-meeting-notes" },
 };
 
 export default function Page() {

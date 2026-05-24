@@ -5,6 +5,7 @@ import BMIClient from "./BMIClient";
 export const metadata: Metadata = {
   title: "BMI Calculator Free Online — QuantixTools",
   description: "Calculate body mass index. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/bmi-calculator" },
 };
 
 export default function Page() {

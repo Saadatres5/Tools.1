@@ -5,6 +5,7 @@ import PercentageClient from "./PercentageClient";
 export const metadata: Metadata = {
   title: "Percentage Calculator Free Online — QuantixTools",
   description: "Calculate percentages. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/percentage-calculator" },
 };
 
 export default function Page() {

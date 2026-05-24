@@ -5,6 +5,7 @@ import JPGToPDFClient from "./JPGToPDFClient";
 export const metadata: Metadata = {
   title: "JPG to PDF Free Online — QuantixTools",
   description: "Convert images to PDF. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/jpg-to-pdf" },
 };
 
 export default function Page() {

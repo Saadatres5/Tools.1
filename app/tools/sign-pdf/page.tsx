@@ -5,6 +5,7 @@ import SignPDFClient from "./SignPDFClient";
 export const metadata: Metadata = {
   title: "Sign PDF Free Online — QuantixTools",
   description: "Add digital signature to PDF. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/sign-pdf" },
 };
 
 export default function Page() {

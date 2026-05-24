@@ -5,6 +5,7 @@ import { getCategoryById } from "@/lib/tools-data";
 export const metadata: Metadata = {
   title: "Student Tools — Free Online Tools — QuantixTools",
   description: "Free student tools online. No signup required. Fast, private, browser-based.",
+  alternates: { canonical: "https://quantixtools.com/tools/student" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import MathSolverClient from "./MathSolverClient";
 export const metadata: Metadata = {
   title: "Math Solver Free Online — QuantixTools",
   description: "Solve math problems step by step. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/math-solver" },
 };
 
 export default function Page() {

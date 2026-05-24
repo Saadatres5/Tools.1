@@ -5,6 +5,7 @@ import VoiceRecorderClient from "./VoiceRecorderClient";
 export const metadata: Metadata = {
   title: "Voice Recorder Free Online — QuantixTools",
   description: "Record audio in browser. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/voice-recorder" },
 };
 
 export default function Page() {

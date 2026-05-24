@@ -5,6 +5,7 @@ import PasswordGeneratorClient from "./PasswordGeneratorClient";
 export const metadata: Metadata = {
   title: "Password Generator Free Online — QuantixTools",
   description: "Generate strong passwords. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/password-generator" },
 };
 
 export default function Page() {

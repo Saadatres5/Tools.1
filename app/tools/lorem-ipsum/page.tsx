@@ -5,6 +5,7 @@ import LoremIpsumClient from "./LoremIpsumClient";
 export const metadata: Metadata = {
   title: "Lorem Ipsum Generator Free Online — QuantixTools",
   description: "Generate placeholder text. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/lorem-ipsum" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import { getCategoryById } from "@/lib/tools-data";
 export const metadata: Metadata = {
   title: "SEO Tools — Free Online Tools — QuantixTools",
   description: "Free seo tools online. No signup required. Fast, private, browser-based.",
+  alternates: { canonical: "https://quantixtools.com/tools/seo" },
 };
 
 export default function Page() {

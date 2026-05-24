@@ -5,6 +5,7 @@ import SpeedTestClient from "./SpeedTestClient";
 export const metadata: Metadata = {
   title: "Internet Speed Test Free Online — QuantixTools",
   description: "Test connection speed. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/internet-speed-test" },
 };
 
 export default function Page() {

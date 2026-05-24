@@ -43,13 +43,13 @@ export const metadata: Metadata = {
     siteName: "QuantixTools",
     title: "QuantixTools — Free AI & File Tools Online",
     description: "100+ free AI and file tools. No signup required. Privacy first.",
-    images: [{ url: "/og-image.svg", width: 1200, height: 630, alt: "QuantixTools" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "QuantixTools" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "QuantixTools — Free AI & File Tools Online",
     description: "100+ free AI and file tools. No signup. Privacy first.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   alternates: { canonical: "https://quantixtools.com" },
   other: {
@@ -97,6 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" dir="ltr" className={`${syne.variable} ${figtree.variable}`}>
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <script
           type="application/ld+json"

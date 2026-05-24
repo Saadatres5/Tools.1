@@ -5,6 +5,7 @@ import PomodoroClient from "./PomodoroClient";
 export const metadata: Metadata = {
   title: "Pomodoro Timer Free Online — QuantixTools",
   description: "Boost focus with Pomodoro. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/pomodoro-timer" },
 };
 
 export default function Page() {

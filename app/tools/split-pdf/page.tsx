@@ -5,6 +5,7 @@ import SplitPDFClient from "./SplitPDFClient";
 export const metadata: Metadata = {
   title: "Split PDF Free Online — QuantixTools",
   description: "Split PDF into separate pages. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/split-pdf" },
 };
 
 export default function Page() {

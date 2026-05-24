@@ -5,6 +5,7 @@ import QRScannerClient from "./QRScannerClient";
 export const metadata: Metadata = {
   title: "QR Scanner Free Online — QuantixTools",
   description: "Scan QR codes with camera. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/qr-scanner" },
 };
 
 export default function Page() {

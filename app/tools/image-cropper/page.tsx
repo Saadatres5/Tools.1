@@ -5,6 +5,7 @@ import ImageCropperClient from "./ImageCropperClient";
 export const metadata: Metadata = {
   title: "Image Cropper Free Online — QuantixTools",
   description: "Crop images to any ratio. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/image-cropper" },
 };
 
 export default function Page() {

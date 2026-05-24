@@ -5,6 +5,7 @@ import AICaptionClient from "./AICaptionClient";
 export const metadata: Metadata = {
   title: "AI Caption Generator Free Online — QuantixTools",
   description: "Generate social media captions. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-caption-generator" },
 };
 
 export default function Page() {

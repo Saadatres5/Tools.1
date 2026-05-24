@@ -5,6 +5,7 @@ import ProtectPDFClient from "./ProtectPDFClient";
 export const metadata: Metadata = {
   title: "Protect PDF Free Online — QuantixTools",
   description: "Add password to your PDF. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/protect-pdf" },
 };
 
 export default function Page() {

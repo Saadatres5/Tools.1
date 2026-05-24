@@ -5,6 +5,7 @@ import TodoClient from "./TodoClient";
 export const metadata: Metadata = {
   title: "To-Do List Free Online — QuantixTools",
   description: "Simple task manager. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/todo-list" },
 };
 
 export default function Page() {

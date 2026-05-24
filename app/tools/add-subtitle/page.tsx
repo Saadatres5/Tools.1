@@ -5,6 +5,7 @@ import AddSubtitleClient from "./AddSubtitleClient";
 export const metadata: Metadata = {
   title: "Add Subtitle Free Online — QuantixTools",
   description: "Add subtitles to video. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/add-subtitle" },
 };
 
 export default function Page() {

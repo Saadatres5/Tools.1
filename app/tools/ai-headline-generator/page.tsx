@@ -5,6 +5,7 @@ import AIHeadlineClient from "./AIHeadlineClient";
 export const metadata: Metadata = {
   title: "AI Headline Generator Free Online — QuantixTools",
   description: "Create compelling headlines. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-headline-generator" },
 };
 
 export default function Page() {

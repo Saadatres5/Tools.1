@@ -5,6 +5,7 @@ import ResumeBuilderClient from "./ResumeBuilderClient";
 export const metadata: Metadata = {
   title: "Resume Builder Free Online — QuantixTools",
   description: "Build your resume. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/resume-builder" },
 };
 
 export default function Page() {

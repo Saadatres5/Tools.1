@@ -5,6 +5,7 @@ import PDFToWordClient from "./PDFToWordClient";
 export const metadata: Metadata = {
   title: "PDF to Word Free Online — QuantixTools",
   description: "Convert PDF to editable text. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/pdf-to-word" },
 };
 
 export default function Page() {

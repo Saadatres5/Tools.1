@@ -5,6 +5,7 @@ import MD5Client from "./MD5Client";
 export const metadata: Metadata = {
   title: "MD5 Generator Free Online — QuantixTools",
   description: "Generate MD5 hash. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/md5-generator" },
 };
 
 export default function Page() {

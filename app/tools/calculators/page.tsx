@@ -5,6 +5,7 @@ import { getCategoryById } from "@/lib/tools-data";
 export const metadata: Metadata = {
   title: "Calculator Tools — Free Online Tools — QuantixTools",
   description: "Free calculator tools online. No signup required. Fast, private, browser-based.",
+  alternates: { canonical: "https://quantixtools.com/tools/calculators" },
 };
 
 export default function Page() {

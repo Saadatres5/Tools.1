@@ -5,6 +5,7 @@ import CompressVideoClient from "./CompressVideoClient";
 export const metadata: Metadata = {
   title: "Compress Video Free Online — QuantixTools",
   description: "Reduce video file size. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/compress-video" },
 };
 
 export default function Page() {

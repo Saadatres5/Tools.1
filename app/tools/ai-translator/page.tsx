@@ -5,6 +5,7 @@ import AITranslatorClient from "./AITranslatorClient";
 export const metadata: Metadata = {
   title: "AI Translator Free Online — QuantixTools",
   description: "Translate text to any language. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-translator" },
 };
 
 export default function Page() {

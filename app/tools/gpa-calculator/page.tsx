@@ -5,6 +5,7 @@ import GPAClient from "./GPAClient";
 export const metadata: Metadata = {
   title: "GPA Calculator Free Online — QuantixTools",
   description: "Calculate your GPA. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/gpa-calculator" },
 };
 
 export default function Page() {

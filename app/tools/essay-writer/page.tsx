@@ -5,6 +5,7 @@ import EssayWriterClient from "./EssayWriterClient";
 export const metadata: Metadata = {
   title: "Essay Writer Free Online — QuantixTools",
   description: "Write essays with AI assistance. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/essay-writer" },
 };
 
 export default function Page() {

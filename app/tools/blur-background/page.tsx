@@ -5,6 +5,7 @@ import BlurBackgroundClient from "./BlurBackgroundClient";
 export const metadata: Metadata = {
   title: "Blur Background Free Online — QuantixTools",
   description: "AI background blur for photos. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/blur-background" },
 };
 
 export default function Page() {

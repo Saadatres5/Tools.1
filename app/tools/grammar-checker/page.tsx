@@ -5,6 +5,7 @@ import GrammarCheckerClient from "./GrammarCheckerClient";
 export const metadata: Metadata = {
   title: "Grammar Checker Free Online — QuantixTools",
   description: "Check and fix grammar. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/grammar-checker" },
 };
 
 export default function Page() {

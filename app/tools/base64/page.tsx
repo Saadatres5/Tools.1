@@ -5,6 +5,7 @@ import Base64Client from "./Base64Client";
 export const metadata: Metadata = {
   title: "Base64 Encoder/Decoder Free Online — QuantixTools",
   description: "Encode and decode Base64. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/base64" },
 };
 
 export default function Page() {

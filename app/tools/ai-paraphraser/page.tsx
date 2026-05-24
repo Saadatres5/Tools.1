@@ -5,6 +5,7 @@ import AIParaphraserClient from "./AIParaphraserClient";
 export const metadata: Metadata = {
   title: "AI Paraphraser Free Online — QuantixTools",
   description: "Rewrite text in new words. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-paraphraser" },
 };
 
 export default function Page() {

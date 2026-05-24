@@ -5,6 +5,7 @@ import MP3CutterClient from "./MP3CutterClient";
 export const metadata: Metadata = {
   title: "MP3 Cutter Free Online — QuantixTools",
   description: "Cut and trim MP3 files. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/mp3-cutter" },
 };
 
 export default function Page() {

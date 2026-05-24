@@ -5,6 +5,7 @@ import SitemapClient from "./SitemapClient";
 export const metadata: Metadata = {
   title: "Sitemap Generator Free Online — QuantixTools",
   description: "Generate XML sitemap. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/sitemap-generator" },
 };
 
 export default function Page() {

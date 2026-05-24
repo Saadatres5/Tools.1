@@ -5,6 +5,7 @@ import JWTClient from "./JWTClient";
 export const metadata: Metadata = {
   title: "JWT Decoder Free Online — QuantixTools",
   description: "Decode JWT tokens. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/jwt-decoder" },
 };
 
 export default function Page() {

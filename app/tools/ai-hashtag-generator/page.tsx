@@ -5,6 +5,7 @@ import AIHashtagClient from "./AIHashtagClient";
 export const metadata: Metadata = {
   title: "AI Hashtag Generator Free Online — QuantixTools",
   description: "Generate trending hashtags. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-hashtag-generator" },
 };
 
 export default function Page() {

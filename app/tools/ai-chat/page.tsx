@@ -5,6 +5,7 @@ import AIChatClient from "./AIChatClient";
 export const metadata: Metadata = {
   title: "AI Chat Workspace Free Online — QuantixTools",
   description: "Chat with AI assistant. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-chat" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import ScreenshotEditorClient from "./ScreenshotEditorClient";
 export const metadata: Metadata = {
   title: "Screenshot Editor Free Online — QuantixTools",
   description: "Annotate and edit screenshots. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/screenshot-editor" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import SERPPreviewClient from "./SERPPreviewClient";
 export const metadata: Metadata = {
   title: "SERP Preview Free Online — QuantixTools",
   description: "Preview Google snippet. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/serp-preview" },
 };
 
 export default function Page() {

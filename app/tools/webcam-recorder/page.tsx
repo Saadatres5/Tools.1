@@ -5,6 +5,7 @@ import WebcamRecorderClient from "./WebcamRecorderClient";
 export const metadata: Metadata = {
   title: "Webcam Recorder Free Online — QuantixTools",
   description: "Record webcam video. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/webcam-recorder" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ import CompressImageClient from "./CompressImageClient";
 export const metadata: Metadata = {
   title: "Compress Image Free Online — QuantixTools",
   description: "Reduce image file size. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/compress-image" },
 };
 
 export default function Page() {

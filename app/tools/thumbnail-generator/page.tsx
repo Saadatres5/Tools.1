@@ -5,6 +5,7 @@ import ThumbnailClient from "./ThumbnailClient";
 export const metadata: Metadata = {
   title: "Thumbnail Generator Free Online — QuantixTools",
   description: "Create YouTube thumbnails. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/thumbnail-generator" },
 };
 
 export default function Page() {

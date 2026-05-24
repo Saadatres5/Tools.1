@@ -5,6 +5,7 @@ import AgeClient from "./AgeClient";
 export const metadata: Metadata = {
   title: "Age Calculator Free Online — QuantixTools",
   description: "Calculate exact age. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/age-calculator" },
 };
 
 export default function Page() {

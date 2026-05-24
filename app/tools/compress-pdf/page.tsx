@@ -5,6 +5,7 @@ import CompressPDFClient from "./CompressPDFClient";
 export const metadata: Metadata = {
   title: "Compress PDF Free Online — QuantixTools",
   description: "Reduce PDF file size instantly. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/compress-pdf" },
 };
 
 export default function Page() {

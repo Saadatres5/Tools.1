@@ -5,6 +5,7 @@ import CitationClient from "./CitationClient";
 export const metadata: Metadata = {
   title: "Citation Generator Free Online — QuantixTools",
   description: "Generate APA, MLA citations. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/citation-generator" },
 };
 
 export default function Page() {

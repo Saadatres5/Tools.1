@@ -5,6 +5,7 @@ import AIEmailWriterClient from "./AIEmailWriterClient";
 export const metadata: Metadata = {
   title: "AI Email Writer Free Online — QuantixTools",
   description: "Write professional emails. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai-email-writer" },
 };
 
 export default function Page() {

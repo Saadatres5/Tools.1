@@ -5,6 +5,7 @@ import AudioConverterClient from "./AudioConverterClient";
 export const metadata: Metadata = {
   title: "Audio Converter Free Online — QuantixTools",
   description: "Convert audio formats. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/audio-converter" },
 };
 
 export default function Page() {

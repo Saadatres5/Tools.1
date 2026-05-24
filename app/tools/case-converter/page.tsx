@@ -5,6 +5,7 @@ import CaseConverterClient from "./CaseConverterClient";
 export const metadata: Metadata = {
   title: "Case Converter Free Online — QuantixTools",
   description: "Convert text case. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/case-converter" },
 };
 
 export default function Page() {

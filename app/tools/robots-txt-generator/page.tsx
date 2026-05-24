@@ -5,6 +5,7 @@ import RobotsTxtClient from "./RobotsTxtClient";
 export const metadata: Metadata = {
   title: "Robots.txt Generator Free Online — QuantixTools",
   description: "Create robots.txt. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/robots-txt-generator" },
 };
 
 export default function Page() {

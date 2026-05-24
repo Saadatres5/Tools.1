@@ -5,6 +5,7 @@ import KeywordDensityClient from "./KeywordDensityClient";
 export const metadata: Metadata = {
   title: "Keyword Density Checker Free Online — QuantixTools",
   description: "Analyze keyword usage. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/keyword-density" },
 };
 
 export default function Page() {

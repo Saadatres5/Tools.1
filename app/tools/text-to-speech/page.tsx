@@ -5,6 +5,7 @@ import TextToSpeechClient from "./TextToSpeechClient";
 export const metadata: Metadata = {
   title: "Text to Speech Free Online — QuantixTools",
   description: "Convert text to audio. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/text-to-speech" },
 };
 
 export default function Page() {

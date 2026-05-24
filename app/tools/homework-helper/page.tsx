@@ -5,6 +5,7 @@ import HomeworkHelperClient from "./HomeworkHelperClient";
 export const metadata: Metadata = {
   title: "AI Homework Helper Free Online — QuantixTools",
   description: "Get help with homework. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/homework-helper" },
 };
 
 export default function Page() {

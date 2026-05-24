@@ -5,6 +5,7 @@ import { getCategoryById } from "@/lib/tools-data";
 export const metadata: Metadata = {
   title: "AI Tools — Free Online Tools — QuantixTools",
   description: "Free ai tools online. No signup required. Fast, private, browser-based.",
+  alternates: { canonical: "https://quantixtools.com/tools/ai" },
 };
 
 export default function Page() {

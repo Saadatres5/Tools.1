@@ -5,6 +5,7 @@ import MergePDFClient from "./MergePDFClient";
 export const metadata: Metadata = {
   title: "Merge PDF Free Online — QuantixTools",
   description: "Combine multiple PDFs into one. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/merge-pdf" },
 };
 
 export default function Page() {

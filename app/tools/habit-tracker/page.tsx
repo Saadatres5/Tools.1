@@ -5,6 +5,7 @@ import HabitTrackerClient from "./HabitTrackerClient";
 export const metadata: Metadata = {
   title: "Habit Tracker Free Online — QuantixTools",
   description: "Track daily habits. 100% free, no signup required.",
+  alternates: { canonical: "https://quantixtools.com/tools/habit-tracker" },
 };
 
 export default function Page() {

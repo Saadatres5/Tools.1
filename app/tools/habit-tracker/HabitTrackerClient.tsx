@@ -1,4 +1,3 @@
-
 "use client";
 import { useState } from "react";
 interface Habit{id:number;name:string;emoji:string;streak:number;done:boolean[]}

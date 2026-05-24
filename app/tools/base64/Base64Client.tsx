@@ -1,4 +1,3 @@
-
 "use client";
 import { useState } from "react";
 export default function Base64Client() {

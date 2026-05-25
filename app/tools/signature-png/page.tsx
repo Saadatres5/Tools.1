@@ -5,7 +5,23 @@ import SignaturePNGClient from "./SignaturePNGClient";
 export const metadata: Metadata = {
   title: "Extract Signature to PNG Free — QuantixTools",
   description: "Upload a signed document or image. AI automatically detects the signature, removes the background, and gives you a clean transparent PNG — ready to use anywhere.",
-  alternates: { canonical: "https://quantixtools.com/tools/signature-png" },
+  alternates: {
+    canonical: "https://quantixtools.com/tools/signature-png",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/tools/signature-png",
+    title: "Extract Signature to PNG Free — QuantixTools",
+    description: "Upload a signed document or image. AI automatically detects the signature, removes the background, and gives you a clean transparent PNG — ready to use anywhere.",
+    siteName: "QuantixTools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Extract Signature to PNG Free — QuantixTools" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Extract Signature to PNG Free — QuantixTools",
+    description: "Upload a signed document or image. AI automatically detects the signature, removes the background, and gives you a clean transparent PNG — ready to use anywhere.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function Page() {

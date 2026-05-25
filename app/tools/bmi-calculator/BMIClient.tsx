@@ -18,21 +18,21 @@ export default function BMIClient() {
     <div className="space-y-5 max-w-md mx-auto">
       <div className="flex gap-2">
         {(["metric","imperial"] as const).map(u=>(
-          <button key={u} onClick={()=>{setUnit(u);setResult(null);}} className={`flex-1 py-2 rounded-xl text-sm font-medium transition-colors ${unit===u?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>
+          <button key={u} onClick={()=>{setUnit(u);setResult(null);}} className={`flex-1 py-2 rounded-xl text-sm font-medium transition-colors ${unit===u?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>
             {u==="metric"?"Metric (kg/cm)":"Imperial (lbs/in)"}
           </button>
         ))}
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs text-white/50 mb-1">Weight ({unit==="metric"?"kg":"lbs"})</label>
+          <label className="block text-xs text-gray-8000 mb-1">Weight ({unit==="metric"?"kg":"lbs"})</label>
           <input type="number" value={weight} onChange={e=>setWeight(e.target.value)} placeholder={unit==="metric"?"70":"155"}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-blue-500/50 text-sm"/>
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-blue-400 text-sm"/>
         </div>
         <div>
-          <label className="block text-xs text-white/50 mb-1">Height ({unit==="metric"?"cm":"inches"})</label>
+          <label className="block text-xs text-gray-8000 mb-1">Height ({unit==="metric"?"cm":"inches"})</label>
           <input type="number" value={height} onChange={e=>setHeight(e.target.value)} placeholder={unit==="metric"?"175":"69"}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-blue-500/50 text-sm"/>
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-blue-400 text-sm"/>
         </div>
       </div>
       <button onClick={calc} disabled={!weight||!height} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-semibold text-sm transition-colors">
@@ -42,11 +42,11 @@ export default function BMIClient() {
         <div className={`p-6 rounded-2xl bg-${result.color}-500/10 border border-${result.color}-500/20 text-center space-y-2`}>
           <div className={`text-5xl font-bold text-${result.color}-400`}>{result.bmi}</div>
           <div className={`text-lg font-semibold text-${result.color}-300`}>{result.cat}</div>
-          <div className="text-xs text-white/40 mt-3 grid grid-cols-4 gap-2">
+          <div className="text-xs text-gray-400 mt-3 grid grid-cols-4 gap-2">
             {[["<18.5","Underweight","blue"],["18.5-24.9","Normal","green"],["25-29.9","Overweight","yellow"],["≥30","Obese","red"]].map(([r,l,c])=>(
               <div key={l} className={`p-2 rounded-lg bg-${c}-500/10 border border-${c}-500/20`}>
                 <div className={`text-${c}-400 font-medium`}>{l}</div>
-                <div className="text-white/30">{r}</div>
+                <div className="text-gray-400">{r}</div>
               </div>
             ))}
           </div>

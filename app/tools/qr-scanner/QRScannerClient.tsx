@@ -23,11 +23,11 @@ export default function QRScannerClient() {
 
   return (
     <div className="space-y-4 max-w-md mx-auto">
-      {error && <p className="text-red-400 text-sm bg-red-500/10 p-3 rounded-xl">{error}</p>}
+      {error && <p className="text-red-600 text-sm bg-red-50 p-3 rounded-xl">{error}</p>}
       {!scanning ? (
         <div className="text-center py-10 space-y-4">
           <div className="text-6xl">📷</div>
-          <p className="text-white/40 text-sm">Point your camera at a QR code</p>
+          <p className="text-gray-400 text-sm">Point your camera at a QR code</p>
           <button onClick={start} className="px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold transition-colors">📷 Start Scanner</button>
         </div>
       ) : (
@@ -38,8 +38,8 @@ export default function QRScannerClient() {
               <div className="w-48 h-48 border-2 border-blue-400 rounded-xl opacity-60"/>
             </div>
           </div>
-          <button onClick={stop} className="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm">Stop Scanner</button>
-          <p className="text-xs text-white/30 text-center">For full QR decoding, integrate the @zxing/browser library.</p>
+          <button onClick={stop} className="w-full py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-sm">Stop Scanner</button>
+          <p className="text-xs text-gray-400 text-center">For full QR decoding, integrate the @zxing/browser library.</p>
         </div>
       )}
     </div>

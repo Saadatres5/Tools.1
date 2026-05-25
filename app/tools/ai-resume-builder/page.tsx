@@ -5,7 +5,23 @@ import AIResumeBuilderClient from "./AIResumeBuilderClient";
 export const metadata: Metadata = {
   title: "AI Resume Builder Free Online — QuantixTools",
   description: "Build resume with AI. 100% free, no signup required.",
-  alternates: { canonical: "https://quantixtools.com/tools/ai-resume-builder" },
+  alternates: {
+    canonical: "https://quantixtools.com/tools/ai-resume-builder",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/tools/ai-resume-builder",
+    title: "AI Resume Builder Free Online — QuantixTools",
+    description: "Build resume with AI. 100% free, no signup required.",
+    siteName: "QuantixTools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Resume Builder Free Online — QuantixTools" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Resume Builder Free Online — QuantixTools",
+    description: "Build resume with AI. 100% free, no signup required.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function Page() {

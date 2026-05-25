@@ -22,21 +22,21 @@ export default function PasswordGeneratorClient() {
   const strength = (symbols && numbers && upper && lower && length>=16) ? ["Strong","green"] : length>=12 ? ["Medium","yellow"] : ["Weak","red"];
   return (
     <div className="space-y-5">
-      <div className="p-5 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+      <div className="p-5 rounded-2xl bg-gray-50 border border-gray-200 space-y-4">
         <div>
-          <div className="flex justify-between mb-2"><label className="text-sm text-white/60">Length</label><span className="text-sm font-bold text-blue-400">{length}</span></div>
+          <div className="flex justify-between mb-2"><label className="text-sm text-gray-8000">Length</label><span className="text-sm font-bold text-blue-600">{length}</span></div>
           <input type="range" min={6} max={64} value={length} onChange={e=>setLength(+e.target.value)} className="w-full accent-blue-500" />
         </div>
         <div className="grid grid-cols-2 gap-3">
           {[["Uppercase (A-Z)",upper,setUpper],["Lowercase (a-z)",lower,setLower],["Numbers (0-9)",numbers,setNumbers],["Symbols (!@#...)",symbols,setSymbols]].map(([l,v,s])=>(
-            <label key={l as string} className="flex items-center gap-2 cursor-pointer text-sm text-white/70">
+            <label key={l as string} className="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
               <input type="checkbox" checked={v as boolean} onChange={e=>(s as (v:boolean)=>void)(e.target.checked)} className="accent-blue-500 w-4 h-4" />
               {l as string}
             </label>
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <span className="text-xs text-white/40">Strength:</span>
+          <span className="text-xs text-gray-400">Strength:</span>
           <span className={`text-xs font-semibold text-${strength[1]}-400`}>{strength[0]}</span>
         </div>
       </div>
@@ -46,9 +46,9 @@ export default function PasswordGeneratorClient() {
       {passwords.length > 0 && (
         <div className="space-y-2">
           {passwords.map(p=>(
-            <div key={p} className="flex items-center justify-between p-3 rounded-xl bg-black/40 border border-white/10 gap-3">
-              <code className="text-sm text-green-400 font-mono flex-1 break-all">{p}</code>
-              <button onClick={()=>copy(p)} className={`text-xs px-3 py-1 rounded-lg transition-colors flex-shrink-0 ${copied===p?"bg-green-600 text-white":"bg-white/10 hover:bg-white/20 text-white/60"}`}>
+            <div key={p} className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-200 gap-3">
+              <code className="text-sm text-emerald-700 font-mono flex-1 break-all">{p}</code>
+              <button onClick={()=>copy(p)} className={`text-xs px-3 py-1 rounded-lg transition-colors flex-shrink-0 ${copied===p?"bg-green-600 text-gray-800":"bg-gray-100 hover:bg-gray-100 text-gray-8000"}`}>
                 {copied===p?"Copied!":"Copy"}
               </button>
             </div>

@@ -215,3 +215,77 @@ textarea:focus, input[type="text"]:focus, input[type="number"]:focus {
   transition: border-color .15s;
 }
 .faq-card:hover { border-color: #cbd5e1; }
+
+/* ── GLOBAL TEXT COLOR ENFORCEMENT ──────────────────────────────────────────
+   Ensures all tool UI elements have visible black text on the white light theme.
+   These rules override any Tailwind utility that might make text invisible. */
+
+/* All inputs, textareas, selects: always dark text */
+input:not([type="color"]):not([type="range"]):not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+  color: #1a1a2e !important;
+  background-color: #ffffff;
+}
+
+/* Placeholder text: always visible gray */
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8 !important;
+  opacity: 1 !important;
+}
+
+/* Labels: always dark */
+label {
+  color: #374151;
+}
+
+/* Paragraphs and spans inside tool cards: dark */
+.tool-ui-card p,
+.tool-ui-card span:not(.badge):not(.tag) {
+  color: #374151;
+}
+
+/* Pre / code blocks: ensure readable */
+pre {
+  color: #1a1a2e;
+}
+
+/* Headings: always black */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a1a2e;
+}
+
+/* Generic text on white pages */
+main p {
+  color: #475569;
+}
+
+/* Fix any lingering text-white class that slipped through on white backgrounds */
+.bg-white .text-white,
+.bg-gray-50 .text-white,
+[style*="background: #fff"] .text-white,
+[style*="background: white"] .text-white,
+[style*="background:#fff"] .text-white {
+  color: #1a1a2e !important;
+}
+
+/* Force all Tailwind text-gray-800 and above to be dark enough */
+.text-gray-800 { color: #1f2937 !important; }
+.text-gray-700 { color: #374151 !important; }
+.text-gray-600 { color: #4b5563 !important; }
+.text-gray-500 { color: #6b7280 !important; }
+
+/* Stat cards, metric displays: numbers must be visible */
+.stat-value,
+.metric-value,
+[class*="text-2xl"],
+[class*="text-3xl"],
+[class*="text-4xl"] {
+  color: #1a1a2e;
+}
+
+/* Buttons: keep their own colors */
+button {
+  /* don't override button text — each button has its own color */
+}

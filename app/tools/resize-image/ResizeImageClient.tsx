@@ -46,38 +46,38 @@ export default function ResizeImageClient() {
           <div className="flex gap-4">
             {preview && (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img src={preview} alt="preview" className="w-32 h-24 object-contain rounded-xl bg-white/5"/>
+              <img src={preview} alt="preview" className="w-32 h-24 object-contain rounded-xl bg-gray-50"/>
             )}
-            <div><p className="font-medium text-sm">{file.name}</p><p className="text-white/40 text-xs">{origW}×{origH}px</p></div>
-            <button onClick={reset} className="ml-auto text-white/30 hover:text-white/60 text-sm">✕</button>
+            <div><p className="font-medium text-sm">{file.name}</p><p className="text-gray-400 text-xs">{origW}×{origH}px</p></div>
+            <button onClick={reset} className="ml-auto text-gray-400 hover:text-gray-8000 text-sm">✕</button>
           </div>
           <div className="flex items-center gap-3">
             <div>
-              <label className="block text-xs text-white/50 mb-1">Width (px)</label>
-              <input type="number" value={w} onChange={e=>updateW(e.target.value)} className="w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none"/>
+              <label className="block text-xs text-gray-8000 mb-1">Width (px)</label>
+              <input type="number" value={w} onChange={e=>updateW(e.target.value)} className="w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none"/>
             </div>
-            <button onClick={() => setLock(l=>!l)} className={`mt-5 p-2 rounded-lg transition-colors ${lock?"bg-blue-600":"bg-white/5"}`} title="Lock aspect ratio">
+            <button onClick={() => setLock(l=>!l)} className={`mt-5 p-2 rounded-lg transition-colors ${lock?"bg-blue-600":"bg-gray-50"}`} title="Lock aspect ratio">
               {lock?"🔒":"🔓"}
             </button>
             <div>
-              <label className="block text-xs text-white/50 mb-1">Height (px)</label>
-              <input type="number" value={h} onChange={e=>updateH(e.target.value)} className="w-28 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none"/>
+              <label className="block text-xs text-gray-8000 mb-1">Height (px)</label>
+              <input type="number" value={h} onChange={e=>updateH(e.target.value)} className="w-28 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none"/>
             </div>
           </div>
           <div className="flex flex-wrap gap-2 text-xs">
             {[[640,480],[800,600],[1280,720],[1920,1080],[1080,1080]].map(([pw,ph]) => (
               <button key={pw} onClick={() => { setW(String(pw)); setH(String(ph)); }}
-                className="px-3 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-white/50">{pw}×{ph}</button>
+                className="px-3 py-1 rounded-lg bg-gray-50 hover:bg-gray-100 text-gray-8000">{pw}×{ph}</button>
             ))}
           </div>
           {result ? (
             <div className="space-y-3">
-              <p className="text-green-400 text-sm font-semibold">✅ Resized to {w}×{h}px</p>
+              <p className="text-emerald-700 text-sm font-semibold">✅ Resized to {w}×{h}px</p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={result} alt="resized" className="max-h-48 rounded-xl object-contain"/>
               <div className="flex gap-3">
                 <button onClick={download} className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium">⬇️ Download</button>
-                <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button>
+                <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button>
               </div>
             </div>
           ) : (

@@ -43,15 +43,15 @@ export default function ScreenshotEditorClient() {
         <>
           <div className="flex flex-wrap gap-2 items-center">
             {[["arrow","↗ Arrow"],["rect","▭ Rectangle"]].map(([v,l])=>(
-              <button key={v} onClick={()=>setTool(v as typeof tool)} className={`px-3 py-1.5 rounded-xl text-xs transition-colors ${tool===v?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>{l}</button>
+              <button key={v} onClick={()=>setTool(v as typeof tool)} className={`px-3 py-1.5 rounded-xl text-xs transition-colors ${tool===v?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>{l}</button>
             ))}
             <div className="flex gap-1 ml-2">
-              {COLORS.map(c=><button key={c} onClick={()=>setColor(c)} className={`w-6 h-6 rounded-full border-2 transition-transform hover:scale-110 ${color===c?"border-white scale-110":"border-white/20"}`} style={{background:c}}/>)}
+              {COLORS.map(c=><button key={c} onClick={()=>setColor(c)} className={`w-6 h-6 rounded-full border-2 transition-transform hover:scale-110 ${color===c?"border-white scale-110":"border-gray-200"}`} style={{background:c}}/>)}
             </div>
             <button onClick={download} className="ml-auto px-3 py-1.5 rounded-xl bg-green-600 hover:bg-green-700 text-xs font-medium transition-colors">⬇️ Download</button>
           </div>
           <canvas ref={canvasRef} onMouseDown={mouseDown} onMouseMove={mouseMove} onMouseUp={mouseUp}
-            className="w-full rounded-xl cursor-crosshair border border-white/10" style={{maxHeight:"400px",objectFit:"contain"}}/>
+            className="w-full rounded-xl cursor-crosshair border border-gray-200" style={{maxHeight:"400px",objectFit:"contain"}}/>
         </>
       )}
     </div>

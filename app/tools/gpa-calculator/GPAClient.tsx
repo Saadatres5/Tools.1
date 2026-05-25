@@ -20,21 +20,21 @@ export default function GPAClient() {
         {courses.map((c,i)=>(
           <div key={i} className="grid grid-cols-12 gap-2 items-center">
             <input value={c.name} onChange={e=>update(i,"name",e.target.value)} placeholder={`Course ${i+1}`}
-              className="col-span-5 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-blue-500/50"/>
-            <select value={c.grade} onChange={e=>update(i,"grade",e.target.value)} className="col-span-3 bg-white/5 border border-white/10 rounded-xl px-2 py-2 text-sm text-white outline-none">
+              className="col-span-5 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none focus:border-blue-400"/>
+            <select value={c.grade} onChange={e=>update(i,"grade",e.target.value)} className="col-span-3 bg-gray-50 border border-gray-200 rounded-xl px-2 py-2 text-sm text-gray-800 outline-none">
               {Object.keys(GRADE_POINTS).map(g=><option key={g} value={g}>{g}</option>)}
             </select>
             <input type="number" value={c.credits} onChange={e=>update(i,"credits",e.target.value)} min="1" max="6"
-              className="col-span-3 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none"/>
-            <button onClick={()=>remove(i)} className="col-span-1 text-white/30 hover:text-red-400 text-center">✕</button>
+              className="col-span-3 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none"/>
+            <button onClick={()=>remove(i)} className="col-span-1 text-gray-400 hover:text-red-600 text-center">✕</button>
           </div>
         ))}
       </div>
-      <button onClick={add} className="w-full py-2 rounded-xl border border-dashed border-white/20 text-white/40 hover:text-white/60 text-sm transition-colors">+ Add Course</button>
+      <button onClick={add} className="w-full py-2 rounded-xl border border-dashed border-gray-200 text-gray-400 hover:text-gray-8000 text-sm transition-colors">+ Add Course</button>
       <div className="p-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-center">
-        <div className="text-5xl font-bold text-blue-400">{g.toFixed(2)}</div>
-        <div className="text-white/60 mt-1">{cat}</div>
-        <div className="text-white/30 text-xs mt-1">out of 4.0</div>
+        <div className="text-5xl font-bold text-blue-600">{g.toFixed(2)}</div>
+        <div className="text-gray-8000 mt-1">{cat}</div>
+        <div className="text-gray-400 text-xs mt-1">out of 4.0</div>
       </div>
     </div>
   );

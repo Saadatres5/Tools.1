@@ -5,7 +5,23 @@ import WatermarkPDFClient from "./WatermarkPDFClient";
 export const metadata: Metadata = {
   title: "Watermark PDF Free Online — QuantixTools",
   description: "Add watermark to PDF pages. 100% free, no signup required.",
-  alternates: { canonical: "https://quantixtools.com/tools/watermark-pdf" },
+  alternates: {
+    canonical: "https://quantixtools.com/tools/watermark-pdf",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/tools/watermark-pdf",
+    title: "Watermark PDF Free Online — QuantixTools",
+    description: "Add watermark to PDF pages. 100% free, no signup required.",
+    siteName: "QuantixTools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Watermark PDF Free Online — QuantixTools" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Watermark PDF Free Online — QuantixTools",
+    description: "Add watermark to PDF pages. 100% free, no signup required.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function Page() {

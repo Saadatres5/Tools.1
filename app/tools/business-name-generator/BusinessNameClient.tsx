@@ -42,7 +42,7 @@ export default function BusinessNameClient() {
     <div className="space-y-4">
       <input value={keyword} onChange={e=>setKeyword(e.target.value)} onKeyDown={e=>e.key==="Enter"&&generate()}
         placeholder="e.g. tools, health, design, finance, education"
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-amber-500/50"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-amber-500/50"/>
       <button onClick={generate} disabled={!keyword.trim()}
         className="w-full py-3 rounded-xl bg-amber-600 hover:bg-amber-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         💡 Generate Names
@@ -50,25 +50,25 @@ export default function BusinessNameClient() {
       {results.length > 0 && (
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {results.map((r,i) => (
-            <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/8 hover:border-white/15 transition-colors">
+            <div key={i} className="p-4 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-200 transition-colors">
               <div className="flex justify-between items-start mb-1">
-                <p className="font-bold text-white">{r.name}</p>
-                <button onClick={()=>copy(r.name)} className={`text-xs px-2 py-0.5 rounded transition-colors ${copied===r.name?"bg-green-600 text-white":"bg-white/10 hover:bg-white/20 text-white/40"}`}>
+                <p className="font-bold text-gray-800">{r.name}</p>
+                <button onClick={()=>copy(r.name)} className={`text-xs px-2 py-0.5 rounded transition-colors ${copied===r.name?"bg-green-600 text-gray-800":"bg-gray-100 hover:bg-gray-100 text-gray-400"}`}>
                   {copied===r.name?"✓":"Copy"}
                 </button>
               </div>
-              <p className="text-xs text-white/40 italic">{r.tagline}</p>
+              <p className="text-xs text-gray-400 italic">{r.tagline}</p>
             </div>
           ))}
         </div>
       )}
       {results.length > 0 && (
         <button onClick={()=>setResults(generateNames(keyword))}
-          className="w-full py-2 rounded-xl border border-dashed border-white/20 text-xs text-white/40 hover:text-white/60 transition-colors">
+          className="w-full py-2 rounded-xl border border-dashed border-gray-200 text-xs text-gray-400 hover:text-gray-8000 transition-colors">
           ↺ Regenerate different names
         </button>
       )}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

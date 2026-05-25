@@ -36,13 +36,13 @@ export default function AISummarizerClient() {
       <div className="flex gap-2">
         {(["short","medium","detailed"] as const).map(m => (
           <button key={m} onClick={() => setMode(m)}
-            className={`flex-1 py-2 rounded-xl text-sm font-medium capitalize transition-colors ${mode===m?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>{m}</button>
+            className={`flex-1 py-2 rounded-xl text-sm font-medium capitalize transition-colors ${mode===m?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>{m}</button>
         ))}
       </div>
       <textarea rows={7} value={text} onChange={e=>setText(e.target.value)}
         placeholder="Paste the text you want to summarize..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50 resize-none"/>
-      <div className="flex items-center justify-between text-xs text-white/30">
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400 resize-none"/>
+      <div className="flex items-center justify-between text-xs text-gray-400">
         <span>{text.split(/\s+/).filter(Boolean).length} words · {text.match(/[.!?]+/g)?.length||0} sentences</span>
       </div>
       <button onClick={summarize} disabled={!text.trim()}
@@ -52,13 +52,13 @@ export default function AISummarizerClient() {
       {result && (
         <div>
           <div className="flex justify-between mb-2">
-            <label className="text-xs text-white/40">Summary ({result.split(/\s+/).length} words)</label>
-            <button onClick={copy} className={`text-xs transition-colors ${copied?"text-green-400":"text-blue-400"}`}>{copied?"✓ Copied":"Copy"}</button>
+            <label className="text-xs text-gray-400">Summary ({result.split(/\s+/).length} words)</label>
+            <button onClick={copy} className={`text-xs transition-colors ${copied?"text-emerald-700":"text-blue-600"}`}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          <div className="bg-white/5 border border-white/8 rounded-2xl p-5 text-sm text-white/80 leading-relaxed">{result}</div>
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 text-sm text-gray-800/80 leading-relaxed">{result}</div>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ 100% browser-based — no API, no data sent anywhere</p>
+      <p className="text-xs text-gray-300">✓ 100% browser-based — no API, no data sent anywhere</p>
     </div>
   );
 }

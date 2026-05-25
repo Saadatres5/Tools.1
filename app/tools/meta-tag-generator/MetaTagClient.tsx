@@ -22,18 +22,18 @@ export default function MetaTagClient() {
     <div className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {[["Page Title","title","e.g. Best Free PDF Tools"],["Meta Description","desc","150-160 characters recommended"],["Keywords","keywords","comma, separated, keywords"],["Author","author","Your name or brand"],["Canonical URL","canonical","https://example.com/page"]].map(([l,k,p])=>(
-          <div key={k}><label className="block text-xs text-white/50 mb-1">{l}</label>
+          <div key={k}><label className="block text-xs text-gray-8000 mb-1">{l}</label>
             <input value={f[k as keyof typeof f] as string} onChange={e=>update(k,e.target.value)} placeholder={p}
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white outline-none focus:border-blue-500/50"/></div>
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-blue-400"/></div>
         ))}
-        <div><label className="block text-xs text-white/50 mb-1">Robots</label>
-          <select value={f.robots} onChange={e=>update("robots",e.target.value)} className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white outline-none">
+        <div><label className="block text-xs text-gray-8000 mb-1">Robots</label>
+          <select value={f.robots} onChange={e=>update("robots",e.target.value)} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 outline-none">
             <option>index, follow</option><option>noindex, follow</option><option>index, nofollow</option><option>noindex, nofollow</option>
           </select></div>
       </div>
       <div className="flex gap-4">
         {[["og","Open Graph (Facebook/LinkedIn)"],["twitter","Twitter Cards"]].map(([k,l])=>(
-          <label key={k} className="flex items-center gap-2 cursor-pointer text-sm text-white/70">
+          <label key={k} className="flex items-center gap-2 cursor-pointer text-sm text-gray-600">
             <input type="checkbox" checked={f[k as "og"|"twitter"]} onChange={e=>update(k,e.target.checked)} className="accent-blue-500"/>
             {l}
           </label>
@@ -42,10 +42,10 @@ export default function MetaTagClient() {
       {f.title&&(
         <div>
           <div className="flex justify-between mb-2">
-            <label className="text-xs text-white/40">Generated Meta Tags</label>
-            <button onClick={copy} className="text-xs text-blue-400 hover:text-blue-300">Copy All</button>
+            <label className="text-xs text-gray-400">Generated Meta Tags</label>
+            <button onClick={copy} className="text-xs text-blue-600 hover:text-blue-300">Copy All</button>
           </div>
-          <pre className="bg-black/40 border border-white/10 rounded-xl p-4 text-xs text-green-400 font-mono overflow-auto whitespace-pre-wrap">{tags}</pre>
+          <pre className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-xs text-emerald-700 font-mono overflow-auto whitespace-pre-wrap">{tags}</pre>
         </div>
       )}
     </div>

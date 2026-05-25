@@ -49,12 +49,12 @@ export default function AIHashtagClient() {
       <div className="flex gap-2 flex-wrap">
         {platforms.map(p=>(
           <button key={p} onClick={()=>setPlatform(p)}
-            className={`px-3 py-1.5 rounded-xl text-xs transition-colors ${platform===p?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>{p}</button>
+            className={`px-3 py-1.5 rounded-xl text-xs transition-colors ${platform===p?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>{p}</button>
         ))}
       </div>
       <input value={topic} onChange={e=>setTopic(e.target.value)} onKeyDown={e=>e.key==="Enter"&&generate()}
         placeholder="e.g. travel photography, fitness motivation, tech startup"
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-pink-500/50"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-pink-500/50"/>
       <button onClick={generate} disabled={!topic.trim()}
         className="w-full py-3 rounded-xl bg-pink-600 hover:bg-pink-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         #️⃣ Generate Hashtags
@@ -62,8 +62,8 @@ export default function AIHashtagClient() {
       {result.length > 0 && (
         <div className="space-y-3">
           <div className="flex justify-between">
-            <label className="text-xs text-white/40">{result.length} hashtags for {platform}</label>
-            <button onClick={copy} className={`text-xs ${copied?"text-green-400":"text-blue-400"}`}>{copied?"✓ Copied All":"Copy All"}</button>
+            <label className="text-xs text-gray-400">{result.length} hashtags for {platform}</label>
+            <button onClick={copy} className={`text-xs ${copied?"text-emerald-700":"text-blue-600"}`}>{copied?"✓ Copied All":"Copy All"}</button>
           </div>
           <div className="flex flex-wrap gap-2">
             {result.map(h=>(
@@ -75,7 +75,7 @@ export default function AIHashtagClient() {
           </div>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

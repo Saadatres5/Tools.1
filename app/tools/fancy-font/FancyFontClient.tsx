@@ -15,12 +15,12 @@ export default function FancyFontClient() {
   return (
     <div className="space-y-4">
       <input value={text} onChange={e=>setText(e.target.value)} placeholder="Type your text here..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-blue-500/50 text-sm"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-blue-400 text-sm"/>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {FONTS.map(f=>{const out=f.fn(text||"Hello World");return(
-          <div key={f.name} className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
-            <div><p className="text-xs text-white/30 mb-1">{f.name}</p><p className="text-xl">{out}</p></div>
-            <button onClick={()=>copy(out)} className={`text-xs px-3 py-1.5 rounded-lg flex-shrink-0 ml-3 transition-colors ${copied===out?"bg-green-600 text-white":"bg-white/10 hover:bg-white/20 text-white/50"}`}>
+          <div key={f.name} className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div><p className="text-xs text-gray-400 mb-1">{f.name}</p><p className="text-xl">{out}</p></div>
+            <button onClick={()=>copy(out)} className={`text-xs px-3 py-1.5 rounded-lg flex-shrink-0 ml-3 transition-colors ${copied===out?"bg-green-600 text-gray-800":"bg-gray-100 hover:bg-gray-100 text-gray-8000"}`}>
               {copied===out?"✓":"Copy"}
             </button>
           </div>

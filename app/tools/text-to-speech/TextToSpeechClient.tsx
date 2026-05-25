@@ -33,29 +33,29 @@ export default function TextToSpeechClient() {
     <div className="space-y-4">
       <textarea rows={6} value={text} onChange={e => setText(e.target.value)}
         placeholder="Enter text to convert to speech..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50 resize-none"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400 resize-none"/>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {voices.length > 0 && (
           <div>
-            <label className="block text-xs text-white/50 mb-1">Voice</label>
+            <label className="block text-xs text-gray-8000 mb-1">Voice</label>
             <select value={voiceIdx} onChange={e => setVoiceIdx(+e.target.value)}
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none">
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none">
               {voices.slice(0,20).map((v,i) => <option key={i} value={i}>{v.name}</option>)}
             </select>
           </div>
         )}
         <div>
           <div className="flex justify-between mb-1">
-            <label className="text-xs text-white/50">Speed</label>
-            <span className="text-xs text-blue-400">{rate}x</span>
+            <label className="text-xs text-gray-8000">Speed</label>
+            <span className="text-xs text-blue-600">{rate}x</span>
           </div>
           <input type="range" min={0.5} max={2} step={0.1} value={rate}
             onChange={e => setRate(+e.target.value)} className="w-full accent-blue-500"/>
         </div>
         <div>
           <div className="flex justify-between mb-1">
-            <label className="text-xs text-white/50">Pitch</label>
-            <span className="text-xs text-blue-400">{pitch}</span>
+            <label className="text-xs text-gray-8000">Pitch</label>
+            <span className="text-xs text-blue-600">{pitch}</span>
           </div>
           <input type="range" min={0.5} max={2} step={0.1} value={pitch}
             onChange={e => setPitch(+e.target.value)} className="w-full accent-blue-500"/>
@@ -75,7 +75,7 @@ export default function TextToSpeechClient() {
           </div>
         )}
       </div>
-      <p className="text-xs text-white/25">Uses your browser&apos;s built-in speech synthesis. Quality depends on your OS voices.</p>
+      <p className="text-xs text-gray-400">Uses your browser&apos;s built-in speech synthesis. Quality depends on your OS voices.</p>
     </div>
   );
 }

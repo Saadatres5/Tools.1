@@ -66,36 +66,36 @@ export default function MathSolverClient() {
       <div className="flex flex-wrap gap-2">
         {EXAMPLES.map(e=>(
           <button key={e} onClick={()=>setExpr(e)}
-            className="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-white/50 transition-colors">{e}</button>
+            className="px-3 py-1.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-xs text-gray-8000 transition-colors">{e}</button>
         ))}
       </div>
       <div className="flex gap-2">
         <input value={expr} onChange={e=>setExpr(e.target.value)} onKeyDown={e=>e.key==="Enter"&&solve()}
           placeholder="Enter expression e.g. 25% of 400, √144, (5+3)*2"
-          className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50 font-mono"/>
+          className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400 font-mono"/>
         <button onClick={solve} className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-medium text-sm transition-colors">=</button>
       </div>
-      {error && <p className="text-red-400 text-sm bg-red-500/10 p-3 rounded-xl">❌ {error}</p>}
+      {error && <p className="text-red-600 text-sm bg-red-50 p-3 rounded-xl">❌ {error}</p>}
       {result && (
         <div className="p-5 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-center">
-          <p className="text-white/40 text-sm mb-1 font-mono">{expr}</p>
-          <p className="text-4xl font-bold text-blue-400 font-mono">= {result}</p>
+          <p className="text-gray-400 text-sm mb-1 font-mono">{expr}</p>
+          <p className="text-4xl font-bold text-blue-600 font-mono">= {result}</p>
         </div>
       )}
       {history.length > 1 && (
         <div>
-          <p className="text-xs text-white/30 mb-2">History</p>
+          <p className="text-xs text-gray-400 mb-2">History</p>
           <div className="space-y-1 max-h-32 overflow-auto">
             {history.slice(1).map((h,i)=>(
               <button key={i} onClick={()=>setExpr(h.expr)}
-                className="w-full flex justify-between px-3 py-1.5 rounded-lg bg-white/3 hover:bg-white/5 text-xs text-white/50 font-mono">
-                <span>{h.expr}</span><span className="text-blue-400">= {h.result}</span>
+                className="w-full flex justify-between px-3 py-1.5 rounded-lg bg-gray-50 hover:bg-gray-50 text-xs text-gray-8000 font-mono">
+                <span>{h.expr}</span><span className="text-blue-600">= {h.result}</span>
               </button>
             ))}
           </div>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Browser-based — supports arithmetic, percentages, powers, square roots</p>
+      <p className="text-xs text-gray-300">✓ Browser-based — supports arithmetic, percentages, powers, square roots</p>
     </div>
   );
 }

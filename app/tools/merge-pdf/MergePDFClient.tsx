@@ -44,33 +44,33 @@ export default function MergePDFClient() {
       <FileDropZone accept=".pdf,application/pdf" multiple emoji="📄" label="Drop PDF files here" hint="You can select multiple PDFs at once" onFiles={handleFiles} />
       {files.length > 0 && (
         <div className="space-y-2">
-          <p className="text-sm text-white/50">{files.length} file{files.length>1?"s":""} selected — drag to reorder</p>
+          <p className="text-sm text-gray-8000">{files.length} file{files.length>1?"s":""} selected — drag to reorder</p>
           {files.map((f,i) => (
-            <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
-              <button onClick={()=>moveUp(i)} disabled={i===0} className="text-white/30 hover:text-white disabled:opacity-20 text-xs px-1">↑</button>
-              <span className="text-white/40 text-xs w-5">{i+1}</span>
+            <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-200">
+              <button onClick={()=>moveUp(i)} disabled={i===0} className="text-gray-400 hover:text-gray-800 disabled:opacity-20 text-xs px-1">↑</button>
+              <span className="text-gray-400 text-xs w-5">{i+1}</span>
               <span className="text-sm flex-1 truncate">{f.name}</span>
-              <span className="text-white/30 text-xs">{formatBytes(f.size)}</span>
-              <button onClick={()=>removeFile(i)} className="text-white/30 hover:text-red-400 text-xs">✕</button>
+              <span className="text-gray-400 text-xs">{formatBytes(f.size)}</span>
+              <button onClick={()=>removeFile(i)} className="text-gray-400 hover:text-red-600 text-xs">✕</button>
             </div>
           ))}
         </div>
       )}
       {status==="processing" && <ProgressBar progress={progress} label="Merging PDFs..." />}
       {status==="done" && (
-        <div className="p-4 rounded-2xl bg-green-500/10 border border-green-500/20 space-y-3">
-          <p className="text-green-400 font-semibold">✅ PDFs merged successfully!</p>
+        <div className="p-4 rounded-2xl bg-green-50 border border-green-200 space-y-3">
+          <p className="text-emerald-700 font-semibold">✅ PDFs merged successfully!</p>
           <div className="flex gap-3">
             <button onClick={download} className="flex-1 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-medium text-sm transition-colors">⬇️ Download Merged PDF</button>
-            <button onClick={reset} className="px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-sm">New</button>
+            <button onClick={reset} className="px-4 py-3 rounded-xl bg-gray-50 hover:bg-gray-100 text-sm">New</button>
           </div>
         </div>
       )}
-      {status==="error" && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">❌ Failed to merge. Make sure all files are valid PDFs.</div>}
+      {status==="error" && <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">❌ Failed to merge. Make sure all files are valid PDFs.</div>}
       {status==="idle" && files.length >= 2 && (
         <button onClick={merge} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold transition-colors">🔗 Merge {files.length} PDFs</button>
       )}
-      {files.length === 1 && <p className="text-center text-white/40 text-sm">Add at least one more PDF to merge</p>}
+      {files.length === 1 && <p className="text-center text-gray-400 text-sm">Add at least one more PDF to merge</p>}
     </div>
   );
 }

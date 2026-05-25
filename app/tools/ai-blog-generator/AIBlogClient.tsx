@@ -109,12 +109,12 @@ export default function AIBlogClient() {
       <div className="flex gap-2">
         {Object.keys(BLOG_TYPES).map(t=>(
           <button key={t} onClick={()=>setType(t)}
-            className={`flex-1 py-2 rounded-xl text-xs font-medium transition-colors ${type===t?"bg-purple-600":"bg-white/5 hover:bg-white/10"}`}>{t}</button>
+            className={`flex-1 py-2 rounded-xl text-xs font-medium transition-colors ${type===t?"bg-purple-600":"bg-gray-50 hover:bg-gray-100"}`}>{t}</button>
         ))}
       </div>
       <input value={topic} onChange={e=>setTopic(e.target.value)} onKeyDown={e=>e.key==="Enter"&&generate()}
         placeholder="e.g. meditation for beginners, email marketing, learning guitar"
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-purple-500/50"/>
       <button onClick={generate} disabled={!topic.trim()}
         className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         📝 Generate Blog Post
@@ -122,13 +122,13 @@ export default function AIBlogClient() {
       {result && (
         <div>
           <div className="flex justify-between mb-2">
-            <label className="text-xs text-white/40">{wordCount} words</label>
-            <button onClick={copy} className={`text-xs ${copied?"text-green-400":"text-blue-400"}`}>{copied?"✓ Copied":"Copy"}</button>
+            <label className="text-xs text-gray-400">{wordCount} words</label>
+            <button onClick={copy} className={`text-xs ${copied?"text-emerald-700":"text-blue-600"}`}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          <div className="bg-white/5 border border-white/8 rounded-2xl p-5 text-sm text-white/80 leading-relaxed whitespace-pre-wrap max-h-96 overflow-auto">{result}</div>
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 text-sm text-gray-800/80 leading-relaxed whitespace-pre-wrap max-h-96 overflow-auto">{result}</div>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

@@ -57,7 +57,7 @@ export default function AIMeetingNotesClient() {
         value={text}
         onChange={e => setText(e.target.value)}
         placeholder="Paste your meeting transcript or raw notes here..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-violet-500/50 resize-none"
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-violet-500/50 resize-none"
       />
       <button
         onClick={process}
@@ -69,7 +69,7 @@ export default function AIMeetingNotesClient() {
       {result && (
         <div className="space-y-3">
           <div className="flex justify-end">
-            <button onClick={copy} className={`text-xs ${copied ? "text-green-400" : "text-blue-400"}`}>
+            <button onClick={copy} className={`text-xs ${copied ? "text-emerald-700" : "text-blue-600"}`}>
               {copied ? "✓ Copied All" : "Copy All"}
             </button>
           </div>
@@ -79,7 +79,7 @@ export default function AIMeetingNotesClient() {
                 <h3 className={`text-xs font-semibold text-${color}-400 mb-2`}>{label}</h3>
                 <ol className="space-y-1">
                   {items.map((item, i) => (
-                    <li key={i} className="text-sm text-white/70 flex gap-2">
+                    <li key={i} className="text-sm text-gray-600 flex gap-2">
                       <span className={`text-${color}-400 flex-shrink-0`}>{i + 1}.</span>
                       {item}
                     </li>
@@ -90,7 +90,7 @@ export default function AIMeetingNotesClient() {
           )}
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Browser-based — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Browser-based — no API key required</p>
     </div>
   );
 }

@@ -26,18 +26,18 @@ export default function AIWriterClient() {
   return (
     <div className="space-y-4">
       <div>
-        <label className="block text-xs text-white/50 mb-2">Content Format</label>
+        <label className="block text-xs text-gray-8000 mb-2">Content Format</label>
         <select value={format} onChange={e=>setFormat(e.target.value)}
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-purple-500/50">
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-purple-500/50">
           {Object.keys(TEMPLATES).map(t=><option key={t} value={t}>{t}</option>)}
         </select>
       </div>
       <div>
-        <label className="block text-xs text-white/50 mb-1">Topic or keyword</label>
+        <label className="block text-xs text-gray-8000 mb-1">Topic or keyword</label>
         <input value={topic} onChange={e=>setTopic(e.target.value)}
           onKeyDown={e=>e.key==="Enter"&&generate()}
           placeholder="e.g. digital marketing, healthy eating, web development"
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50"/>
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-purple-500/50"/>
       </div>
       <button onClick={generate} disabled={!topic.trim()}
         className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-40 font-semibold text-sm transition-colors">
@@ -46,14 +46,14 @@ export default function AIWriterClient() {
       {result && (
         <div>
           <div className="flex justify-between mb-2">
-            <label className="text-xs text-white/40">Generated Content</label>
-            <button onClick={copy} className={`text-xs ${copied?"text-green-400":"text-blue-400"}`}>{copied?"✓ Copied":"Copy"}</button>
+            <label className="text-xs text-gray-400">Generated Content</label>
+            <button onClick={copy} className={`text-xs ${copied?"text-emerald-700":"text-blue-600"}`}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          <div className="bg-white/5 border border-white/8 rounded-2xl p-5 text-sm text-white/80 leading-relaxed whitespace-pre-wrap">{result}</div>
-          <button onClick={generate} className="mt-2 text-xs text-white/30 hover:text-white/60">↺ Regenerate</button>
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 text-sm text-gray-800/80 leading-relaxed whitespace-pre-wrap">{result}</div>
+          <button onClick={generate} className="mt-2 text-xs text-gray-400 hover:text-gray-8000">↺ Regenerate</button>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ 100% free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ 100% free — no API key required</p>
     </div>
   );
 }

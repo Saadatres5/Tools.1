@@ -39,15 +39,15 @@ export default function SpeedTestClient() {
           <div key={l as string} className={`p-6 rounded-2xl bg-${c}-500/10 border border-${c}-500/20`}>
             <div className="text-3xl mb-2">{e}</div>
             <div className={`text-2xl font-bold text-${c}-400`}>{v}</div>
-            <div className="text-white/40 text-xs mt-1">{l}</div>
+            <div className="text-gray-400 text-xs mt-1">{l}</div>
           </div>
         ))}
       </div>
       {download&&<div className={`text-lg font-semibold text-${getColor(download)}-400`}>Rating: {getRating(download)}</div>}
       {status==="testing"&&(
         <div className="space-y-2">
-          <div className="w-full bg-white/10 rounded-full h-2"><div className="h-2 bg-blue-500 rounded-full transition-all duration-500" style={{width:`${progress}%`}}/></div>
-          <p className="text-white/40 text-sm animate-pulse">Testing your connection...</p>
+          <div className="w-full bg-gray-100 rounded-full h-2"><div className="h-2 bg-blue-500 rounded-full transition-all duration-500" style={{width:`${progress}%`}}/></div>
+          <p className="text-gray-400 text-sm animate-pulse">Testing your connection...</p>
         </div>
       )}
       <button onClick={test} disabled={status==="testing"} className="px-8 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-50 font-semibold transition-colors">

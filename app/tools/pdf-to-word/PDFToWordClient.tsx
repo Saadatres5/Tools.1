@@ -54,25 +54,25 @@ export default function PDFToWordClient() {
           onFiles={f => { setFile(f[0]); setStatus("idle"); }} />
       ) : (
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+          <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
             <p className="font-medium text-sm">{file.name}</p>
-            <button onClick={reset} className="text-white/30 hover:text-white/60 text-sm">✕</button>
+            <button onClick={reset} className="text-gray-400 hover:text-gray-8000 text-sm">✕</button>
           </div>
           {status === "processing" && <ProgressBar progress={progress} label="Extracting text from PDF..." />}
           {status === "done" && text && (
             <div className="space-y-3">
-              <p className="text-green-400 text-sm font-semibold">✅ Text extracted successfully!</p>
-              <div className="bg-white/5 border border-white/10 rounded-xl p-4 text-sm text-white/70 max-h-48 overflow-auto whitespace-pre-wrap font-mono text-xs">
+              <p className="text-emerald-700 text-sm font-semibold">✅ Text extracted successfully!</p>
+              <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-sm text-gray-600 max-h-48 overflow-auto whitespace-pre-wrap font-mono text-xs">
                 {text.slice(0, 2000)}{text.length > 2000 ? "..." : ""}
               </div>
               <div className="flex gap-3">
                 <button onClick={download} className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium">⬇️ Download .txt</button>
-                <button onClick={() => navigator.clipboard.writeText(text)} className="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm">Copy</button>
-                <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button>
+                <button onClick={() => navigator.clipboard.writeText(text)} className="px-4 py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-sm">Copy</button>
+                <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button>
               </div>
             </div>
           )}
-          {status === "error" && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">❌ Failed. Try a text-based PDF.</div>}
+          {status === "error" && <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">❌ Failed. Try a text-based PDF.</div>}
           {status === "idle" && <button onClick={convert} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold text-sm transition-colors">📝 Extract Text from PDF</button>}
         </div>
       )}

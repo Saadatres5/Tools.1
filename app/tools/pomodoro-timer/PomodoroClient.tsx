@@ -40,7 +40,7 @@ export default function PomodoroClient() {
       <div className="flex gap-2 justify-center">
         {(Object.keys(MODES) as ModeKey[]).map(m => (
           <button key={m} onClick={() => setMode(m)}
-            className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${mode===m?`bg-${colors[m]}-600`:"bg-white/5 hover:bg-white/10"}`}>
+            className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors ${mode===m?`bg-${colors[m]}-600`:"bg-gray-50 hover:bg-gray-100"}`}>
             {labels[m]}
           </button>
         ))}
@@ -57,7 +57,7 @@ export default function PomodoroClient() {
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-4xl font-mono font-bold">{fmt(secs)}</span>
-          <span className="text-white/40 text-xs mt-1">{labels[mode]}</span>
+          <span className="text-gray-400 text-xs mt-1">{labels[mode]}</span>
         </div>
       </div>
       <div className="flex gap-3 justify-center">
@@ -66,9 +66,9 @@ export default function PomodoroClient() {
           {running ? "⏸ Pause" : "▶ Start"}
         </button>
         <button onClick={() => { setSecs(MODES[mode]*60); setRunning(false); }}
-          className="px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">↺</button>
+          className="px-4 py-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors">↺</button>
       </div>
-      <p className="text-white/40 text-sm">Sessions today: <span className="text-white font-semibold">{sessions}</span></p>
+      <p className="text-gray-400 text-sm">Sessions today: <span className="text-gray-800 font-semibold">{sessions}</span></p>
     </div>
   );
 }

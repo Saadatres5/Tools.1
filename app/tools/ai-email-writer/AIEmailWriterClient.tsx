@@ -85,17 +85,17 @@ export default function AIEmailWriterClient() {
   return (
     <div className="space-y-4">
       <div>
-        <label className="block text-xs text-white/50 mb-2">Email Type</label>
+        <label className="block text-xs text-gray-8000 mb-2">Email Type</label>
         <select value={type} onChange={e=>setType(e.target.value)}
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-blue-500/50">
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-blue-400">
           {Object.keys(EMAIL_TEMPLATES).map(t=><option key={t}>{t}</option>)}
         </select>
       </div>
       <div>
-        <label className="block text-xs text-white/50 mb-1">Context or purpose</label>
+        <label className="block text-xs text-gray-8000 mb-1">Context or purpose</label>
         <input value={context} onChange={e=>setContext(e.target.value)} onKeyDown={e=>e.key==="Enter"&&generate()}
           placeholder="e.g. job interview follow-up, project proposal, Q3 report"
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50"/>
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400"/>
       </div>
       <button onClick={generate} disabled={!context.trim()}
         className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-semibold text-sm transition-colors">
@@ -104,13 +104,13 @@ export default function AIEmailWriterClient() {
       {result && (
         <div>
           <div className="flex justify-between mb-2">
-            <label className="text-xs text-white/40">Generated Email</label>
-            <button onClick={copy} className={`text-xs ${copied?"text-green-400":"text-blue-400"}`}>{copied?"✓ Copied":"Copy"}</button>
+            <label className="text-xs text-gray-400">Generated Email</label>
+            <button onClick={copy} className={`text-xs ${copied?"text-emerald-700":"text-blue-600"}`}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          <div className="bg-white/5 border border-white/8 rounded-2xl p-5 text-sm text-white/80 leading-relaxed whitespace-pre-wrap font-mono">{result}</div>
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 text-sm text-gray-800/80 leading-relaxed whitespace-pre-wrap font-mono">{result}</div>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

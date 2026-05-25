@@ -27,23 +27,23 @@ export default function AITweetClient() {
     <div className="space-y-4">
       <input value={topic} onChange={e=>setTopic(e.target.value)} onKeyDown={e=>e.key==="Enter"&&generate()}
         placeholder="e.g. productivity, AI tools, personal finance"
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-sky-500/50"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-sky-500/50"/>
       <button onClick={generate} disabled={!topic.trim()}
         className="w-full py-3 rounded-xl bg-sky-600 hover:bg-sky-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         🐦 Generate Tweets
       </button>
       {results.map((r,i) => (
-        <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/8 space-y-2">
-          <p className="text-sm text-white/80 leading-relaxed whitespace-pre-wrap">{r}</p>
+        <div key={i} className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
+          <p className="text-sm text-gray-800/80 leading-relaxed whitespace-pre-wrap">{r}</p>
           <div className="flex items-center justify-between">
-            <span className={`text-xs ${r.length>280?"text-red-400":"text-white/30"}`}>{r.length}/280</span>
-            <button onClick={()=>copy(r)} className={`text-xs px-3 py-1 rounded-lg transition-colors ${copied===r?"bg-green-600 text-white":"bg-white/10 hover:bg-white/20 text-white/50"}`}>
+            <span className={`text-xs ${r.length>280?"text-red-600":"text-gray-400"}`}>{r.length}/280</span>
+            <button onClick={()=>copy(r)} className={`text-xs px-3 py-1 rounded-lg transition-colors ${copied===r?"bg-green-600 text-gray-800":"bg-gray-100 hover:bg-gray-100 text-gray-8000"}`}>
               {copied===r?"✓ Copied":"Copy"}
             </button>
           </div>
         </div>
       ))}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

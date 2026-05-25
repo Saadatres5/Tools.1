@@ -55,12 +55,12 @@ export default function AIResumeBuilderClient() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
         {FIELDS.map(({ key, label, placeholder }) => (
           <div key={key}>
-            <label className="block text-xs text-white/50 mb-1">{label}</label>
+            <label className="block text-xs text-gray-8000 mb-1">{label}</label>
             <input
               value={data[key]}
               onChange={e => upd(key, e.target.value)}
               placeholder={placeholder}
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-blue-500/50 placeholder-white/20"
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none focus:border-blue-400 placeholder-gray-300"
             />
           </div>
         ))}
@@ -68,8 +68,8 @@ export default function AIResumeBuilderClient() {
 
       {(["summary", "experience", "skills", "education"] as const).map(k => (
         <div key={k}>
-          <label className="block text-xs text-white/50 mb-1 capitalize">
-            {k} <span className="text-white/20">(optional — auto-filled if blank)</span>
+          <label className="block text-xs text-gray-8000 mb-1 capitalize">
+            {k} <span className="text-gray-300">(optional — auto-filled if blank)</span>
           </label>
           <textarea
             rows={k === "experience" ? 4 : 2}
@@ -80,7 +80,7 @@ export default function AIResumeBuilderClient() {
               k === "experience" ? "[Company] | [Role] | [Year] – Present\n• Achievement 1\n• Achievement 2" :
               undefined
             }
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none focus:border-blue-500/50 resize-none placeholder-white/20"
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none focus:border-blue-400 resize-none placeholder-gray-300"
           />
         </div>
       ))}
@@ -102,13 +102,13 @@ export default function AIResumeBuilderClient() {
             <button onClick={download} className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium">
               ⬇️ Download .txt
             </button>
-            <button onClick={copy} className={`px-4 py-2.5 rounded-xl text-sm transition-colors ${copied ? "bg-green-600 text-white" : "bg-white/5 hover:bg-white/10"}`}>
+            <button onClick={copy} className={`px-4 py-2.5 rounded-xl text-sm transition-colors ${copied ? "bg-green-600 text-gray-800" : "bg-gray-50 hover:bg-gray-100"}`}>
               {copied ? "✓ Copied" : "Copy"}
             </button>
           </div>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

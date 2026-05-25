@@ -37,24 +37,24 @@ export default function CurrencyClient() {
   return (
     <div className="space-y-4 max-w-md mx-auto">
       <div>
-        <label className="block text-xs text-white/50 mb-1">Amount</label>
+        <label className="block text-xs text-gray-8000 mb-1">Amount</label>
         <input type="number" value={amount} onChange={e=>{setAmount(e.target.value);setResult(null);}}
           placeholder="Enter amount"
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-lg font-semibold outline-none focus:border-blue-500/50"/>
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 text-lg font-semibold outline-none focus:border-blue-400"/>
       </div>
       <div className="flex items-center gap-3">
         <div className="flex-1">
-          <label className="block text-xs text-white/50 mb-1">From</label>
+          <label className="block text-xs text-gray-8000 mb-1">From</label>
           <select value={from} onChange={e=>{setFrom(e.target.value);setResult(null);}}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none">
             {CURRENCIES.map(c=><option key={c} value={c}>{c}</option>)}
           </select>
         </div>
-        <button onClick={swap} className="mt-5 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-lg">⇄</button>
+        <button onClick={swap} className="mt-5 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors text-lg">⇄</button>
         <div className="flex-1">
-          <label className="block text-xs text-white/50 mb-1">To</label>
+          <label className="block text-xs text-gray-8000 mb-1">To</label>
           <select value={to} onChange={e=>{setTo(e.target.value);setResult(null);}}
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none">
             {CURRENCIES.map(c=><option key={c} value={c}>{c}</option>)}
           </select>
         </div>
@@ -63,13 +63,13 @@ export default function CurrencyClient() {
         className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         {loading ? "Fetching rates..." : "💱 Convert"}
       </button>
-      {error && <p className="text-red-400 text-sm bg-red-500/10 p-3 rounded-xl">{error}</p>}
+      {error && <p className="text-red-600 text-sm bg-red-50 p-3 rounded-xl">{error}</p>}
       {result !== null && rate !== null && (
         <div className="p-6 rounded-2xl bg-blue-500/10 border border-blue-500/20 space-y-2 text-center">
-          <p className="text-white/50 text-sm">{amount} {from} =</p>
-          <p className="text-4xl font-bold text-blue-400">{result.toLocaleString()}</p>
-          <p className="text-xl font-semibold text-white">{to}</p>
-          <p className="text-white/30 text-xs">1 {from} = {rate} {to} · Updated {lastUpdated}</p>
+          <p className="text-gray-8000 text-sm">{amount} {from} =</p>
+          <p className="text-4xl font-bold text-blue-600">{result.toLocaleString()}</p>
+          <p className="text-xl font-semibold text-gray-800">{to}</p>
+          <p className="text-gray-400 text-xs">1 {from} = {rate} {to} · Updated {lastUpdated}</p>
         </div>
       )}
     </div>

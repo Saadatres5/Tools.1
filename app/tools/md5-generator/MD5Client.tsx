@@ -49,17 +49,17 @@ export default function MD5Client() {
   return (
     <div className="space-y-4">
       <textarea rows={4} value={input} onChange={e=>setInput(e.target.value)} placeholder="Enter text to generate MD5 hash..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50 resize-none" />
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400 resize-none" />
       <button onClick={generate} disabled={!input} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-medium text-sm transition-colors">
         #️⃣ Generate MD5 Hash
       </button>
       {hash && (
-        <div className="p-4 rounded-xl bg-black/40 border border-white/10">
+        <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
           <div className="flex justify-between mb-2">
-            <span className="text-xs text-white/40">MD5 Hash</span>
-            <button onClick={copy} className={`text-xs transition-colors ${copied?"text-green-400":"text-blue-400"}`}>{copied?"✓ Copied":"Copy"}</button>
+            <span className="text-xs text-gray-400">MD5 Hash</span>
+            <button onClick={copy} className={`text-xs transition-colors ${copied?"text-emerald-700":"text-blue-600"}`}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          <code className="text-green-400 font-mono text-sm break-all">{hash}</code>
+          <code className="text-emerald-700 font-mono text-sm break-all">{hash}</code>
         </div>
       )}
     </div>

@@ -59,12 +59,12 @@ export default function AIParaphraserClient() {
       <div className="flex flex-wrap gap-2">
         {styles.map(s => (
           <button key={s} onClick={() => setStyle(s)}
-            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-colors ${style===s?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>{s}</button>
+            className={`px-3 py-1.5 rounded-xl text-xs font-medium transition-colors ${style===s?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>{s}</button>
         ))}
       </div>
       <textarea rows={6} value={text} onChange={e=>setText(e.target.value)}
         placeholder="Paste the text you want to paraphrase..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50 resize-none"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400 resize-none"/>
       <button onClick={() => setResult(paraphrase(text, style))} disabled={!text.trim()}
         className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         🔄 Paraphrase
@@ -72,13 +72,13 @@ export default function AIParaphraserClient() {
       {result && (
         <div>
           <div className="flex justify-between mb-2">
-            <label className="text-xs text-white/40">Paraphrased Text</label>
-            <button onClick={copy} className={`text-xs ${copied?"text-green-400":"text-blue-400"}`}>{copied?"✓ Copied":"Copy"}</button>
+            <label className="text-xs text-gray-400">Paraphrased Text</label>
+            <button onClick={copy} className={`text-xs ${copied?"text-emerald-700":"text-blue-600"}`}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          <div className="bg-white/5 border border-white/8 rounded-2xl p-5 text-sm text-white/80 leading-relaxed whitespace-pre-wrap">{result}</div>
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 text-sm text-gray-800/80 leading-relaxed whitespace-pre-wrap">{result}</div>
         </div>
       )}
-      <p className="text-xs text-white/20">✓ 100% browser-based — no API required</p>
+      <p className="text-xs text-gray-300">✓ 100% browser-based — no API required</p>
     </div>
   );
 }

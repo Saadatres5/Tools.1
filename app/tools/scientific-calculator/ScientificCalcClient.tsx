@@ -47,9 +47,9 @@ export default function ScientificCalcClient() {
   const numBtns=["7","8","9","÷","4","5","6","×","1","2","3","-","0",".","=","+"];
   return (
     <div className="max-w-xs mx-auto space-y-3">
-      <div className="p-4 rounded-2xl bg-black/60 border border-white/10 text-right">
-        <div className="text-white/30 text-xs h-4">{prev} {op}</div>
-        <div className="text-3xl font-mono text-white mt-1 truncate">{display}</div>
+      <div className="p-4 rounded-2xl bg-black/60 border border-gray-200 text-right">
+        <div className="text-gray-400 text-xs h-4">{prev} {op}</div>
+        <div className="text-3xl font-mono text-gray-800 mt-1 truncate">{display}</div>
       </div>
       <div className="space-y-2">
         {sciRows.map((row,i)=>(
@@ -73,8 +73,8 @@ export default function ScientificCalcClient() {
               else press(b);
             }} className={`py-3 rounded-xl text-sm font-medium transition-colors ${
               b==="="?"bg-blue-600 hover:bg-blue-700":
-              ["+","-","×","÷"].includes(b)?"bg-white/10 hover:bg-white/15 text-blue-400":
-              "bg-white/5 hover:bg-white/10"
+              ["+","-","×","÷"].includes(b)?"bg-gray-100 hover:bg-gray-100 text-blue-600":
+              "bg-gray-50 hover:bg-gray-100"
             }`}>
               {b}
             </button>

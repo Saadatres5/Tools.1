@@ -20,14 +20,14 @@ export default function PercentageClient() {
     <div className="space-y-4 max-w-lg mx-auto">
       <div className="grid grid-cols-2 gap-2">
         {modes.map((m,i)=>(
-          <button key={i} onClick={()=>{setMode(i);setResult(null);}} className={`py-2 px-3 rounded-xl text-xs transition-colors ${mode===i?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>{m}</button>
+          <button key={i} onClick={()=>{setMode(i);setResult(null);}} className={`py-2 px-3 rounded-xl text-xs transition-colors ${mode===i?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>{m}</button>
         ))}
       </div>
       <div className="grid grid-cols-2 gap-3">
-        <div><label className="block text-xs text-white/50 mb-1">Value X</label>
-          <input type="number" value={a} onChange={e=>setA(e.target.value)} placeholder="e.g. 25" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-blue-500/50 text-sm"/></div>
-        <div><label className="block text-xs text-white/50 mb-1">Value Y</label>
-          <input type="number" value={b} onChange={e=>setB(e.target.value)} placeholder="e.g. 200" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-blue-500/50 text-sm"/></div>
+        <div><label className="block text-xs text-gray-8000 mb-1">Value X</label>
+          <input type="number" value={a} onChange={e=>setA(e.target.value)} placeholder="e.g. 25" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-blue-400 text-sm"/></div>
+        <div><label className="block text-xs text-gray-8000 mb-1">Value Y</label>
+          <input type="number" value={b} onChange={e=>setB(e.target.value)} placeholder="e.g. 200" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-blue-400 text-sm"/></div>
       </div>
       <button onClick={calc} disabled={!a||!b} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-semibold text-sm">Calculate</button>
       {result&&<div className="p-5 rounded-2xl bg-blue-500/10 border border-blue-500/20 text-blue-300 font-semibold text-center text-lg">{result}</div>}

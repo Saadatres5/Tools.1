@@ -33,16 +33,16 @@ export default function QRCodeClient() {
       <div className="flex flex-wrap gap-2">
         {types.map(([l,v]) => (
           <button key={l} onClick={() => setText(v)}
-            className="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-white/60 transition-colors">{l}</button>
+            className="px-3 py-1.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-xs text-gray-8000 transition-colors">{l}</button>
         ))}
       </div>
       <textarea rows={3} value={text} onChange={e => setText(e.target.value)}
         placeholder="Enter text, URL, email, or any content..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-blue-500/50 resize-none"/>
-      <div className="flex items-center gap-3 text-sm text-white/60">
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-blue-400 resize-none"/>
+      <div className="flex items-center gap-3 text-sm text-gray-8000">
         <label>Size:</label>
         <select value={size} onChange={e => setSize(+e.target.value)}
-          className="bg-white/5 border border-white/10 rounded-lg px-2 py-1 text-sm text-white outline-none">
+          className="bg-gray-50 border border-gray-200 rounded-lg px-2 py-1 text-sm text-gray-800 outline-none">
           {[128,256,512].map(s => <option key={s} value={s}>{s}px</option>)}
         </select>
       </div>

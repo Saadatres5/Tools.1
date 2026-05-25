@@ -60,33 +60,33 @@ export default function AIPDFSummarizerClient() {
         <FileDropZone accept=".pdf,application/pdf" emoji="🤖" label="Drop your PDF here to summarize" onFiles={f=>{setFile(f[0]);setStatus("idle");}}/>
       ) : (
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+          <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
             <p className="font-medium text-sm">{file.name}</p>
-            <button onClick={reset} className="text-white/30 hover:text-white/60 text-sm">✕</button>
+            <button onClick={reset} className="text-gray-400 hover:text-gray-8000 text-sm">✕</button>
           </div>
           <div className="flex gap-2">
             {(["short","medium","detailed"] as const).map(m=>(
               <button key={m} onClick={()=>setMode(m)}
-                className={`flex-1 py-2 rounded-xl text-xs capitalize transition-colors ${mode===m?"bg-purple-600":"bg-white/5 hover:bg-white/10"}`}>{m}</button>
+                className={`flex-1 py-2 rounded-xl text-xs capitalize transition-colors ${mode===m?"bg-purple-600":"bg-gray-50 hover:bg-gray-100"}`}>{m}</button>
             ))}
           </div>
           {status==="processing" && <ProgressBar progress={progress} label="Extracting and summarizing PDF..."/>}
           {status==="done" && summary && (
             <div className="space-y-3">
-              <p className="text-green-400 text-sm font-semibold">✅ Summary ready!</p>
-              <div className="bg-white/5 border border-white/8 rounded-2xl p-5 text-sm text-white/80 leading-relaxed">{summary}</div>
+              <p className="text-emerald-700 text-sm font-semibold">✅ Summary ready!</p>
+              <div className="bg-gray-50 border border-gray-200 rounded-2xl p-5 text-sm text-gray-800/80 leading-relaxed">{summary}</div>
               <div className="flex gap-3">
                 <button onClick={regenerate} className="flex-1 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-sm">↺ Re-summarize</button>
-                <button onClick={()=>navigator.clipboard.writeText(summary)} className="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm">Copy</button>
-                <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button>
+                <button onClick={()=>navigator.clipboard.writeText(summary)} className="px-4 py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-sm">Copy</button>
+                <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button>
               </div>
             </div>
           )}
-          {status==="error" && <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">❌ Could not read this PDF. Try a text-based PDF.</div>}
+          {status==="error" && <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">❌ Could not read this PDF. Try a text-based PDF.</div>}
           {status==="idle" && <button onClick={process} className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 font-semibold text-sm transition-colors">🤖 Summarize PDF</button>}
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Browser-based extractive summarization — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Browser-based extractive summarization — no API key required</p>
     </div>
   );
 }

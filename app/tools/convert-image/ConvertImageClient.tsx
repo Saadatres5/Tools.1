@@ -28,24 +28,24 @@ export default function ConvertImageClient() {
     <div className="space-y-4">
       {!file?<FileDropZone accept="image/*" emoji="🔄" label="Drop your image here" onFiles={f=>{setFile(f[0]);setResult("");}}/>:(
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
-            <div><p className="font-medium text-sm">{file.name}</p><p className="text-xs text-white/40">{fmt(file.size)}</p></div>
-            <button onClick={reset} className="text-white/30 hover:text-white/60 text-sm">✕</button>
+          <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div><p className="font-medium text-sm">{file.name}</p><p className="text-xs text-gray-400">{fmt(file.size)}</p></div>
+            <button onClick={reset} className="text-gray-400 hover:text-gray-8000 text-sm">✕</button>
           </div>
-          <div><label className="block text-xs text-white/50 mb-2">Convert to</label>
+          <div><label className="block text-xs text-gray-8000 mb-2">Convert to</label>
             <div className="flex gap-2">
               {FORMATS.map(([l,v])=>(
-                <button key={v} onClick={()=>setFormat(v as typeof format)} className={`flex-1 py-2 rounded-xl text-sm transition-colors ${format===v?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>{l}</button>
+                <button key={v} onClick={()=>setFormat(v as typeof format)} className={`flex-1 py-2 rounded-xl text-sm transition-colors ${format===v?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>{l}</button>
               ))}
             </div>
           </div>
-          {format!=="image/png"&&<div><div className="flex justify-between mb-1"><label className="text-xs text-white/50">Quality</label><span className="text-xs text-blue-400">{quality}%</span></div>
+          {format!=="image/png"&&<div><div className="flex justify-between mb-1"><label className="text-xs text-gray-8000">Quality</label><span className="text-xs text-blue-600">{quality}%</span></div>
             <input type="range" min={10} max={100} value={quality} onChange={e=>setQuality(+e.target.value)} className="w-full accent-blue-500"/></div>}
           {result?(
-            <div className="p-4 rounded-2xl bg-green-500/10 border border-green-500/20 space-y-3">
-              <p className="text-green-400 font-semibold">✅ Converted! New size: {fmt(size)}</p>
+            <div className="p-4 rounded-2xl bg-green-50 border border-green-200 space-y-3">
+              <p className="text-emerald-700 font-semibold">✅ Converted! New size: {fmt(size)}</p>
               <div className="flex gap-3"><button onClick={download} className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium">⬇️ Download</button>
-              <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button></div>
+              <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button></div>
             </div>
           ):<button onClick={convert} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold text-sm transition-colors">🔄 Convert Image</button>}
         </div>

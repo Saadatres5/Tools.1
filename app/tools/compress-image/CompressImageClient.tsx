@@ -23,24 +23,24 @@ export default function CompressImageClient() {
     <div className="space-y-4">
       {!file?<FileDropZone accept="image/*" emoji="📦" label="Drop your image here" onFiles={handleFile}/>:(
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+          <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
             <p className="font-medium text-sm">{file.name} — {fmt(file.size)}</p>
-            <button onClick={reset} className="text-white/30 hover:text-white/60 text-sm">✕</button>
+            <button onClick={reset} className="text-gray-400 hover:text-gray-8000 text-sm">✕</button>
           </div>
-          <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-            <div className="flex justify-between mb-2"><label className="text-sm text-white/60">Quality</label><span className="text-blue-400 font-medium">{quality}%</span></div>
+          <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div className="flex justify-between mb-2"><label className="text-sm text-gray-8000">Quality</label><span className="text-blue-600 font-medium">{quality}%</span></div>
             <input type="range" min={10} max={100} value={quality} onChange={e=>setQuality(+e.target.value)} className="w-full accent-blue-500"/>
           </div>
           {result?(
-            <div className="p-5 rounded-2xl bg-green-500/10 border border-green-500/20 space-y-3">
-              <p className="text-green-400 font-semibold">✅ Compressed!</p>
+            <div className="p-5 rounded-2xl bg-green-50 border border-green-200 space-y-3">
+              <p className="text-emerald-700 font-semibold">✅ Compressed!</p>
               <div className="grid grid-cols-3 gap-3 text-center text-sm">
-                <div className="p-3 rounded-xl bg-white/5"><p className="text-white/40 text-xs">Original</p><p className="font-semibold">{fmt(result.orig)}</p></div>
-                <div className="p-3 rounded-xl bg-white/5"><p className="text-white/40 text-xs">Compressed</p><p className="font-semibold text-green-400">{fmt(result.size)}</p></div>
-                <div className="p-3 rounded-xl bg-white/5"><p className="text-white/40 text-xs">Saved</p><p className="font-semibold text-blue-400">{Math.round((1-result.size/result.orig)*100)}%</p></div>
+                <div className="p-3 rounded-xl bg-gray-50"><p className="text-gray-400 text-xs">Original</p><p className="font-semibold">{fmt(result.orig)}</p></div>
+                <div className="p-3 rounded-xl bg-gray-50"><p className="text-gray-400 text-xs">Compressed</p><p className="font-semibold text-emerald-700">{fmt(result.size)}</p></div>
+                <div className="p-3 rounded-xl bg-gray-50"><p className="text-gray-400 text-xs">Saved</p><p className="font-semibold text-blue-600">{Math.round((1-result.size/result.orig)*100)}%</p></div>
               </div>
               <div className="flex gap-3"><button onClick={download} className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium">⬇️ Download</button>
-              <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button></div>
+              <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button></div>
             </div>
           ):<button onClick={compress} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold text-sm transition-colors">📦 Compress Image</button>}
         </div>

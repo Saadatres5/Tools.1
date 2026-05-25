@@ -78,29 +78,29 @@ export default function CompressPDFClient() {
       ) : (
         <div className="space-y-4">
           {/* File info */}
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+          <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
             <div className="flex items-center gap-3">
               <span className="text-2xl">📄</span>
               <div>
                 <p className="font-medium text-sm">{file.name}</p>
-                <p className="text-white/40 text-xs">{formatBytes(file.size)}</p>
+                <p className="text-gray-400 text-xs">{formatBytes(file.size)}</p>
               </div>
             </div>
-            <button onClick={reset} className="text-white/30 hover:text-white/60 text-sm">✕ Remove</button>
+            <button onClick={reset} className="text-gray-400 hover:text-gray-8000 text-sm">✕ Remove</button>
           </div>
 
           {/* Quality slider */}
           {status === "idle" && (
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+            <div className="p-4 rounded-xl bg-gray-50 border border-gray-200">
               <div className="flex justify-between items-center mb-2">
-                <label className="text-sm text-white/60">Compression Level</label>
-                <span className="text-sm font-medium text-blue-400">
+                <label className="text-sm text-gray-8000">Compression Level</label>
+                <span className="text-sm font-medium text-blue-600">
                   {quality >= 80 ? "Low (Best Quality)" : quality >= 60 ? "Medium (Balanced)" : "High (Smallest Size)"}
                 </span>
               </div>
               <input type="range" min={30} max={90} value={quality} onChange={e => setQuality(+e.target.value)}
                 className="w-full accent-blue-500" />
-              <div className="flex justify-between text-xs text-white/30 mt-1">
+              <div className="flex justify-between text-xs text-gray-400 mt-1">
                 <span>Smaller file</span><span>Better quality</span>
               </div>
             </div>
@@ -111,22 +111,22 @@ export default function CompressPDFClient() {
 
           {/* Result */}
           {status === "done" && result && (
-            <div className="p-5 rounded-2xl bg-green-500/10 border border-green-500/20 space-y-3">
-              <div className="flex items-center gap-2 text-green-400 font-semibold">
+            <div className="p-5 rounded-2xl bg-green-50 border border-green-200 space-y-3">
+              <div className="flex items-center gap-2 text-emerald-700 font-semibold">
                 <span>✅</span> Compression complete!
               </div>
               <div className="grid grid-cols-3 gap-3 text-center text-sm">
-                <div className="p-3 rounded-xl bg-white/5">
-                  <p className="text-white/40 text-xs mb-1">Original</p>
+                <div className="p-3 rounded-xl bg-gray-50">
+                  <p className="text-gray-400 text-xs mb-1">Original</p>
                   <p className="font-semibold">{formatBytes(result.original)}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-white/5">
-                  <p className="text-white/40 text-xs mb-1">Compressed</p>
-                  <p className="font-semibold text-green-400">{formatBytes(result.size)}</p>
+                <div className="p-3 rounded-xl bg-gray-50">
+                  <p className="text-gray-400 text-xs mb-1">Compressed</p>
+                  <p className="font-semibold text-emerald-700">{formatBytes(result.size)}</p>
                 </div>
-                <div className="p-3 rounded-xl bg-white/5">
-                  <p className="text-white/40 text-xs mb-1">Saved</p>
-                  <p className="font-semibold text-blue-400">
+                <div className="p-3 rounded-xl bg-gray-50">
+                  <p className="text-gray-400 text-xs mb-1">Saved</p>
+                  <p className="font-semibold text-blue-600">
                     {Math.max(0, Math.round((1 - result.size / result.original) * 100))}%
                   </p>
                 </div>
@@ -135,7 +135,7 @@ export default function CompressPDFClient() {
                 <button onClick={download} className="flex-1 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-medium text-sm transition-colors">
                   ⬇️ Download Compressed PDF
                 </button>
-                <button onClick={reset} className="px-4 py-3 rounded-xl bg-white/5 hover:bg-white/10 text-sm transition-colors">
+                <button onClick={reset} className="px-4 py-3 rounded-xl bg-gray-50 hover:bg-gray-100 text-sm transition-colors">
                   New File
                 </button>
               </div>
@@ -143,7 +143,7 @@ export default function CompressPDFClient() {
           )}
 
           {status === "error" && (
-            <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+            <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">
               ❌ Failed to compress. Please try another PDF file.
             </div>
           )}

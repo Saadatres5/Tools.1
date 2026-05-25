@@ -35,12 +35,12 @@ export default function AICaptionClient() {
       <div className="flex gap-2 flex-wrap">
         {platforms.map(p=>(
           <button key={p} onClick={()=>setPlatform(p)}
-            className={`px-3 py-1.5 rounded-xl text-xs transition-colors ${platform===p?"bg-purple-600":"bg-white/5 hover:bg-white/10"}`}>{p}</button>
+            className={`px-3 py-1.5 rounded-xl text-xs transition-colors ${platform===p?"bg-purple-600":"bg-gray-50 hover:bg-gray-100"}`}>{p}</button>
         ))}
       </div>
       <input value={topic} onChange={e=>setTopic(e.target.value)} onKeyDown={e=>e.key==="Enter"&&setResults(CAPTIONS[platform](topic))}
         placeholder="Describe your post or image..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-purple-500/50"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-purple-500/50"/>
       <button onClick={()=>topic.trim()&&setResults(CAPTIONS[platform](topic))} disabled={!topic.trim()}
         className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         💬 Generate Captions
@@ -48,16 +48,16 @@ export default function AICaptionClient() {
       {results.length > 0 && (
         <div className="space-y-3">
           {results.map((r,i) => (
-            <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/8 space-y-2">
-              <p className="text-sm text-white/80 leading-relaxed">{r}</p>
-              <button onClick={()=>copy(r)} className={`text-xs px-3 py-1 rounded-lg transition-colors ${copied===r?"bg-green-600 text-white":"bg-white/10 hover:bg-white/20 text-white/50"}`}>
+            <div key={i} className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
+              <p className="text-sm text-gray-800/80 leading-relaxed">{r}</p>
+              <button onClick={()=>copy(r)} className={`text-xs px-3 py-1 rounded-lg transition-colors ${copied===r?"bg-green-600 text-gray-800":"bg-gray-100 hover:bg-gray-100 text-gray-8000"}`}>
                 {copied===r?"✓ Copied":"Copy"}
               </button>
             </div>
           ))}
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

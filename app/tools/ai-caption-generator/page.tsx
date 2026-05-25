@@ -5,7 +5,23 @@ import AICaptionClient from "./AICaptionClient";
 export const metadata: Metadata = {
   title: "AI Caption Generator Free Online — QuantixTools",
   description: "Generate social media captions. 100% free, no signup required.",
-  alternates: { canonical: "https://quantixtools.com/tools/ai-caption-generator" },
+  alternates: {
+    canonical: "https://quantixtools.com/tools/ai-caption-generator",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/tools/ai-caption-generator",
+    title: "AI Caption Generator Free Online — QuantixTools",
+    description: "Generate social media captions. 100% free, no signup required.",
+    siteName: "QuantixTools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Caption Generator Free Online — QuantixTools" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Caption Generator Free Online — QuantixTools",
+    description: "Generate social media captions. 100% free, no signup required.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function Page() {

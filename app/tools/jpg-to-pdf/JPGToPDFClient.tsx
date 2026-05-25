@@ -36,19 +36,19 @@ export default function JPGToPDFClient() {
       {files.length>0&&(
         <div className="space-y-2">
           {files.map((f,i)=>(
-            <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/8">
+            <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-200">
               <span className="text-sm flex-1 truncate">{f.name}</span>
-              <button onClick={()=>remove(i)} className="text-white/30 hover:text-red-400 text-xs">✕</button>
+              <button onClick={()=>remove(i)} className="text-gray-400 hover:text-red-600 text-xs">✕</button>
             </div>
           ))}
         </div>
       )}
       {status==="processing"&&<ProgressBar progress={progress} label="Creating PDF..."/>}
-      {status==="done"?<div className="p-4 rounded-2xl bg-green-500/10 border border-green-500/20 space-y-3">
-        <p className="text-green-400 font-semibold">✅ PDF created from {files.length} image{files.length>1?"s":""}!</p>
+      {status==="done"?<div className="p-4 rounded-2xl bg-green-50 border border-green-200 space-y-3">
+        <p className="text-emerald-700 font-semibold">✅ PDF created from {files.length} image{files.length>1?"s":""}!</p>
         <div className="flex gap-3"><button onClick={download} className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium">⬇️ Download PDF</button>
-        <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button></div>
-      </div>:status==="error"?<div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">❌ Conversion failed.</div>:
+        <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button></div>
+      </div>:status==="error"?<div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">❌ Conversion failed.</div>:
       files.length>0?<button onClick={convert} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold text-sm transition-colors">📄 Create PDF</button>:null}
     </div>
   );

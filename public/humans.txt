@@ -1,0 +1,13 @@
+/* TEAM */
+Name: QuantixTools Team
+Contact: hello@quantixtools.com
+Website: https://quantixtools.com
+
+/* SITE */
+Last update: 2025/05/01
+Language: English
+Doctype: HTML5
+IDE: Visual Studio Code
+Standards: HTML5, CSS3, JavaScript ES2024
+Components: Next.js 16, React 19, TypeScript, Tailwind CSS
+Software: Node.js 20+

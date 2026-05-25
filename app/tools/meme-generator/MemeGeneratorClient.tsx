@@ -43,14 +43,14 @@ export default function MemeGeneratorClient() {
           <img src={imgSrc} alt="Meme base" className="w-full rounded-xl max-h-48 object-contain bg-black"/>
           {[["Top text",top,setTop],["Bottom text",bottom,setBottom]].map(([l,v,s]) => (
             <div key={l as string}>
-              <label className="block text-xs text-white/50 mb-1">{l as string}</label>
+              <label className="block text-xs text-gray-8000 mb-1">{l as string}</label>
               <input value={v as string} onChange={e=>(s as (v:string)=>void)(e.target.value)}
                 placeholder={l as string}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white outline-none focus:border-blue-500/50 uppercase"/>
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-blue-400 uppercase"/>
             </div>
           ))}
           <div>
-            <div className="flex justify-between mb-1"><label className="text-xs text-white/50">Font size</label><span className="text-xs text-blue-400">{fontSize}px</span></div>
+            <div className="flex justify-between mb-1"><label className="text-xs text-gray-8000">Font size</label><span className="text-xs text-blue-600">{fontSize}px</span></div>
             <input type="range" min={20} max={100} value={fontSize} onChange={e=>setFontSize(+e.target.value)} className="w-full accent-blue-500"/>
           </div>
           <button onClick={generate} className="w-full py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium transition-colors">😂 Generate Meme</button>
@@ -60,7 +60,7 @@ export default function MemeGeneratorClient() {
               <img src={result} alt="Generated meme" className="w-full rounded-xl"/>
               <div className="flex gap-2">
                 <button onClick={download} className="flex-1 py-2.5 rounded-xl bg-green-600 hover:bg-green-700 text-sm font-medium">⬇️ Download</button>
-                <button onClick={()=>{setImgSrc("");setResult("");}} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button>
+                <button onClick={()=>{setImgSrc("");setResult("");}} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button>
               </div>
             </div>
           )}

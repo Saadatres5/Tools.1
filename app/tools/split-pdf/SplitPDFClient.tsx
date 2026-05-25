@@ -53,41 +53,41 @@ export default function SplitPDFClient() {
     <div className="space-y-4">
       {!file?<FileDropZone accept=".pdf,application/pdf" emoji="✂️" label="Drop your PDF here" onFiles={handleFile}/>:(
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
-            <div><p className="font-medium text-sm">{file.name}</p><p className="text-white/40 text-xs">{pages} pages • {fmt(file.size)}</p></div>
-            <button onClick={reset} className="text-white/30 hover:text-white/60 text-sm">✕</button>
+          <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <div><p className="font-medium text-sm">{file.name}</p><p className="text-gray-400 text-xs">{pages} pages • {fmt(file.size)}</p></div>
+            <button onClick={reset} className="text-gray-400 hover:text-gray-8000 text-sm">✕</button>
           </div>
-          <div className="p-4 rounded-xl bg-white/5 border border-white/10 space-y-3">
+          <div className="p-4 rounded-xl bg-gray-50 border border-gray-200 space-y-3">
             <div className="flex gap-3">
               {[["all","Split every page"],["range","Custom range"]].map(([v,l])=>(
-                <button key={v} onClick={()=>setMode(v as "all"|"range")} className={`flex-1 py-2 rounded-xl text-sm transition-colors ${mode===v?"bg-blue-600":"bg-white/5 hover:bg-white/10"}`}>{l}</button>
+                <button key={v} onClick={()=>setMode(v as "all"|"range")} className={`flex-1 py-2 rounded-xl text-sm transition-colors ${mode===v?"bg-blue-600":"bg-gray-50 hover:bg-gray-100"}`}>{l}</button>
               ))}
             </div>
             {mode==="range"&&<div>
-              <label className="block text-xs text-white/50 mb-1">Page ranges (e.g. 1-3, 5, 7-9)</label>
+              <label className="block text-xs text-gray-8000 mb-1">Page ranges (e.g. 1-3, 5, 7-9)</label>
               <input value={range} onChange={e=>setRange(e.target.value)} placeholder="1-3, 5, 7-9"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white outline-none focus:border-blue-500/50"/>
+                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-2.5 text-sm text-gray-800 outline-none focus:border-blue-400"/>
             </div>}
           </div>
           {status==="processing"&&<ProgressBar progress={progress} label="Splitting PDF..."/>}
           {status==="done"&&results.length>0&&(
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <p className="text-green-400 text-sm font-semibold">✅ Split into {results.length} file{results.length>1?"s":""}!</p>
-                <button onClick={dlAll} className="text-xs text-blue-400 hover:text-blue-300">Download all</button>
+                <p className="text-emerald-700 text-sm font-semibold">✅ Split into {results.length} file{results.length>1?"s":""}!</p>
+                <button onClick={dlAll} className="text-xs text-blue-600 hover:text-blue-300">Download all</button>
               </div>
               <div className="space-y-2 max-h-48 overflow-auto">
                 {results.map((r,i)=>(
-                  <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/8">
+                  <div key={i} className="flex items-center justify-between p-3 rounded-xl bg-gray-50 border border-gray-200">
                     <span className="text-sm">📄 {r.name}</span>
-                    <a href={r.url} download={r.name} className="text-xs text-blue-400 hover:text-blue-300">Download</a>
+                    <a href={r.url} download={r.name} className="text-xs text-blue-600 hover:text-blue-300">Download</a>
                   </div>
                 ))}
               </div>
-              <button onClick={reset} className="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm">New File</button>
+              <button onClick={reset} className="w-full py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-sm">New File</button>
             </div>
           )}
-          {status==="error"&&<div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">❌ Failed to split PDF.</div>}
+          {status==="error"&&<div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">❌ Failed to split PDF.</div>}
           {status==="idle"&&<button onClick={split} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold text-sm transition-colors">✂️ Split PDF</button>}
         </div>
       )}

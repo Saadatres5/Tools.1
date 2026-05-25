@@ -28,30 +28,30 @@ export default function HabitTrackerClient() {
   return (
     <div className="space-y-4">
       <div className="flex gap-2">
-        <select value={newEmoji} onChange={e=>setNewEmoji(e.target.value)} className="bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm outline-none">
+        <select value={newEmoji} onChange={e=>setNewEmoji(e.target.value)} className="bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm outline-none">
           {EMOJIS.map(e=><option key={e}>{e}</option>)}
         </select>
         <input value={newName} onChange={e=>setNewName(e.target.value)} onKeyDown={e=>e.key==="Enter"&&add()}
-          placeholder="New habit name..." className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white placeholder-white/30 outline-none focus:border-blue-500/50"/>
+          placeholder="New habit name..." className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-4 py-2 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400"/>
         <button onClick={add} disabled={!newName} className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 text-sm font-medium">Add</button>
       </div>
-      <div className="grid grid-cols-7 gap-1 text-center text-xs text-white/30 px-[88px]">
-        {days.map((d,i)=><div key={i} className={`${i===today-1||i===(today===0?6:today-1)?"text-blue-400 font-bold":""}`}>{d}</div>)}
+      <div className="grid grid-cols-7 gap-1 text-center text-xs text-gray-400 px-[88px]">
+        {days.map((d,i)=><div key={i} className={`${i===today-1||i===(today===0?6:today-1)?"text-blue-600 font-bold":""}`}>{d}</div>)}
       </div>
       <div className="space-y-2">
         {habits.map(h=>(
-          <div key={h.id} className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/8">
+          <div key={h.id} className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-200">
             <span className="text-xl">{h.emoji}</span>
             <span className="text-sm flex-1">{h.name}</span>
             <span className="text-xs text-orange-400">🔥{h.streak}</span>
             <div className="flex gap-1">
               {h.done.map((d,i)=>(
-                <button key={i} onClick={()=>toggle(h.id,i)} className={`w-7 h-7 rounded-lg transition-colors text-xs ${d?"bg-green-500 text-white":"bg-white/5 hover:bg-white/10 text-white/20"}`}>
+                <button key={i} onClick={()=>toggle(h.id,i)} className={`w-7 h-7 rounded-lg transition-colors text-xs ${d?"bg-green-500 text-gray-800":"bg-gray-50 hover:bg-gray-100 text-gray-300"}`}>
                   {d?"✓":""}
                 </button>
               ))}
             </div>
-            <button onClick={()=>remove(h.id)} className="text-white/20 hover:text-red-400 text-xs ml-1">✕</button>
+            <button onClick={()=>remove(h.id)} className="text-gray-300 hover:text-red-600 text-xs ml-1">✕</button>
           </div>
         ))}
       </div>

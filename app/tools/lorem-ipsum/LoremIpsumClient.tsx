@@ -16,14 +16,14 @@ export default function LoremIpsumClient() {
   const copy = () => navigator.clipboard.writeText(output);
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap gap-3 items-center p-4 rounded-xl bg-white/5 border border-white/10">
-        <select value={type} onChange={e=>setType(e.target.value as typeof type)} className="bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none">
+      <div className="flex flex-wrap gap-3 items-center p-4 rounded-xl bg-gray-50 border border-gray-200">
+        <select value={type} onChange={e=>setType(e.target.value as typeof type)} className="bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none">
           <option value="paragraphs">Paragraphs</option>
           <option value="sentences">Sentences</option>
           <option value="words">Words</option>
         </select>
         <input type="number" min={1} max={20} value={count} onChange={e=>setCount(+e.target.value)}
-          className="w-20 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white outline-none" />
+          className="w-20 bg-gray-50 border border-gray-200 rounded-xl px-3 py-2 text-sm text-gray-800 outline-none" />
         <button onClick={generate} className="flex-1 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium transition-colors">
           📝 Generate
         </button>
@@ -31,10 +31,10 @@ export default function LoremIpsumClient() {
       {output && (
         <div>
           <div className="flex justify-between mb-2">
-            <span className="text-xs text-white/40">{output.split(" ").length} words</span>
-            <button onClick={copy} className="text-xs text-blue-400 hover:text-blue-300">Copy</button>
+            <span className="text-xs text-gray-400">{output.split(" ").length} words</span>
+            <button onClick={copy} className="text-xs text-blue-600 hover:text-blue-300">Copy</button>
           </div>
-          <div className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-sm text-white/70 leading-relaxed whitespace-pre-wrap max-h-64 overflow-auto">{output}</div>
+          <div className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-4 text-sm text-gray-600 leading-relaxed whitespace-pre-wrap max-h-64 overflow-auto">{output}</div>
         </div>
       )}
     </div>

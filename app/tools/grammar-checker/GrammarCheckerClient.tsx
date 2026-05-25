@@ -27,23 +27,23 @@ export default function GrammarCheckerClient() {
     <div className="space-y-4">
       <textarea rows={7} value={text} onChange={e=>{setText(e.target.value);setFixed("");setIssues([]);}}
         placeholder="Paste your text here and we'll check for common grammar issues..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50 resize-none"/>
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400 resize-none"/>
       <button onClick={check} disabled={!text} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-medium text-sm transition-colors">
         ✅ Check Grammar
       </button>
       {issues.length>0&&(
         <div className="p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/20 space-y-2">
-          <p className="text-yellow-400 text-sm font-semibold">Found {issues.length} issue{issues.length>1?"s":""}:</p>
-          {issues.map((i,idx)=><p key={idx} className="text-white/60 text-xs">⚠️ {i.msg} ({i.count}x)</p>)}
+          <p className="text-yellow-600 text-sm font-semibold">Found {issues.length} issue{issues.length>1?"s":""}:</p>
+          {issues.map((i,idx)=><p key={idx} className="text-gray-8000 text-xs">⚠️ {i.msg} ({i.count}x)</p>)}
         </div>
       )}
       {fixed&&(
         <div>
           <div className="flex justify-between mb-1">
-            <label className="text-xs text-white/40">Corrected Text {issues.length===0?"(No issues found!)":""}</label>
-            <button onClick={copy} className="text-xs text-blue-400">Copy</button>
+            <label className="text-xs text-gray-400">Corrected Text {issues.length===0?"(No issues found!)":""}</label>
+            <button onClick={copy} className="text-xs text-blue-600">Copy</button>
           </div>
-          <div className="bg-green-500/5 border border-green-500/20 rounded-xl px-4 py-3 text-sm text-white/80 leading-relaxed">{fixed}</div>
+          <div className="bg-green-500/5 border border-green-200 rounded-xl px-4 py-3 text-sm text-white/80 leading-relaxed">{fixed}</div>
         </div>
       )}
     </div>

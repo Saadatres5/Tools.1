@@ -15,19 +15,19 @@ export default function TextCompareClient() {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
-        <div><label className="block text-xs text-white/40 mb-1">Text A</label>
+        <div><label className="block text-xs text-gray-400 mb-1">Text A</label>
           <textarea rows={8} value={a} onChange={e=>setA(e.target.value)} placeholder="Paste first text..."
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-blue-500/50 resize-none"/></div>
-        <div><label className="block text-xs text-white/40 mb-1">Text B</label>
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-blue-400 resize-none"/></div>
+        <div><label className="block text-xs text-gray-400 mb-1">Text B</label>
           <textarea rows={8} value={b} onChange={e=>setB(e.target.value)} placeholder="Paste second text..."
-            className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-red-500/50 resize-none"/></div>
+            className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-red-500/50 resize-none"/></div>
       </div>
       {(a&&b)&&(
         <div className="grid grid-cols-3 gap-3 text-center">
           {[["Words A",a.trim().split(/\s+/).length,"blue"],["Words B",b.trim().split(/\s+/).length,"purple"],["Similarity",sim+"%",sim>70?"green":sim>40?"yellow":"red"]].map(([l,v,c])=>(
             <div key={l as string} className={`p-4 rounded-2xl bg-${c}-500/10 border border-${c}-500/20`}>
               <div className={`text-2xl font-bold text-${c}-400`}>{v}</div>
-              <div className="text-white/40 text-xs mt-1">{l}</div>
+              <div className="text-gray-400 text-xs mt-1">{l}</div>
             </div>
           ))}
         </div>

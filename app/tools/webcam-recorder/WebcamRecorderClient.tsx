@@ -39,7 +39,7 @@ export default function WebcamRecorderClient() {
   const fmt=(s:number)=>`${String(Math.floor(s/60)).padStart(2,"0")}:${String(s%60).padStart(2,"0")}`;
   return (
     <div className="space-y-4">
-      {error&&<p className="text-red-400 text-sm bg-red-500/10 p-3 rounded-xl">{error}</p>}
+      {error&&<p className="text-red-600 text-sm bg-red-50 p-3 rounded-xl">{error}</p>}
       {!previewing?(
         <div className="text-center py-10 space-y-4">
           <div className="text-6xl">📹</div>
@@ -56,17 +56,17 @@ export default function WebcamRecorderClient() {
           <div className="flex gap-3">
             {!recording?<button onClick={startRec} className="flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 font-medium text-sm transition-colors">● Start Recording</button>:
             <button onClick={stopRec} className="flex-1 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 font-medium text-sm">⏹ Stop Recording</button>}
-            <button onClick={stopAll} className="px-4 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-sm">✕ Close</button>
+            <button onClick={stopAll} className="px-4 py-2.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-sm">✕ Close</button>
           </div>
         </div>
       )}
       {videos.length>0&&(
         <div className="space-y-2">
-          <p className="text-sm text-white/50 font-medium">Recorded Videos</p>
+          <p className="text-sm text-gray-8000 font-medium">Recorded Videos</p>
           {videos.map((v,i)=>(
-            <div key={i} className="p-3 rounded-xl bg-white/5 border border-white/8 space-y-2">
+            <div key={i} className="p-3 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
               <div className="flex justify-between"><span className="text-sm">{v.name}</span>
-                <button onClick={()=>dl(v.url,v.name)} className="text-xs text-blue-400">⬇️ Download</button></div>
+                <button onClick={()=>dl(v.url,v.name)} className="text-xs text-blue-600">⬇️ Download</button></div>
               <video controls src={v.url} className="w-full rounded-lg max-h-28"/>
             </div>
           ))}

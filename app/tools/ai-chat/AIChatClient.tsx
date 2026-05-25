@@ -38,13 +38,13 @@ export default function AIChatClient() {
 
   return (
     <div className="flex flex-col" style={{height:"460px"}}>
-      <div className="flex-1 overflow-y-auto space-y-3 p-4 rounded-2xl bg-black/20 border border-white/8 mb-4">
+      <div className="flex-1 overflow-y-auto space-y-3 p-4 rounded-2xl bg-black/20 border border-gray-200 mb-4">
         {messages.map((m,i)=>(
           <div key={i} className={`flex gap-2 ${m.role==="user"?"flex-row-reverse":""}`}>
             <div className={`w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-bold ${m.role==="user"?"bg-blue-600":"bg-purple-600"}`}>
               {m.role==="user"?"U":"🤖"}
             </div>
-            <div className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${m.role==="user"?"bg-blue-600/20 border border-blue-500/20":"bg-white/5 border border-white/8"}`}>
+            <div className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${m.role==="user"?"bg-blue-600/20 border border-blue-500/20":"bg-gray-50 border border-gray-200"}`}>
               {m.text}
             </div>
           </div>
@@ -54,18 +54,18 @@ export default function AIChatClient() {
         <div className="flex flex-wrap gap-2 mb-3">
           {suggestions.map(s=>(
             <button key={s} onClick={()=>setInput(s)}
-              className="px-3 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-white/50 transition-colors">{s}</button>
+              className="px-3 py-1.5 rounded-xl bg-gray-50 hover:bg-gray-100 text-xs text-gray-8000 transition-colors">{s}</button>
           ))}
         </div>
       )}
       <div className="flex gap-2">
         <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&send()}
           placeholder="Ask about our tools..."
-          className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 outline-none focus:border-purple-500/50"/>
+          className="flex-1 bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-purple-500/50"/>
         <button onClick={send} disabled={!input.trim()}
           className="px-4 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-40 text-sm font-medium transition-colors">Send</button>
       </div>
-      <p className="text-xs text-white/20 mt-2 text-center">✓ Local help assistant — no API key required</p>
+      <p className="text-xs text-gray-300 mt-2 text-center">✓ Local help assistant — no API key required</p>
     </div>
   );
 }

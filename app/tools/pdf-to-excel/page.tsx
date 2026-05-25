@@ -5,7 +5,23 @@ import PDFToExcelClient from "./PDFToExcelClient";
 export const metadata: Metadata = {
   title: "PDF to Excel Free Online — QuantixTools",
   description: "Convert PDF tables to Excel spreadsheet (CSV/XLSX). Extract tables from PDF files free, no signup required.",
-  alternates: { canonical: "https://quantixtools.com/tools/pdf-to-excel" },
+  alternates: {
+    canonical: "https://quantixtools.com/tools/pdf-to-excel",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/tools/pdf-to-excel",
+    title: "PDF to Excel Free Online — QuantixTools",
+    description: "Convert PDF tables to Excel spreadsheet (CSV/XLSX). Extract tables from PDF files free, no signup required.",
+    siteName: "QuantixTools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PDF to Excel Free Online — QuantixTools" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PDF to Excel Free Online — QuantixTools",
+    description: "Convert PDF tables to Excel spreadsheet (CSV/XLSX). Extract tables from PDF files free, no signup required.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function Page() {

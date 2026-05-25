@@ -5,7 +5,23 @@ import MD5Client from "./MD5Client";
 export const metadata: Metadata = {
   title: "MD5 Generator Free Online — QuantixTools",
   description: "Generate MD5 hash. 100% free, no signup required.",
-  alternates: { canonical: "https://quantixtools.com/tools/md5-generator" },
+  alternates: {
+    canonical: "https://quantixtools.com/tools/md5-generator",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/tools/md5-generator",
+    title: "MD5 Generator Free Online — QuantixTools",
+    description: "Generate MD5 hash. 100% free, no signup required.",
+    siteName: "QuantixTools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "MD5 Generator Free Online — QuantixTools" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MD5 Generator Free Online — QuantixTools",
+    description: "Generate MD5 hash. 100% free, no signup required.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function Page() {

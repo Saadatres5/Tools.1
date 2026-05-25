@@ -21,11 +21,11 @@ export default function CaseConverterClient() {
   return (
     <div className="space-y-4">
       <textarea rows={5} value={input} onChange={e=>setInput(e.target.value)} placeholder="Enter your text here..."
-        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-blue-500/50 resize-none" />
+        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-blue-400 resize-none" />
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {cases.map(([l,t])=>(
           <button key={t} onClick={()=>convert(t)} disabled={!input}
-            className="py-2 px-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 disabled:opacity-40 text-sm transition-colors font-mono">
+            className="py-2 px-3 rounded-xl bg-gray-50 border border-gray-200 hover:bg-gray-100 disabled:opacity-40 text-sm transition-colors font-mono">
             {l}
           </button>
         ))}
@@ -33,10 +33,10 @@ export default function CaseConverterClient() {
       {result && (
         <div>
           <div className="flex justify-between mb-1">
-            <label className="text-xs text-white/40">Result</label>
-            <button onClick={copy} className={`text-xs transition-colors ${copied?"text-green-400":"text-blue-400 hover:text-blue-300"}`}>{copied?"✓ Copied":"Copy"}</button>
+            <label className="text-xs text-gray-400">Result</label>
+            <button onClick={copy} className={`text-xs transition-colors ${copied?"text-emerald-700":"text-blue-600 hover:text-blue-300"}`}>{copied?"✓ Copied":"Copy"}</button>
           </div>
-          <div className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white break-words">{result}</div>
+          <div className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 break-words">{result}</div>
         </div>
       )}
     </div>

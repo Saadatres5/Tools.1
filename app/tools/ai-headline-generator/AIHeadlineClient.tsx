@@ -28,10 +28,10 @@ export default function AIHeadlineClient() {
   return (
     <div className="space-y-4">
       <div>
-        <label className="block text-xs text-white/50 mb-1">Topic or keyword</label>
+        <label className="block text-xs text-gray-8000 mb-1">Topic or keyword</label>
         <input value={topic} onChange={e=>setTopic(e.target.value)} onKeyDown={e=>e.key==="Enter"&&generate()}
           placeholder="e.g. productivity, fitness, JavaScript, social media"
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none focus:border-yellow-500/50"/>
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-yellow-500/50"/>
       </div>
       <button onClick={generate} disabled={!topic.trim()}
         className="w-full py-3 rounded-xl bg-yellow-600 hover:bg-yellow-700 disabled:opacity-40 font-semibold text-sm transition-colors">
@@ -40,16 +40,16 @@ export default function AIHeadlineClient() {
       {results.length > 0 && (
         <div className="space-y-2">
           {results.map((r,i) => (
-            <div key={i} className="flex items-start justify-between gap-3 p-4 rounded-xl bg-white/5 border border-white/8 hover:border-white/15 transition-colors">
-              <p className="text-sm text-white flex-1">{r}</p>
-              <button onClick={()=>copy(r)} className={`text-xs px-2 py-1 rounded-lg flex-shrink-0 transition-colors ${copied===r?"bg-green-600 text-white":"bg-white/10 hover:bg-white/20 text-white/50"}`}>
+            <div key={i} className="flex items-start justify-between gap-3 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:border-gray-200 transition-colors">
+              <p className="text-sm text-gray-800 flex-1">{r}</p>
+              <button onClick={()=>copy(r)} className={`text-xs px-2 py-1 rounded-lg flex-shrink-0 transition-colors ${copied===r?"bg-green-600 text-gray-800":"bg-gray-100 hover:bg-gray-100 text-gray-8000"}`}>
                 {copied===r?"✓":"Copy"}
               </button>
             </div>
           ))}
         </div>
       )}
-      <p className="text-xs text-white/20">✓ Free — no API key required</p>
+      <p className="text-xs text-gray-300">✓ Free — no API key required</p>
     </div>
   );
 }

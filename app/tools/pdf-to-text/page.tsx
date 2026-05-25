@@ -5,7 +5,23 @@ import PDFToTextClient from "./PDFToTextClient";
 export const metadata: Metadata = {
   title: "PDF to Text Free Online — QuantixTools",
   description: "Extract all text from any PDF file instantly. Copy or download as .txt. Free, browser-based, no signup.",
-  alternates: { canonical: "https://quantixtools.com/tools/pdf-to-text" },
+  alternates: {
+    canonical: "https://quantixtools.com/tools/pdf-to-text",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/tools/pdf-to-text",
+    title: "PDF to Text Free Online — QuantixTools",
+    description: "Extract all text from any PDF file instantly. Copy or download as .txt. Free, browser-based, no signup.",
+    siteName: "QuantixTools",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "PDF to Text Free Online — QuantixTools" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PDF to Text Free Online — QuantixTools",
+    description: "Extract all text from any PDF file instantly. Copy or download as .txt. Free, browser-based, no signup.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function Page() {

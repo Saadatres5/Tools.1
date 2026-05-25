@@ -34,24 +34,24 @@ export default function VoiceRecorderClient() {
   return (
     <div className="space-y-5">
       <div className="text-center py-8 space-y-4">
-        <div className={`w-28 h-28 rounded-full mx-auto flex flex-col items-center justify-center transition-all ${recording?"bg-red-500/20 border-2 border-red-500":"bg-white/5 border-2 border-white/20"}`}>
+        <div className={`w-28 h-28 rounded-full mx-auto flex flex-col items-center justify-center transition-all ${recording?"bg-red-500/20 border-2 border-red-500":"bg-gray-50 border-2 border-gray-200"}`}>
           <span className="text-4xl">🎙️</span>
-          {recording&&<span className="text-red-400 font-mono text-sm mt-1">{fmt(duration)}</span>}
+          {recording&&<span className="text-red-600 font-mono text-sm mt-1">{fmt(duration)}</span>}
         </div>
-        {error&&<p className="text-red-400 text-sm">{error}</p>}
+        {error&&<p className="text-red-600 text-sm">{error}</p>}
         <button onClick={recording?stop:start} className={`px-8 py-3 rounded-xl font-semibold transition-colors ${recording?"bg-red-600 hover:bg-red-700":"bg-blue-600 hover:bg-blue-700"}`}>
           {recording?"⏹ Stop Recording":"🎙️ Start Recording"}
         </button>
-        {recording&&<p className="text-white/40 text-sm animate-pulse">Recording in progress...</p>}
+        {recording&&<p className="text-gray-400 text-sm animate-pulse">Recording in progress...</p>}
       </div>
       {recordings.length>0&&(
         <div className="space-y-2">
-          <p className="text-sm text-white/50 font-medium">Recordings</p>
+          <p className="text-sm text-gray-8000 font-medium">Recordings</p>
           {recordings.map((r,i)=>(
-            <div key={i} className="p-3 rounded-xl bg-white/5 border border-white/8 space-y-2">
+            <div key={i} className="p-3 rounded-xl bg-gray-50 border border-gray-200 space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-sm">{r.name}</span>
-                <button onClick={()=>dl(r.url,r.name)} className="text-xs text-blue-400 hover:text-blue-300">⬇️ Download</button>
+                <button onClick={()=>dl(r.url,r.name)} className="text-xs text-blue-600 hover:text-blue-300">⬇️ Download</button>
               </div>
               <audio controls src={r.url} className="w-full h-8"/>
             </div>

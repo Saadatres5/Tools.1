@@ -26,19 +26,19 @@ export default function UnlockPDFClient() {
     <div className="space-y-4">
       {!file?<FileDropZone accept=".pdf,application/pdf" emoji="🔓" label="Drop your protected PDF here" onFiles={f=>{setFile(f[0]);setStatus("idle");}}/>:(
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
+          <div className="flex items-center justify-between p-4 rounded-xl bg-gray-50 border border-gray-200">
             <p className="font-medium text-sm">{file.name}</p>
-            <button onClick={reset} className="text-white/30 hover:text-white/60 text-sm">✕</button>
+            <button onClick={reset} className="text-gray-400 hover:text-gray-8000 text-sm">✕</button>
           </div>
-          <div><label className="block text-xs text-white/50 mb-1">Password (if known)</label>
+          <div><label className="block text-xs text-gray-8000 mb-1">Password (if known)</label>
             <input type="password" value={password} onChange={e=>setPassword(e.target.value)} placeholder="Enter PDF password (optional)"
-              className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-blue-500/50"/></div>
+              className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 outline-none focus:border-blue-400"/></div>
           {status==="processing"&&<ProgressBar progress={progress} label="Removing password..."/>}
-          {status==="done"?<div className="p-4 rounded-2xl bg-green-500/10 border border-green-500/20 space-y-3">
-            <p className="text-green-400 font-semibold">✅ Password removed!</p>
+          {status==="done"?<div className="p-4 rounded-2xl bg-green-50 border border-green-200 space-y-3">
+            <p className="text-emerald-700 font-semibold">✅ Password removed!</p>
             <div className="flex gap-3"><button onClick={download} className="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-sm font-medium">⬇️ Download Unlocked PDF</button>
-            <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-white/5 text-sm">New</button></div>
-          </div>:status==="error"?<div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">❌ Could not unlock this PDF. The password may be required.</div>:
+            <button onClick={reset} className="px-4 py-2.5 rounded-xl bg-gray-50 text-sm">New</button></div>
+          </div>:status==="error"?<div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-600 text-sm">❌ Could not unlock this PDF. The password may be required.</div>:
           <button onClick={unlock} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 font-semibold text-sm transition-colors">🔓 Remove Password</button>}
         </div>
       )}

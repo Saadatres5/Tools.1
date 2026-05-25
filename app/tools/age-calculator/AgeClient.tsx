@@ -20,9 +20,9 @@ export default function AgeClient() {
   return (
     <div className="space-y-5 max-w-md mx-auto">
       <div>
-        <label className="block text-sm text-white/60 mb-2">Date of Birth</label>
+        <label className="block text-sm text-gray-8000 mb-2">Date of Birth</label>
         <input type="date" value={dob} onChange={e=>setDob(e.target.value)} max={new Date().toISOString().split("T")[0]}
-          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-blue-500/50"/>
+          className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-800 outline-none focus:border-blue-400"/>
       </div>
       <button onClick={calc} disabled={!dob} className="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 disabled:opacity-40 font-semibold text-sm transition-colors">
         🎂 Calculate Age
@@ -32,7 +32,7 @@ export default function AgeClient() {
           {[["Years",result.y,"blue"],["Months",result.m,"purple"],["Days",result.d,"pink"],["Total Days",result.days.toLocaleString(),"green"],["Next Birthday","in "+result.next+" days","yellow"]].map(([l,v,c])=>(
             <div key={l as string} className={`p-4 rounded-2xl bg-${c}-500/10 border border-${c}-500/20 text-center`}>
               <div className={`text-2xl font-bold text-${c}-400`}>{v}</div>
-              <div className="text-white/40 text-xs mt-1">{l}</div>
+              <div className="text-gray-400 text-xs mt-1">{l}</div>
             </div>
           ))}
         </div>

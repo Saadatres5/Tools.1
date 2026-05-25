@@ -57,17 +57,17 @@ export default function ColorPickerClient() {
     <div className="space-y-4">
       <div className="flex gap-4 items-start">
         <div className="flex-1">
-          <label className="block text-xs text-white/50 mb-1">Pick a color</label>
+          <label className="block text-xs text-gray-8000 mb-1">Pick a color</label>
           <input type="color" value={picked}
             onChange={e => { setPicked(e.target.value); setPalette(p=>[e.target.value,...p.filter(c=>c!==e.target.value)].slice(0,8)); }}
-            className="w-full h-16 rounded-xl border border-white/10 cursor-pointer bg-transparent" />
+            className="w-full h-16 rounded-xl border border-gray-200 cursor-pointer bg-transparent" />
         </div>
         <div className="space-y-2">
           {[["HEX", picked], ["RGB", toRGB(picked)], ["HSL", toHSL(picked)]].map(([l,v]) => (
             <div key={l} className="flex items-center gap-2">
-              <span className="text-xs text-white/30 w-8">{l}</span>
-              <code className="text-xs text-green-400 font-mono bg-black/40 px-2 py-1 rounded">{v}</code>
-              <button onClick={() => copy(v)} className={`text-xs transition-colors ${copied===v?"text-green-400":"text-white/30 hover:text-white/60"}`}>{copied===v?"✓":"⎘"}</button>
+              <span className="text-xs text-gray-400 w-8">{l}</span>
+              <code className="text-xs text-emerald-700 font-mono bg-gray-50 px-2 py-1 rounded">{v}</code>
+              <button onClick={() => copy(v)} className={`text-xs transition-colors ${copied===v?"text-emerald-700":"text-gray-400 hover:text-gray-8000"}`}>{copied===v?"✓":"⎘"}</button>
             </div>
           ))}
         </div>
@@ -79,7 +79,7 @@ export default function ColorPickerClient() {
         ? <FileDropZone accept="image/*" emoji="🎨" label="Drop an image to pick colors" hint="Click anywhere on the image to pick" onFiles={handleImg} />
         : (
           <div>
-            <p className="text-xs text-white/40 mb-2">Click anywhere to pick a color</p>
+            <p className="text-xs text-gray-400 mb-2">Click anywhere to pick a color</p>
             <canvas
               ref={el => {
                 (canvasRef as React.MutableRefObject<HTMLCanvasElement|null>).current = el;
@@ -97,11 +97,11 @@ export default function ColorPickerClient() {
       }
       {palette.length > 0 && (
         <div>
-          <p className="text-xs text-white/40 mb-2">Picked Colors</p>
+          <p className="text-xs text-gray-400 mb-2">Picked Colors</p>
           <div className="flex gap-2 flex-wrap">
             {palette.map(c => (
               <button key={c} onClick={() => { setPicked(c); copy(c); }} title={c}
-                className="w-10 h-10 rounded-xl border-2 border-white/20 hover:scale-110 transition-transform"
+                className="w-10 h-10 rounded-xl border-2 border-gray-200 hover:scale-110 transition-transform"
                 style={{ background: c }} />
             ))}
           </div>

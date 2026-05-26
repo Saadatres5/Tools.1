@@ -124,7 +124,7 @@ export const metadata: Metadata = {
 
   // ── Site verification ─────────────────────────────────────────────────────
   verification: {
-    google: "add-your-google-search-console-verification-code",
+    google: "TbTVXBwopdCeF1H1Sgsc-XI5ynECwmE777XIZQNffIo",
     // yandex: "your-yandex-code",
   },
 

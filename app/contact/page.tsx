@@ -15,9 +15,27 @@ const contacts = [
   { icon: "🐛", title: "Bug Reports & Feature Requests", email: "support@quantixtools.com", desc: "Found a bug or have a tool idea? We'd love to hear it." },
 ];
 
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "@id": "https://quantixtools.com/contact",
+  "name": "Contact QuantixTools",
+  "url": "https://quantixtools.com/contact",
+  "publisher": { "@type": "Organization", "@id": "https://quantixtools.com/#organization" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",    "item": "https://quantixtools.com" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://quantixtools.com/contact" },
+    ],
+  },
+};
+
 export default function ContactPage() {
   return (
     <div style={{ minHeight: "100vh", background: "#f7f8fc" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
       <Navbar />
       <main id="main-content">
 

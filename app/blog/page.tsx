@@ -4,9 +4,22 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog — AI & File Tools Tips — QuantixTools",
-  description: "Learn about AI tools, PDF tips, image editing, and productivity hacks.",
+  title: "Blog — AI Tools, PDF Tips & Productivity — QuantixTools",
+  description: "Guides and tips on AI tools, PDF editing, image processing, video tools and productivity. Free resources from QuantixTools.",
   alternates: { canonical: "https://quantixtools.com/blog" },
+  openGraph: {
+    type: "website",
+    url: "https://quantixtools.com/blog",
+    title: "Blog — AI Tools, PDF Tips & Productivity — QuantixTools",
+    description: "Guides and tips on AI tools, PDF editing, image processing and productivity.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog — QuantixTools",
+    description: "Tips and guides on AI tools, PDF, image, and productivity tools.",
+    images: ["/og-image.png"],
+  },
 };
 
 const posts = [
@@ -23,9 +36,28 @@ const catColor: Record<string, { bg: string; color: string }> = {
   Image: { bg: "#eff6ff", color: "#2563eb" },
 };
 
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://quantixtools.com/blog",
+  "name": "QuantixTools Blog",
+  "url": "https://quantixtools.com/blog",
+  "description": "Tips, guides, and insights on AI tools, PDF editing, image processing, and productivity.",
+  "publisher": { "@type": "Organization", "@id": "https://quantixtools.com/#organization" },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://quantixtools.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://quantixtools.com/blog" },
+    ],
+  },
+};
+
 export default function BlogPage() {
   return (
     <div style={{ minHeight: "100vh", background: "#f7f8fc" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
       <Navbar />
       <main id="main-content">
 

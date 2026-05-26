@@ -161,8 +161,6 @@ export const allCategories: Category[] = [
     gradient: "from-red-500/20 to-pink-500/20",
     border: "border-red-500/20",
     tools: [
-      { name: "Password Generator", href: "/tools/password-generator", desc: "Create strong passwords" },
-      { name: "MD5 Generator", href: "/tools/md5-generator", desc: "Generate MD5 hash" },
     ],
   },
   {
@@ -206,7 +204,6 @@ export const allCategories: Category[] = [
       { name: "AI Caption Generator", href: "/tools/ai-caption-generator", desc: "Generate social media captions", badge: "AI" },
       { name: "AI Tweet Generator", href: "/tools/ai-tweet-generator", desc: "Write viral tweets with AI", badge: "AI" },
       { name: "YouTube Title Generator", href: "/tools/youtube-title-generator", desc: "Generate YouTube titles", badge: "AI" },
-      { name: "Hashtag Generator", href: "/tools/ai-hashtag-generator", desc: "Generate trending hashtags", badge: "AI" },
       { name: "Thumbnail Generator", href: "/tools/thumbnail-generator", desc: "Create YouTube thumbnails" },
     ],
   },

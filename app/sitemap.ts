@@ -1,91 +1,50 @@
 import { MetadataRoute } from "next";
 import { allCategories } from "@/lib/tools-data";
 
-const BASE_URL = "https://quantixtools.com";
+const BASE = "https://quantixtools.com";
 
-// Static dates — only update when page content actually changes
-const DATES = {
-  home:      new Date("2025-05-01"),
-  tools:     new Date("2025-05-01"),
-  blog:      new Date("2025-05-01"),
-  category:  new Date("2025-05-01"),
-  tool:      new Date("2025-05-01"),
-  static:    new Date("2025-01-01"),
+// ── Date constants — update when content changes ──────────────────────────────
+const D = {
+  home:     "2025-05-24",
+  tools:    "2025-05-24",
+  blog:     "2025-05-01",
+  category: "2025-05-24",
+  tool:     "2025-05-01",
+  static:   "2025-01-01",
 };
 
-// Blog posts with accurate publish dates
-const BLOG_POSTS = [
-  { slug: "best-free-pdf-editor",               date: new Date("2025-01-15") },
-  { slug: "ai-tools-for-students",              date: new Date("2025-01-20") },
-  { slug: "compress-pdf-without-losing-quality", date: new Date("2024-12-10") },
-  { slug: "remove-background-online-free",      date: new Date("2024-12-05") },
-  { slug: "best-ai-summarizer-tools",           date: new Date("2024-11-20") },
+// ── Blog posts ────────────────────────────────────────────────────────────────
+const BLOGS = [
+  { slug: "best-free-pdf-editor",                date: "2025-01-15" },
+  { slug: "ai-tools-for-students",               date: "2025-01-20" },
+  { slug: "compress-pdf-without-losing-quality", date: "2024-12-10" },
+  { slug: "remove-background-online-free",       date: "2024-12-05" },
+  { slug: "best-ai-summarizer-tools",            date: "2024-11-20" },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
 
-  // ── 1. Core static pages ────────────────────────────────────────────────────
+  // ── 1. Core static pages ─────────────────────────────────────────────────
   const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: BASE_URL,
-      lastModified: DATES.home,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${BASE_URL}/tools`,
-      lastModified: DATES.tools,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${BASE_URL}/blog`,
-      lastModified: DATES.blog,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    {
-      url: `${BASE_URL}/about`,
-      lastModified: DATES.static,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${BASE_URL}/contact`,
-      lastModified: DATES.static,
-      changeFrequency: "monthly",
-      priority: 0.4,
-    },
-    {
-      url: `${BASE_URL}/privacy`,
-      lastModified: DATES.static,
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${BASE_URL}/terms`,
-      lastModified: DATES.static,
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${BASE_URL}/disclaimer`,
-      lastModified: DATES.static,
-      changeFrequency: "yearly",
-      priority: 0.1,
-    },
+    { url: BASE,                    lastModified: D.home,   changeFrequency: "daily",   priority: 1.0 },
+    { url: `${BASE}/tools`,         lastModified: D.tools,  changeFrequency: "daily",   priority: 0.95 },
+    { url: `${BASE}/blog`,          lastModified: D.blog,   changeFrequency: "weekly",  priority: 0.7 },
+    { url: `${BASE}/about`,         lastModified: D.static, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${BASE}/contact`,       lastModified: D.static, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${BASE}/privacy`,       lastModified: D.static, changeFrequency: "yearly",  priority: 0.2 },
+    { url: `${BASE}/terms`,         lastModified: D.static, changeFrequency: "yearly",  priority: 0.2 },
+    { url: `${BASE}/disclaimer`,    lastModified: D.static, changeFrequency: "yearly",  priority: 0.1 },
   ];
 
-  // ── 2. Category pages ───────────────────────────────────────────────────────
+  // ── 2. Category pages ─────────────────────────────────────────────────────
   const categoryPages: MetadataRoute.Sitemap = allCategories.map((cat) => ({
-    url: `${BASE_URL}${cat.href}`,
-    lastModified: DATES.category,
+    url: `${BASE}${cat.href}`,
+    lastModified: D.category,
     changeFrequency: "weekly" as const,
     priority: 0.85,
   }));
 
-  // ── 3. Individual tool pages ─────────────────────────────────────────────────
-  // Deduplicate by href (in case a tool appears in multiple categories)
+  // ── 3. Tool pages — deduplicated ─────────────────────────────────────────
   const seenHrefs = new Set<string>();
   const toolPages: MetadataRoute.Sitemap = allCategories
     .flatMap((cat) => cat.tools)
@@ -95,19 +54,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       return true;
     })
     .map((tool) => ({
-      url: `${BASE_URL}${tool.href}`,
-      lastModified: DATES.tool,
+      url: `${BASE}${tool.href}`,
+      lastModified: D.tool,
       changeFrequency: "monthly" as const,
       priority: 0.75,
     }));
 
-  // ── 4. Blog post pages ──────────────────────────────────────────────────────
-  const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map(({ slug, date }) => ({
-    url: `${BASE_URL}/blog/${slug}`,
+  // ── 4. Blog post pages ────────────────────────────────────────────────────
+  const blogPages: MetadataRoute.Sitemap = BLOGS.map(({ slug, date }) => ({
+    url: `${BASE}/blog/${slug}`,
     lastModified: date,
     changeFrequency: "monthly" as const,
-    priority: 0.6,
+    priority: 0.65,
   }));
 
-  return [...staticPages, ...categoryPages, ...toolPages, ...blogPages];
+  return [
+    ...staticPages,
+    ...categoryPages,
+    ...toolPages,
+    ...blogPages,
+  ];
 }

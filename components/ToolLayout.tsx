@@ -1,76 +1,166 @@
+"use client";
+import React from "react";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AdBanner from "@/components/AdBanner";
-import AdSidebar from "@/components/AdSidebar";
-import ErrorBoundary from "@/components/ErrorBoundary";
 
-interface RelatedTool { name: string; href: string; }
-interface Props {
-  title: string;
-  description: string;
-  emoji: string;
-  category: string;
-  categoryHref: string;
-  related?: RelatedTool[];
-  children: React.ReactNode;
-  schemaType?: "SoftwareApplication" | "WebApplication";
+// ─────────────────────────────────────────────
+// Types
+// ─────────────────────────────────────────────
+export interface Requirement {
+  label: string;
+  value: string;
+  color: string;
 }
 
-export default function ToolLayout({ title, description, emoji, category, categoryHref, related = [], children }: Props) {
-  const toolSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: title,
-    description,
-    applicationCategory: "WebApplication",
-    operatingSystem: "Any",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    featureList: [description, "Free to use", "No signup required", "Browser-based", "Privacy first"],
-    browserRequirements: "Requires JavaScript",
-  };
+export interface Step {
+  title: string;
+  desc: string;
+}
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      { "@type": "Question", name: `Is ${title} free?`, acceptedAnswer: { "@type": "Answer", text: `Yes, ${title} is completely free to use. No signup or account required.` } },
-      { "@type": "Question", name: `Is ${title} safe?`, acceptedAnswer: { "@type": "Answer", text: "Yes. Your files are processed locally in your browser. Nothing is uploaded to our servers." } },
-      { "@type": "Question", name: `How do I use ${title}?`, acceptedAnswer: { "@type": "Answer", text: `Simply open the ${title} tool, upload or paste your content, and click process. Results are instant.` } },
-    ],
-  };
+export interface FAQ {
+  q: string;
+  a: string;
+}
 
+export interface RelatedTool {
+  name: string;
+  icon: string;
+  href: string;
+}
+
+export interface ToolPageLayoutProps {
+  toolName: string;
+  toolIcon: string;
+  toolDescription: string;
+  toolCategory: string;
+  toolCategorySlug: string;
+  toolSlug: string;
+  /** Tailwind-compatible gradient stops e.g. "from-[#0c4a6e] via-[#0e7490] to-[#0d9488]" */
+  gradientClass: string;
+  /** Hex accent colour used for highlights, borders, badges */
+  accentColor: string;
+  requirements: Requirement[];
+  toolUI: React.ReactNode;
+  steps: Step[];
+  faqs: FAQ[];
+  relatedTools?: RelatedTool[];
+  tags?: string[];
+}
+
+// ─────────────────────────────────────────────
+// Sub-components
+// ─────────────────────────────────────────────
+
+function Breadcrumb({ category, categorySlug, toolName }: { category: string; categorySlug: string; toolName: string }) {
   return (
-    <div style={{ minHeight: "100vh", background: "#f7f8fc" }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Navbar />
+    <nav aria-label="breadcrumb" className="flex flex-wrap items-center gap-1.5 text-xs text-white/50 mb-5">
+      <Link href="/" className="hover:text-white/80 transition-colors">Home</Link>
+      <span>/</span>
+      <Link href="/tools" className="hover:text-white/80 transition-colors">Tools</Link>
+      <span>/</span>
+      <Link href={`/tools/${categorySlug}`} className="hover:text-white/80 transition-colors">{category}</Link>
+      <span>/</span>
+      <span className="text-white/85 font-semibold">{toolName}</span>
+    </nav>
+  );
+}
 
-      {/* Tool page hero header */}
-      <div style={{ background: "#fff", borderBottom: "1px solid #e8eaf0", padding: "36px 24px 28px" }}>
-        <div style={{ maxWidth: 860, margin: "0 auto" }}>
-          {/* Breadcrumb */}
-          <nav aria-label="breadcrumb" style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 12, color: "#94a3b8", marginBottom: 16, flexWrap: "wrap" }}>
-            <Link href="/" style={{ color: "#94a3b8", textDecoration: "none" }} className="bc-link">Home</Link>
-            <span>/</span>
-            <Link href="/tools" style={{ color: "#94a3b8", textDecoration: "none" }} className="bc-link">Tools</Link>
-            <span>/</span>
-            <Link href={categoryHref} style={{ color: "#94a3b8", textDecoration: "none" }} className="bc-link">{category}</Link>
-            <span>/</span>
-            <span style={{ color: "#475569", fontWeight: 600 }} aria-current="page">{title}</span>
-          </nav>
+function RequirementsBanner({ requirements }: { requirements: Requirement[] }) {
+  return (
+    <div className="rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-sky-100 p-4 grid gap-3"
+      style={{ gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))" }}>
+      {requirements.map((r, i) => (
+        <div key={i} className="flex items-start gap-2.5">
+          <div className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0" style={{ background: r.color }} />
+          <div>
+            <div className="text-[10px] font-bold tracking-wide uppercase mb-0.5" style={{ color: r.color }}>{r.label}</div>
+            <div className="text-[13px] font-medium text-slate-800 leading-snug whitespace-pre-line">{r.value}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
 
-          {/* Header */}
-          <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-            <div style={{ width: 60, height: 60, borderRadius: 14, background: "#fff0f3", border: "1px solid #fecdd3", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 30, flexShrink: 0 }}>
-              {emoji}
+function HowToUse({ steps }: { steps: Step[] }) {
+  return (
+    <div className="flex flex-col gap-3.5">
+      {steps.map((s, i) => (
+        <div key={i} className="flex items-start gap-3.5">
+          <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-black text-white shadow-md"
+            style={{ background: "linear-gradient(135deg,#0ea5e9,#0d9488)" }}>
+            {i + 1}
+          </div>
+          <div className="pt-0.5">
+            <div className="text-sm font-bold text-slate-800 mb-0.5">{s.title}</div>
+            <div className="text-[13px] text-slate-500 leading-relaxed">{s.desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function FAQSection({ faqs }: { faqs: FAQ[] }) {
+  const [open, setOpen] = React.useState<number | null>(null);
+  return (
+    <div className="flex flex-col gap-2.5">
+      {faqs.map((f, i) => (
+        <div key={i}
+          className={`rounded-xl border px-4 py-3.5 cursor-pointer transition-all ${open === i ? "bg-white border-sky-300" : "bg-slate-50 border-slate-200 hover:bg-sky-50"}`}
+          onClick={() => setOpen(open === i ? null : i)}>
+          <div className="flex justify-between items-center">
+            <span className="text-sm font-bold text-slate-800 leading-snug pr-3">{f.q}</span>
+            <span className="text-sky-500 text-xl font-light flex-shrink-0">{open === i ? "−" : "+"}</span>
+          </div>
+          {open === i && <p className="text-[13px] text-slate-500 mt-3 leading-relaxed">{f.a}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Card({ icon, iconBg, title, children }: { icon: string; iconBg: string; title: string; children: React.ReactNode }) {
+  return (
+    <div className="bg-white rounded-2xl border border-sky-100 shadow-sm shadow-sky-100 overflow-hidden">
+      <div className="flex items-center gap-2.5 px-6 pt-5 pb-0">
+        <div className={`w-9 h-9 rounded-xl flex items-center justify-center text-lg flex-shrink-0 ${iconBg}`}>{icon}</div>
+        <h2 className="font-bold text-[17px] text-slate-900" style={{ fontFamily: "'Outfit',sans-serif" }}>{title}</h2>
+      </div>
+      <div className="px-6 py-5">{children}</div>
+    </div>
+  );
+}
+
+// ─────────────────────────────────────────────
+// Main Layout
+// ─────────────────────────────────────────────
+export default function ToolPageLayout({
+  toolName, toolIcon, toolDescription, toolCategory, toolCategorySlug, toolSlug,
+  gradientClass, accentColor, requirements, toolUI, steps, faqs, relatedTools = [], tags = [],
+}: ToolPageLayoutProps) {
+  return (
+    <>
+      {/* Google Fonts */}
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap');body{font-family:'DM Sans',sans-serif;}`}</style>
+
+      {/* ── HERO HEADER ── */}
+      <div className={`bg-gradient-to-br ${gradientClass} px-6 py-12 relative overflow-hidden`}>
+        {/* subtle grid overlay */}
+        <div className="absolute inset-0 opacity-[0.03]"
+          style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fff' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E\")" }} />
+        <div className="max-w-[860px] mx-auto relative z-10">
+          <Breadcrumb category={toolCategory} categorySlug={toolCategorySlug} toolName={toolName} />
+          <div className="flex items-start gap-5 flex-wrap sm:flex-nowrap">
+            <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-[32px] flex-shrink-0 border-2 border-white/25 bg-white/15 backdrop-blur shadow-lg">
+              {toolIcon}
             </div>
             <div>
-              <h1 style={{ fontFamily: "var(--font-syne,sans-serif)", fontSize: "clamp(22px,3.5vw,32px)", fontWeight: 800, color: "#1a1a2e", letterSpacing: "-0.5px", marginBottom: 6 }}>{title}</h1>
-              <p style={{ fontSize: 14, color: "#64748b", lineHeight: 1.6, marginBottom: 10 }}>{description}</p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
-                {["Free", "No Signup", "Browser-Based", "Privacy First"].map(badge => (
-                  <span key={badge} style={{ fontSize: 11, fontWeight: 600, color: "#22c55e", background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: 100, padding: "3px 10px" }}>{badge}</span>
+              <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight mb-2 drop-shadow"
+                style={{ fontFamily: "'Outfit',sans-serif" }}>{toolName}</h1>
+              <p className="text-sm text-white/75 leading-relaxed max-w-xl mb-4">{toolDescription}</p>
+              <div className="flex flex-wrap gap-2">
+                {["✓ Free", "✓ No Signup", "✓ Instant Results", "✓ Download Report", "✓ 100% Private", ...(tags || [])].map((t) => (
+                  <span key={t} className="text-[11px] font-bold px-3 py-1 rounded-full border border-white/30 bg-white/12 text-white/90 backdrop-blur">{t}</span>
                 ))}
               </div>
             </div>
@@ -78,86 +168,36 @@ export default function ToolLayout({ title, description, emoji, category, catego
         </div>
       </div>
 
-      <main id="main-content" style={{ maxWidth: 860, margin: "0 auto", padding: "28px 24px 80px" }}>
+      {/* ── MAIN ── */}
+      <main className="max-w-[860px] mx-auto px-4 sm:px-6 py-8 flex flex-col gap-6">
 
-        {/* Ad top */}
-        <div style={{ marginBottom: 24 }}>
-          <AdBanner slot="1234567890" format="horizontal" className="rounded-xl" />
-        </div>
+        {/* Requirements */}
+        <RequirementsBanner requirements={requirements} />
 
-        {/* Tool UI Card */}
-        <div style={{ background: "#fff", border: "1px solid #e8eaf0", borderRadius: 16, padding: "28px", marginBottom: 20 }}>
-          <ErrorBoundary toolName={title}>
-            {children}
-          </ErrorBoundary>
-        </div>
+        {/* Tool UI */}
+        <Card icon={toolIcon} iconBg="bg-sky-100" title={`Use ${toolName}`}>{toolUI}</Card>
 
-        {/* Ad after tool */}
-        <div style={{ marginBottom: 20 }}>
-          <AdSidebar slot="0987654321" />
-        </div>
-
-        {/* How it works */}
-        <div style={{ background: "#fff", border: "1px solid #e8eaf0", borderRadius: 14, padding: "24px 24px", marginBottom: 16 }}>
-          <h2 style={{ fontFamily: "var(--font-syne,sans-serif)", fontWeight: 700, fontSize: 16, color: "#1a1a2e", marginBottom: 16 }}>How to use {title}</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {[
-              "Open the tool above",
-              "Upload your file or enter your content",
-              "Click the process button and get instant results",
-              "Download or copy your output",
-            ].map((step, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
-                <div style={{ width: 28, height: 28, borderRadius: "50%", background: "#fff0f3", border: "1px solid #fecdd3", color: "#e8284a", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, fontWeight: 800, fontSize: 12 }}>{i + 1}</div>
-                <span style={{ fontSize: 13, color: "#64748b", lineHeight: 1.6, paddingTop: 4 }}>{step}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* How to Use */}
+        <Card icon="📋" iconBg="bg-emerald-100" title={`How to Use ${toolName}`}><HowToUse steps={steps} /></Card>
 
         {/* FAQ */}
-        <div style={{ background: "#fff", border: "1px solid #e8eaf0", borderRadius: 14, padding: "24px 24px", marginBottom: 16 }}>
-          <h2 style={{ fontFamily: "var(--font-syne,sans-serif)", fontWeight: 700, fontSize: 16, color: "#1a1a2e", marginBottom: 14 }}>Frequently Asked Questions</h2>
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {[
-              { q: `Is ${title} free?`, a: `Yes, completely free. No account, no credit card, no hidden fees.` },
-              { q: `Are my files safe with ${title}?`, a: `Absolutely. Processing happens entirely in your browser. Your files never leave your device.` },
-              { q: `Does ${title} work on mobile?`, a: `Yes, it works on all devices — desktop, tablet, and mobile.` },
-            ].map(faq => (
-              <details key={faq.q} style={{ background: "#f8fafc", border: "1px solid #e8eaf0", borderRadius: 10, padding: "14px 16px", cursor: "pointer" }}>
-                <summary style={{ fontWeight: 600, fontSize: 13, color: "#1a1a2e", display: "flex", justifyContent: "space-between", alignItems: "center", listStyle: "none" }}>
-                  {faq.q}
-                  <span style={{ color: "#94a3b8", fontSize: 12 }}>▼</span>
-                </summary>
-                <p style={{ fontSize: 13, color: "#64748b", marginTop: 10, lineHeight: 1.65 }}>{faq.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
+        <Card icon="❓" iconBg="bg-amber-100" title="Frequently Asked Questions"><FAQSection faqs={faqs} /></Card>
 
         {/* Related Tools */}
-        {related.length > 0 && (
-          <div style={{ background: "#fff", border: "1px solid #e8eaf0", borderRadius: 14, padding: "24px 24px" }}>
-            <h2 style={{ fontFamily: "var(--font-syne,sans-serif)", fontWeight: 700, fontSize: 16, color: "#1a1a2e", marginBottom: 14 }}>Related Tools</h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {related.map(r => (
-                <Link key={r.href} href={r.href} style={{
-                  fontSize: 13, fontWeight: 500, color: "#475569",
-                  background: "#f1f5f9", border: "1px solid #e2e8f0",
-                  borderRadius: 100, padding: "7px 16px",
-                  textDecoration: "none", transition: "all .15s",
-                }} className="related-tag">{r.name}</Link>
+        {relatedTools.length > 0 && (
+          <Card icon="🔗" iconBg="bg-violet-100" title="Related Tools">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {relatedTools.map((rt) => (
+                <Link key={rt.href} href={rt.href}
+                  className="flex flex-col items-center gap-2 p-3 rounded-xl border border-slate-200 bg-slate-50 hover:bg-sky-50 hover:border-sky-200 transition-all text-center group">
+                  <span className="text-2xl">{rt.icon}</span>
+                  <span className="text-[12px] font-600 text-slate-700 group-hover:text-sky-700 leading-tight">{rt.name}</span>
+                </Link>
               ))}
             </div>
-          </div>
+          </Card>
         )}
       </main>
-
-      <Footer />
-      <style>{`
-        .bc-link:hover { color: #1a1a2e !important; }
-        .related-tag:hover { background: #e2e8f0 !important; border-color: #cbd5e1 !important; color: #1a1a2e !important; }
-      `}</style>
-    </div>
+    </>
   );
 }
